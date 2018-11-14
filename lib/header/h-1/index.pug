@@ -1,0 +1,83 @@
+header.canhcam-header-1
+	.top-nav
+		.container
+			.row.justify-content-between.align-items-center
+				.shopcart(map-to="#cart")
+					span.mdi.mdi-basket
+				.logo-wrapper
+					img(src="./img/_global/logo.png", alt="")
+				.toggle-menu
+					a(href="javascript:void(0)") 
+						span.mdi.mdi-menu
+				.tool
+					#phone
+					#login
+	.overlay
+	nav.main-nav.container
+		.logo-wrapper
+			img(src="./img/_global/logo.png", alt="")
+		button.btn.btn-close
+			span.mdi.mdi-close-circle-outline
+		.account-menu(map-to="#login")
+			ul.account-list
+				li
+					img(src="./img/menu/login_icon_1.png", alt="")
+					a(href="javascript:void(0)") Đăng ký
+				li
+					img(src="./img/menu/login_icon_2.png", alt="")
+					a(href="javascript:void(0)") Đăng nhập
+		#cart
+		.searchbox
+			input(type="text").searchinput
+			button.searchbutton
+		
+		ul.nav
+			li.nav-item
+				a(href="#").nav-link.dropdown-btn Danh mục sản phẩm
+				.dropdown-list
+					ul.dd-menu
+						li.dd-item
+							img(src="./img/menu/icon_1.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link Chăm sóc cá nhân
+						li.dd-item
+							img(src="./img/menu/icon_2.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link Chăm sóc sức khỏe
+						li.dd-item
+							img(src="./img/menu/icon_3.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link Đồ dùng gia đình
+						li.dd-item
+							img(src="./img/menu/icon_4.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link Thực phẩm
+						li.dd-item
+							img(src="./img/menu/icon_5.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link nước hoa
+						li.dd-item
+							img(src="./img/menu/icon_6.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link mỹ phẩm dưỡng da
+						li.dd-item
+							img(src="./img/menu/icon_7.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link mỹ phẩm trang điểm
+						li.dd-item
+							img(src="./img/menu/icon_8.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link thời trang
+						li.dd-item
+							img(src="./img/menu/icon_9.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link phụ kiện
+						li.dd-item
+							img(src="./img/menu/icon_10.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link thiết bị điện tử
+						li.dd-item
+							img(src="./img/menu/icon_11.png", alt="").dd-icon
+							a(href="javascript:void(0)").dd-link thanh lý hộ
+			li.nav-item
+				a(href="javascript:void(0)").nav-link Deal giá tốt
+			li.nav-item
+				a(href="javascript:void(0)").nav-link Order hàng Mỹ
+		ul.phone-list(map-to="#phone")
+			li
+				img(src="./img/menu/phone_icon.png", alt="")
+				a(href="javascript:void(0)") US: (+1) 702 703 9988
+			li
+				img(src="./img/menu/phone_icon.png", alt="")
+				a(href="javascript:void(0)") VN: (+84) 090 331 9840
+			

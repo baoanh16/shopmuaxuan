@@ -1,0 +1,274 @@
+.canhcam-header-1
+	position: fixed
+	width: 100%
+	z-index: 1000
+	top: 0
+	left: 0
+	height: 100%
+	.top-nav
+		box-shadow: 0 2px 1px 0 rgba(0,0,0,.2)
+		padding: 1rem
+		display: flex
+		justify-content: space-between
+		align-items: center
+		#login,#phone
+			display: none
+		.toggle-menu
+			background: transparent
+			border: 0
+			height: auto
+			span
+				font-size: 1.5rem
+				color: color-get($mau,den)
+		.shopcart
+			display: flex
+			justify-content: center
+			align-items: center
+			color: color-get($mau,trang)
+			height: 40px
+			width: 40px
+			border-radius: 5px
+			background: linear-gradient( 0deg, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+		.tool
+			display: none
+
+	.overlay
+		position: fixed
+		top: 0
+		bottom: 0
+		right: 0
+		z-index: 90
+		background: #000
+		opacity: .7
+		width: 100%
+		display: none
+		&.active
+			display: block
+	.main-nav
+		padding: 0 1rem
+		width: 300px
+		height: 100%
+		position: absolute
+		left: -350px
+		top: 0
+		background: color-get($mau,trang)
+		&.active
+			left: 0
+			position: fixed
+			z-index: 91
+		.logo-wrapper
+			padding: 1rem 0 0 0.5rem
+		.btn-close
+			background: transparent
+			padding: 0
+			position: absolute
+			right: 2rem
+			top: 0
+			font-size: r(25px)
+			width: 0
+			height: 0
+		.account-list
+			list-style: none
+			display: flex
+			justify-content: space-around
+			padding: r(30px) r(12px) r(20px)
+			li
+				height: r(50px)
+				width: r(110px)
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				text-transform: uppercase
+				&:not(:last-child)
+					border-right: 1px solid #e1e1e1
+				img
+					margin-bottom: 0.4rem
+		.nav
+			flex-direction: column
+			.nav-item
+				.nav-link
+					padding: 0.5rem 0
+					font-size: 1rem
+					text-transform: uppercase
+					color: color-get($mau,den)
+				.dropdown-btn
+					position: relative
+					&:after
+						+linearicons('\e874')
+						position: absolute
+						right: 0
+						top: 50%
+						transform: translateY(-50%)
+						font-size: r(9.88px)
+				.dropdown-list
+					display: none
+					opacity: 0
+					visibility: hidden
+					transition: all .3s ease-in-out
+					ul
+						li
+							display: flex
+							align-items: center
+							.dd-link
+								font-size: 0.8025rem
+								padding: 0.5rem 0
+								text-transform: uppercase
+								color: color-get($mau,den)
+							.dd-icon
+								margin-right: r(22px)
+					&.active
+						display: block
+						opacity: 1
+						visibility: visible
+						transition: all 0.3s ease-in-out
+		.phone-list
+			list-style: none
+			li
+				display: flex
+				align-items: center
+				padding: 0.5rem 0
+				a
+					color: color-get($mau,den)
+				img
+					padding-right: 0.5rem
+		.searchbox
+			margin-bottom: 0.5rem
+			display: flex
+			padding: 0
+			position: relative
+			button
+				width: 30px 
+				height: 30px
+				background: linear-gradient( 0deg, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+				color: color-get($mau,trang)
+				border: 0
+				position: absolute
+				right: 0
+				border-radius: 0 25px 25px 0
+				&:before
+					content: '\F349'
+					font-family: 'Material Design Icons'
+					+set-center()
+			input
+				height: 30px
+				width: 268px
+				padding: 0 0 0 0.5rem
+				border-radius: 25px
+				background: #f4f4f4
+				border: 0
+	+media-breakpoint-up(lg)
+		height: auto
+		.top-nav
+			box-shadow: none
+			border-bottom: 1px solid #e1e1e1
+			.tool
+				display: flex
+				#login,#phone
+					display: block
+					ul
+						list-style: none
+						display: flex
+						li
+							display: flex
+							flex-direction: column
+							justify-content: center
+							align-items: center
+							margin-left: 2.5rem
+							position: relative
+							&:after
+								content: ''
+								position: absolute
+								height: 50px
+								width: 1px
+								background: #e1e1e1
+								right: -21px
+
+							img
+								margin-bottom: 0.2rem
+							a 
+								font-size: r(12.84px)
+								color: color-get($mau,den)
+								font-weight: 500
+				#login
+					ul
+						li
+							&:last-child
+								&:after
+									display: none
+			.toggle-menu
+				display: none
+		.main-nav
+			position: static
+			width: 100%
+			height: auto
+			display: flex
+			flex-direction: row-reverse
+			align-items: center
+			justify-content: space-between
+			padding: 0.5rem 0 0 0
+			.logo-wrapper
+				display: none
+			.btn-close
+				display: none
+			.searchbox
+				margin-bottom: 0
+			#cart
+				span
+					display: flex
+					justify-content: center
+					align-items: center
+					margin-left: 2rem
+					color: color-get($mau,trang)
+					height: 40px
+					width: 40px
+					border-radius: 5px
+					background: linear-gradient( 0deg, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+			.nav
+				flex-direction: row
+				width: 100%
+				.nav-item
+					.nav-link
+						font-weight: 600
+						font-size: r(14.82px)
+					&:not(:last-child)
+						margin-right: r(50px)
+					.dropdown-btn
+						display: flex
+						&:after
+							right: r(-12px)
+					.dropdown-list
+						position: absolute
+						background-color: color-get($mau,trang)
+						box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2)
+						padding: r(12px) r(28px) r(45px) 
+						&:before
+							position: absolute
+							content: ''
+							width: 100%
+							height: r(2px)
+							background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+							top: 0
+							left: 0
+						&:after
+							position: absolute
+							content: ''
+							width: 0
+							height: 0
+							border-style: solid
+							border-width: 0 6px 8px 6px
+							border-color: transparent transparent #007bff transparent
+							top: r(-6px)
+							left: r(66px)
+						.dd-menu
+							width: 100%
+							.dd-item
+								padding: 0.3rem 1.2rem
+								width: 100%
+								&:not(:last-child)
+									border-bottom: 1px solid #e1e1e1
+	+media-breakpoint-up(xl)
+		.main-nav
+			.searchbox
+				input
+					width: 413px
