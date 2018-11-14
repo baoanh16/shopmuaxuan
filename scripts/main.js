@@ -24,7 +24,15 @@ $(document).ready(function () {
 	});
 	doMapTo()
 
+	if ($(window).scrollTop() >= 1) {
+		$(".canhcam-header-1").addClass('header-fixed');
+		setHeader($(window).scrollTop());
+	}
 
+});
+
+$($(window)).scroll(function () { 
+	setHeader($(window).scrollTop());
 });
 
 $(window).resize(function () {
@@ -38,7 +46,7 @@ const doMapTo = function () {
 			$(n).html($(this).clone().removeAttr("map-to").show());
 			$(this).hide();
 		})
-	}else{
+	} else {
 		doMapBack()
 	}
 }
@@ -49,4 +57,12 @@ const doMapBack = function () {
 		$(n).html("")
 		$(this).show()
 	})
+}
+
+function setHeader(elm) {
+	if (elm >= 1) {
+		$("header").addClass('header-fixed');
+	} else {
+		$("header").removeClass('header-fixed');
+	}
 }

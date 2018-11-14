@@ -9,3 +9,16 @@ html, body
 	line-height: 1.5
 	font-weight: 400
 	font-family: 'Montserrat', sans-serif
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+.title-line
+	&:after
+		content: ''
+		position: absolute
+		height: 2px
+		width: 70px
+		background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+		left: 0
+		bottom: 0

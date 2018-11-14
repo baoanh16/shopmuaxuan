@@ -1,10 +1,12 @@
 .canhcam-header-1
-	position: fixed
 	width: 100%
-	z-index: 1000
-	top: 0
-	left: 0
-	height: 100%
+	background: #fff
+	&.header-fixed
+		position: fixed
+		z-index: 1000
+		top: 0
+		left: 0
+		
 	.top-nav
 		box-shadow: 0 2px 1px 0 rgba(0,0,0,.2)
 		padding: 1rem
@@ -28,7 +30,7 @@
 			height: 40px
 			width: 40px
 			border-radius: 5px
-			background: linear-gradient( 0deg, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+			background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
 		.tool
 			display: none
 
