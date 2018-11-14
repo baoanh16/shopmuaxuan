@@ -148,6 +148,7 @@ function watchDist() {
 		port: 9999,
 	})
 	gulp.watch('plugins.json', gulp.series(concatCss, concatJs))
+	gulp.watch('plugins/**/**.*', gulp.series(concatCss, concatJs))
 	gulp.watch(paths.images.src, gulp.series(cleanImg, copyImages))
 	gulp.watch(paths.styles.allSrc, sassProcess)
 	gulp.watch(paths.scripts.allSrc, jsProcess)
