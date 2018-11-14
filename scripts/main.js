@@ -29,6 +29,18 @@ $(document).ready(function () {
 		setHeader($(window).scrollTop());
 	}
 	SliderHome();
+	$('.canhcam-home-2 .part-list').owlCarousel({
+		items: 1,
+		nav: true,
+		dots: false,
+		navText: ['<i class="lnr lnr-chevron-left"></i>', '<i class="lnr lnr-chevron-right"></i>'],
+		responsive: {
+			768: {
+				items: 2,
+				margin: 30
+			}
+		}
+	})
 });
 
 $($(window)).scroll(function () {
