@@ -1,0 +1,42 @@
+.canhcam-home-7
+	+pad(2rem null)
+	.homes-list
+		.item
+			text-decoration: none
+			display: block
+			figure
+				.boxzoom
+					img
+						width: 100%
+				figcaption
+					+pad(1rem)
+					background: #f4f4f4
+					time
+						display: block
+						+fz(r(14.82px))
+						+lh(r(14.82px))
+						color: #999999
+						margin-bottom: r(14px)
+					h4
+						color: #333333
+						+fz(r(16px))
+						margin-bottom: 0
+						+fw(500)
+						+text-clamp(2 , 2.5rem)
+	+media-breakpoint-up(lg)
+		+pad(4rem null)
+		.homes-list
+			.item
+				figure
+					margin-bottom: 0
+					.boxzoom
+						overflow: hidden
+						img
+							+transition(all .3s ease-in-out)
+					figcaption
+						+pad(r(28px))
+						padding-bottom: r(45px)
+				&:hover
+					.boxzoom
+						img
+							+transform(scale(1.2))
