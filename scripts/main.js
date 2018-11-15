@@ -50,7 +50,6 @@ $(function() {
 });
 $($(window)).scroll(function () {
 	setHeader($(window).scrollTop());
-=======
 	// Header fixed
 	// $(window).scroll(function () {
 	// 	let header = $("header")
