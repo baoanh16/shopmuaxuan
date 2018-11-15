@@ -1,6 +1,6 @@
 .canhcam-home-2
 	+pad(2rem null)
-	.home-lists
+	.homes-list
 		a
 			text-decoration: none
 			display: block
@@ -36,7 +36,9 @@
 		.top-list
 			margin-bottom: 1rem
 		.part-list
+			margin-bottom: 1rem
 			.owl-nav
+				margin-top: 0
 				button
 					+mar(0)
 					&.owl-prev , &.owl-next
@@ -52,15 +54,49 @@
 						left: 0
 					&.owl-next
 						right: 0
+		[class="col-lg-4"]
+			figure
+				display: flex
+				align-items: center
+				+pad(r(10px))
+				min-height: r(180px)
+				margin-bottom: .5rem
+				.boxicon
+					margin-right: r(14px)
+				figcaption
+					position: static
+					color: #ffffff
+					+pad(0)
+					text-align: left
+					h2
+						+fz(r(20px))
+						+lh(r(20px))
+						margin-bottom: r(15px)
+						text-transform: uppercase
+						+fw(700)
+					p
+						margin-bottom: 0
+						+fz(r(13px))
+						+fw(400)
+			&:last-child
+				figure
+					margin-bottom: 0
 	+media-breakpoint-up(lg)
 		padding-top: 4rem
 		padding-bottom: 3rem
-		.home-lists
+		.homes-list
+			.top-list , .part-list
+				margin-bottom: 2.14rem
 			figure
+				// margin-bottom: 2.14rem
 				.boxzoom
 					overflow: hidden
 					img
 						+transition(all .3s ease-in-out)
 				&:hover
-					img
-						+transform(scale(1.2))
+					.boxzoom
+						img
+							+transform(scale(1.2))
+			[class="col-lg-4"]
+				figure
+					margin-bottom: 0

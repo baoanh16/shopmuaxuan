@@ -1,5 +1,5 @@
 
-	
+
 p ,ul ,h1,h2,h3,h4,h5,h6,figure,div, *
 	margin: 0
 	padding: 0
@@ -22,3 +22,84 @@ a
 		background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
 		left: 0
 		bottom: 0
+
+
+.mx__title
+	+fz(r(30px))
+	// +lh(r(30px))
+	+lh(r(44px))
+	text-align: center
+	text-transform: uppercase
+	margin-bottom: r(30px)
+	position: relative
+	color: #333333
+	&:before
+		content: ''
+		display: block
+		width: r(120px)
+		height: r(2px)
+		+pos(abs , null null r(-15px) 50%)
+		+transform(translateX(-50%))
+	&--white
+		color: #ffffff
+		&:before
+			background: #ffffff
+	&--gradient
+		+text-gradient()
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		&:before
+			+text-gradient()
+	+media-breakpoint-up(lg)
+		+fz(r(36px))
+		// +lh(r(36px))
+		// +lh(44p)
+		margin-bottom: r(45px)
+		&:before
+			// bottom: r(-20px)
+.product__item
+	figure
+		margin-bottom: 1rem
+		.boxzoom
+			+box-sha(0 0 18px 3px rgba(0,0,0,.1))
+			img
+				width: 100%
+		figcaption
+			padding-top: r(20px)
+			text-align: center
+			ul
+				display: flex
+				justify-content: center
+				align-items: center
+				list-style-type: none
+				padding-left: 0
+				margin-bottom: 1rem
+				li
+					margin-right: r(7px)
+					a
+						display: block
+						width: r(11px)
+						height: r(11px)
+						+bor-rad(50%)
+					&:last-child
+						margin-right: 0
+			h4
+				+fz(r(14px))
+				+fw(400)
+				color: #333333
+				margin-bottom: r(17px)
+			span
+				color: #298ac4
+				+fw(700)
+				+fz(r(17px))
+	+media-breakpoint-up(lg)
+		figure
+			margin-bottom: 0
+			.boxzoom
+				overflow: hidden
+				img
+					+transition(all .3 ease-in-out)
+			&:hover
+				.boxzoom
+					img
+						+transform(scale(1.1))
