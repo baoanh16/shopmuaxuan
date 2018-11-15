@@ -96,6 +96,13 @@ $(document).ready(function () {
 			}
 		}
 	})
+	$('.canhcam-banner-1 .banners-list').owlCarousel({
+		items: 1,
+		mouseDrag: false,
+		touchDrag: false,
+		dots: false,
+		nav: false
+	})
 }); // End document ready
 $(function() {
 	$('.product__item figcaption').matchHeight();
