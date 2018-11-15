@@ -1,12 +1,10 @@
 .canhcam-header-1
 	width: 100%
 	background: #fff
-	&.header-fixed
-		position: fixed
-		z-index: 1000
-		top: 0
-		left: 0
-		
+	transition: position 10s
+	position: sticky
+	z-index: 999
+	top: 0
 	.top-nav
 		box-shadow: 0 2px 1px 0 rgba(0,0,0,.2)
 		padding: 1rem
@@ -50,7 +48,7 @@
 		padding: 0 1rem
 		width: 300px
 		height: 100%
-		position: absolute
+		position: fixed
 		left: -350px
 		top: 0
 		background: color-get($mau,trang)

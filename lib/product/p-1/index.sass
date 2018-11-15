@@ -1,0 +1,36 @@
+.smx-product-1
+	.item
+		min-height: 240px
+		position: relative
+		.title
+			position: absolute
+			bottom: 25px
+			left: 50%
+			transform: translateX(-50%)
+			text-align: center
+			width: 100%
+			h1
+				font-size: r(24px)
+				font-weight: 500
+				text-shadow: 1px 1px 4px rgba(0,0,0,0.3)
+				color: #fff
+				text-transform: uppercase
+			h2
+				font-size: r(24px)
+				font-weight: 300
+				text-shadow: 1px 1px 4px rgba(0,0,0,0.3)
+				color: #fff
+		+media-breakpoint-up(sm)
+			.title
+				top: 50%
+				bottom: auto
+				transform: translateX(0) translateY(-50%)
+				left: 25px
+				text-align: left
+				width: auto
+		+media-breakpoint-up(lg)
+			min-height: 350px
+			.title
+				left: r(113px)
+				h1
+					font-size: r(30px)
