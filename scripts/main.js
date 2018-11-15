@@ -22,6 +22,8 @@ $(document).ready(function () {
 		$('.canhcam-header-1 .main-nav').removeClass('active')
 		$('.canhcam-header-1 .overlay').removeClass('active')
 	});
+
+	//Map to
 	doMapTo()
 
 	if ($(window).scrollTop() >= 1) {
@@ -48,10 +50,37 @@ $(function() {
 });
 $($(window)).scroll(function () {
 	setHeader($(window).scrollTop());
+=======
+	// Header fixed
+	// $(window).scroll(function () {
+	// 	let header = $("header")
+	// 	let h = header.outerHeight()
+	// 	if ($(window).scrollTop() > h) {
+	// 		header.addClass('header-fixed');
+	// 	} else {
+	// 		header.removeClass('header-fixed');
+	// 	}
+	// });
+
+	// Hassub trigger
+	$('.hassub .sub-title').click(function (e) { 
+		$(this).toggleClass('active')
+		$(this).next().toggleClass('active')
+	});
+
+	// Filter trigger
+	triggerFilter()
+	
 });
+
+
+
+
+
 
 $(window).resize(function () {
 	doMapTo()
+	triggerFilter()
 });
 
 const doMapTo = function () {
@@ -65,7 +94,17 @@ const doMapTo = function () {
 		doMapBack()
 	}
 }
-
+const triggerFilter = function(){
+	if (window.matchMedia('(max-width: 992px)').matches) {
+		$('.sidemenu').hide()
+		$('.btn-trigger-filter').click(function (e) { 
+			e.preventDefault();
+			$('.sidemenu').toggle()
+		})
+	} else {
+		$('.sidemenu').show()
+	}
+}
 const doMapBack = function () {
 	$("[map-to]").each(function () {
 		var n = $(this).attr("map-to");
