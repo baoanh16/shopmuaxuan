@@ -41,8 +41,11 @@ $(document).ready(function () {
 			}
 		}
 	})
+	
+}); // End document ready
+$(function() {
+	$('.product__item figcaption').matchHeight();
 });
-
 $($(window)).scroll(function () {
 	setHeader($(window).scrollTop());
 });

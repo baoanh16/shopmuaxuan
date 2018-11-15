@@ -19,6 +19,7 @@
 		"bower_components/offline/offline.min.js",
 		"bower_components/owl.carousel/dist/owl.carousel.min.js",
 		"plugins/bigimg.js",
-		"bower_components/swiper/dist/js/swiper.min.js"
+		"bower_components/swiper/dist/js/swiper.min.js",
+		"bower_components/matchHeight/dist/jquery.matchHeight-min.js"
 	]
 }
