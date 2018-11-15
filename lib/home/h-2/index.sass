@@ -1,0 +1,102 @@
+.canhcam-home-2
+	+pad(2rem null)
+	.homes-list
+		a
+			text-decoration: none
+			display: block
+		figure
+			position: relative
+			.boxzoom
+				position: relative
+				img
+					width: 100%
+				&:before
+					content: ''
+					+pos(abs , null null 0 0)
+					z-index: 1
+					width: 100%
+					height: 100%
+					background: rgba(0,0,0,.5)
+					background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.65) 100%)
+					background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%)
+					background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%)
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0)
+			figcaption
+				+pos(abs , null null 0 0 )
+				+pad(r(14px))
+				width: 100%
+				text-align: center
+				z-index: 2
+				h3
+					margin-bottom: 0
+					+fz(1rem)
+					+fw(500)
+					color: #ffffff
+					text-transform: uppercase
+		.top-list
+			margin-bottom: 1rem
+		.part-list
+			margin-bottom: 1rem
+			.owl-nav
+				margin-top: 0
+				button
+					+mar(0)
+					&.owl-prev , &.owl-next
+						+pos(abs,50% null null null)
+						+transform(translateY(-50%))
+						+fz(r(30px))
+						+lh(r(30px))
+						color: #ffffff
+						&:focus , &:hover
+							background: none
+							outline: none
+					&.owl-prev
+						left: 0
+					&.owl-next
+						right: 0
+		[class="col-lg-4"]
+			figure
+				display: flex
+				align-items: center
+				+pad(r(10px))
+				min-height: r(180px)
+				margin-bottom: .5rem
+				.boxicon
+					margin-right: r(14px)
+				figcaption
+					position: static
+					color: #ffffff
+					+pad(0)
+					text-align: left
+					h2
+						+fz(r(20px))
+						+lh(r(20px))
+						margin-bottom: r(15px)
+						text-transform: uppercase
+						+fw(700)
+					p
+						margin-bottom: 0
+						+fz(r(13px))
+						+fw(400)
+			&:last-child
+				figure
+					margin-bottom: 0
+	+media-breakpoint-up(lg)
+		padding-top: 4rem
+		padding-bottom: 3rem
+		.homes-list
+			.top-list , .part-list
+				margin-bottom: 2.14rem
+			figure
+				// margin-bottom: 2.14rem
+				.boxzoom
+					overflow: hidden
+					img
+						+transition(all .3s ease-in-out)
+				&:hover
+					.boxzoom
+						img
+							+transform(scale(1.2))
+			[class="col-lg-4"]
+				figure
+					margin-bottom: 0

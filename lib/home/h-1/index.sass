@@ -1,14 +1,91 @@
-.smx-home-1
-	.item
-		min-height: 280px
-		position: relative
-		.title
-			position: absolute
-			bottom: 25px
-			left: 5px
-			text-align: center
-			h1
-				font-size: r(24px)
-				font-weight: 300
-				text-shadow: 1px 1px 4px rgba(0,0,0,0.3)
-				color: #fff
+$xam-1: #c8c8c4
+$den-1: #333333
+.canhcam-banner-1
+	// position: relative
+	// &:before
+	// 	content: ''
+	// 	display: block
+	// 	width: 100%
+	// 	height: r(10px)
+	// 	+pos(abs , null null 0 0 )
+	// 	background: url('./../img/home/home_slider_after_bg.png')
+	.swiper-container
+		height: r(300px)
+		.swiper-slide
+			overflow: hidden
+			.slide-inner
+				+pos(abs , 0 null null 0)
+				width: 100%
+				height: 100%
+				display: flex
+				align-items: center
+				text-decoration: none
+				h2
+					+fz(1.1rem)
+					+lh(25px)
+					+fw(200)
+					margin-bottom: 2.14rem
+					color: $den-1
+				.see__more
+					display: inline-block
+					p
+						+fz(r(14px))
+						+fw(400)
+						color: $den-1
+						+pad(.5rem 2.5rem)
+						+bor-rad(5px)
+						+box-sha(inset 0 0 0 1px #000000)
+						display: inline-block
+						margin-bottom: 0
+						display: flex
+						align-items: center
+						&:after
+							content: '\e87a'
+							font-family: 'Linearicons-Free'
+							+fz(r(18px))
+							display: inline-block
+							margin-left: .5rem
+	.swiper-btn
+		width: 2.14rem
+		height: 2.14rem
+		background-size: cover
+		&.swiper-button-next
+			background-image: url('./../img/home/swiper_next.png')
+			right: 0
+		&.swiper-button-prev
+			background-image: url('./../img/home/swiper_prev.png')
+			left: 0
+	.swiper-pagination
+		bottom: r(50px)
+		.swiper-pagination-bullet
+			width: r(40px)
+			height: r(6px)
+			+bor-rad(3px)
+			opacity: 1
+			background: $xam-1
+			&.swiper-pagination-bullet-active
+				+background-gradient($startColor: rgb(8,174,234) , $endColor:  rgb(42,245,152))
+			&:focus
+				outline: none
+	+media-breakpoint-up(sm)
+		.swiper-container
+			height: r(480px)
+	+media-breakpoint-up(lg)
+		.swiper-container
+			height: r(577px)
+			.swiper-slide
+				.slide-inner
+					h2
+						+fz(r(30px))
+						+fw(r(48px))
+		.swiper-btn
+			width: 4rem
+			height: 4rem
+			&.swiper-button-next
+				right: 8rem
+			&.swiper-button-prev
+				left: 8rem
+		// .swiper-pagination
+		// 	.swiper-pagination-bullet
+		// 		width: 20px
+		// 		height: 20px
