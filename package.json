@@ -32,5 +32,10 @@
 		"gulp-sourcemaps": "^2.6.4",
 		"gulp-uglify-es": "^1.0.4",
 		"gulp-watch": "^5.0.1"
+	},
+	"dependencies": {
+		"bower": "^1.8.4",
+		"git": "^0.1.5",
+		"node-sass": "^4.10.0"
 	}
 }

@@ -2,9 +2,11 @@ section.smx-product-2
 	article
 		.container
 			.row
-				.col-lg-3
-					a(href="javacript:void(0)").btn.btn-primary.btn-trigger-filter Bộ lọc
-						span.mdi.mdi-filter
+				.col-md-4.col-lg-3.mb-3.mb-lg-0
+					.sort_filter_mb
+						a(href="javacript:void(0)").btn.btn-primary.btn-trigger-filter Bộ lọc
+							span.mdi.mdi-filter
+						#sortbox
 					.sidemenu
 						.categories-wrapper.hassub
 							h2.title-line.sub-title Danh mục sản phẩm
@@ -12,7 +14,7 @@ section.smx-product-2
 								ul.list-unstyled
 									li.hassub
 										a(href="javacript:void(0)").sub-title Chăm sóc cơ thể
-											em.fas.fa-caret-down
+											em.mdi.mdi-menu-down
 										ul.list-unstyled.hassub-menu
 											li.active
 												a(href="javacript:void(0)") Gel tắm
@@ -36,7 +38,7 @@ section.smx-product-2
 												a(href="javacript:void(0)") Gel rửa tay
 									li.hassub
 										a(href="javacript:void(0)").sub-title Chăm sóc cơ thể
-											em.fas.fa-caret-down
+											em.mdi.mdi-menu-down
 										ul.list-unstyled.hassub-menu
 											li 
 												a(href="javacript:void(0)") Gel tắm
@@ -83,4 +85,164 @@ section.smx-product-2
 										a(href="javacript:void(0)") Mango
 									li 
 										a(href="javacript:void(0)") Zara
-				.col-lg-9
+				.col-md-8.col-lg-9
+					.row.px-3
+						.sort-bar
+							h3(map-to-pc="#title") Gel tắm
+							.selectbox(map-to-pc="#sortbox")
+								select
+									option(value="") Giá: Thấp - Cao
+									option(value="") Giá: Thấp - Cao
+									option(value="") Giá: Thấp - Cao
+					.row.products-list
+						#title
+						.col-sm-6.col-lg-4.product__item
+							figure
+								.boxzoom
+									img(src="./img/product/product_1.jpg", alt="alt")
+									.boxdetail
+										a.buy(href="#")
+											em.mdi.mdi-basket
+											| Cho vào giỏ hàng
+										a.detail(href="#")
+											em.mdi.mdi-eye
+											| Xem sản phẩm
+								figcaption
+									.color__list
+										ul
+											li
+												span(style="background-color: #298ac4")
+											li
+												span(style="background-color: #f6de7e")
+											li
+												span(style="background-color: #000000")
+											li
+												span(style="background-color: #dcdcd9")
+									.name
+										a(href="#") PUMA Smash Perf Leather Size 8.5 US/41 EU
+									span.price 1.500.000 đ
+						.col-sm-6.col-lg-4.product__item
+							figure
+								.boxzoom
+									img(src="./img/product/product_1.jpg", alt="alt")
+									.boxdetail
+										a.buy(href="#")
+											em.mdi.mdi-basket
+											| Cho vào giỏ hàng
+										a.detail(href="#")
+											em.mdi.mdi-eye
+											| Xem sản phẩm
+								figcaption
+									.color__list
+										ul
+											li
+												span(style="background-color: #298ac4")
+											li
+												span(style="background-color: #f6de7e")
+											li
+												span(style="background-color: #000000")
+											li
+												span(style="background-color: #dcdcd9")
+									.name
+										a(href="#") Ly giữ nhiệt Takeya Actives Insulated Stainless 
+									span.price 1.500.000 đ
+						.col-sm-6.col-lg-4.product__item
+							figure
+								.boxzoom
+									img(src="./img/product/product_1.jpg", alt="alt")
+									.boxdetail
+										a.buy(href="#")
+											em.mdi.mdi-basket
+											| Cho vào giỏ hàng
+										a.detail(href="#")
+											em.mdi.mdi-eye
+											| Xem sản phẩm
+								figcaption
+									.color__list
+										ul
+											li
+												span(style="background-color: #298ac4")
+											li
+												span(style="background-color: #f6de7e")
+											li
+												span(style="background-color: #000000")
+											li
+												span(style="background-color: #dcdcd9")
+									.name
+										a(href="#") Swarovski Daytime Turquoise Gold Bracelet Watch
+									span.price 1.500.000 đ
+						.col-sm-6.col-lg-4.product__item
+							figure
+								.boxzoom
+									img(src="./img/product/product_1.jpg", alt="alt")
+									.boxdetail
+										a.buy(href="#")
+											em.mdi.mdi-basket
+											| Cho vào giỏ hàng
+										a.detail(href="#")
+											em.mdi.mdi-eye
+											| Xem sản phẩm
+								figcaption
+									.color__list
+										ul
+											li
+												span(style="background-color: #298ac4")
+											li
+												span(style="background-color: #f6de7e")
+											li
+												span(style="background-color: #000000")
+											li
+												span(style="background-color: #dcdcd9")
+									.name
+										a(href="#") Nhẫn Swarovski Creativity Wide, Size 55
+									span.price 1.500.000 đ
+						.col-sm-6.col-lg-4.product__item
+							figure
+								.boxzoom
+									img(src="./img/product/product_1.jpg", alt="alt")
+									.boxdetail
+										a.buy(href="#")
+											em.mdi.mdi-basket
+											| Cho vào giỏ hàng
+										a.detail(href="#")
+											em.mdi.mdi-eye
+											| Xem sản phẩm
+								figcaption
+									.color__list
+										ul
+											li
+												span(style="background-color: #298ac4")
+											li
+												span(style="background-color: #f6de7e")
+											li
+												span(style="background-color: #000000")
+											li
+												span(style="background-color: #dcdcd9")
+									.name
+										a(href="#") Versace Dylan Blue Pour 
+									span.price 1.500.000 đ
+						.col-sm-6.col-lg-4.product__item
+							figure
+								.boxzoom
+									img(src="./img/product/product_1.jpg", alt="alt")
+									.boxdetail
+										a.buy(href="#")
+											em.mdi.mdi-basket
+											| Cho vào giỏ hàng
+										a.detail(href="#")
+											em.mdi.mdi-eye
+											| Xem sản phẩm
+								figcaption
+									.color__list
+										ul
+											li
+												span(style="background-color: #298ac4")
+											li
+												span(style="background-color: #f6de7e")
+											li
+												span(style="background-color: #000000")
+											li
+												span(style="background-color: #dcdcd9")
+									.name
+										a(href="#") L'oreal Paris Age Perfect Hydrating Cream Day
+									span.price 1.500.000 đ

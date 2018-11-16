@@ -25,6 +25,7 @@ $(document).ready(function () {
 
 	//Map to
 	doMapTo()
+	doMapTo_pc()
 
 	if ($(window).scrollTop() >= 1) {
 		$(".canhcam-header-1").addClass('header-fixed');
@@ -43,45 +44,28 @@ $(document).ready(function () {
 			}
 		}
 	})
-	
-}); // End document ready
-$(function() {
-	$('.product__item figcaption').matchHeight();
-});
-$($(window)).scroll(function () {
-	setHeader($(window).scrollTop());
-=======
-	// Header fixed
-	// $(window).scroll(function () {
-	// 	let header = $("header")
-	// 	let h = header.outerHeight()
-	// 	if ($(window).scrollTop() > h) {
-	// 		header.addClass('header-fixed');
-	// 	} else {
-	// 		header.removeClass('header-fixed');
-	// 	}
-	// });
 
-	// Hassub trigger
-	$('.hassub .sub-title').click(function (e) { 
+	$('.hassub .sub-title').click(function (e) {
 		$(this).toggleClass('active')
 		$(this).next().toggleClass('active')
 	});
 
-	// Filter trigger
 	triggerFilter()
-	
+
 });
-
-
-
-
-
-
-$(window).resize(function () {
+ // End document ready
+ $(window).resize(function () {
 	doMapTo()
 	triggerFilter()
+	doMapTo_pc()
 });
+ // End window resize
+
+$(function () {
+	$('.product__item figcaption').matchHeight();
+});
+
+
 
 const doMapTo = function () {
 	if (window.matchMedia('(min-width: 992px)').matches) {
@@ -94,10 +78,21 @@ const doMapTo = function () {
 		doMapBack()
 	}
 }
-const triggerFilter = function(){
-	if (window.matchMedia('(max-width: 992px)').matches) {
+const doMapTo_pc = function () {
+	if (window.matchMedia('(max-width: 768px)').matches) {
+		$("[map-to-pc]").each(function () {
+			var n = $(this).attr("map-to-pc");
+			$(n).html($(this).clone().removeAttr("map-to-pc").show());
+			$(this).hide();
+		})
+	} else {
+		doMapBack_pc()
+	}
+}
+const triggerFilter = function () {
+	if (window.matchMedia('(max-width: 768px)').matches) {
 		$('.sidemenu').hide()
-		$('.btn-trigger-filter').click(function (e) { 
+		$('.btn-trigger-filter').click(function (e) {
 			e.preventDefault();
 			$('.sidemenu').toggle()
 		})
@@ -108,6 +103,13 @@ const triggerFilter = function(){
 const doMapBack = function () {
 	$("[map-to]").each(function () {
 		var n = $(this).attr("map-to");
+		$(n).html("")
+		$(this).show()
+	})
+}
+const doMapBack_pc = function () {
+	$("[map-to-pc]").each(function () {
+		var n = $(this).attr("map-top-pc");
 		$(n).html("")
 		$(this).show()
 	})
