@@ -1,0 +1,52 @@
+.canhcam-home-8
+	.homes-list
+		background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+		.item
+			border-bottom: 1px solid #68b6b9
+			&:last-child
+				border-bottom: 0
+			@media (min-width: 576px)
+				border-left: 1px solid #68b6b9
+				&:last-child
+					border-right: 1px solid #68b6b9
+			figure
+				display: flex
+				align-content: center
+				flex-direction: row
+				justify-content: center
+				align-items: center
+				padding: 1rem
+			figcaption
+				display: flex
+				align-content: center
+				padding: 1rem 1.2rem
+				h2
+					color: #fff
+					font-size: r(13.83px)
+					text-transform: uppercase
+					line-height: 1.4
+					text-align: left
+			.img-block
+				display: flex
+				align-items: center
+			+media-breakpoint-up(sm)
+				figure
+					flex-direction: column
+					figcaption
+						padding: 1rem 0.5rem
+						h2
+							text-align: center
+			+media-breakpoint-up(md)
+				figure
+					flex-direction: row
+					figcaption
+						h2
+							text-align: left
+			+media-breakpoint-up(lg)
+				figure
+					padding: 1.5rem 2rem
+			+media-breakpoint-up(xl)
+				figure
+					padding: 1.5rem 1rem
+					figcaption
+						padding: 1rem 5rem 1rem 1rem
