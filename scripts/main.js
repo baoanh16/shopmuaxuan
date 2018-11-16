@@ -44,6 +44,83 @@ $(document).ready(function () {
 			}
 		}
 	})
+]
+	// Owl Carousel Partner
+	$('.canhcam-home-4 .homes-list .list-partners').owlCarousel({
+		items: 2,
+		nav: true,
+		dots: false,
+		autoplay: true,
+		autoplayTimeout: 3000,
+		navText: ['<span class="lnr lnr-chevron-left"></span>','<span class="lnr lnr-chevron-right"></span>'],
+		responsive: {
+			768: {
+				items: 3
+			},
+			992: {
+				items: 6
+			}
+		}
+	})
+	// Owl Carousel Home 5
+	$('.canhcam-home-5 .homes-list .products-list').owlCarousel({
+		items: 1,
+		nav: true,
+		dots: false,
+		autoplay: true,
+		autoplayTimeout: 3000,
+		margin: 34,
+		navText: ['<span class="lnr lnr-chevron-left"></span>','<span class="lnr lnr-chevron-right"></span>'],
+		responsive: {
+			768: {
+				items: 3
+			},
+			992: {
+				items: 4,
+				stagePadding: 23
+			}
+		}
+	})
+	$('.canhcam-home-6 .homes-list .list-promos').owlCarousel({
+		items: 1,
+		nav: true,
+		dots: false,
+		autoplay: true,
+		autoplayTimeout: 3000,
+		margin: 30,
+		navText: ['<span class="lnr lnr-chevron-left"></span>','<span class="lnr lnr-chevron-right"></span>'],
+		responsive: {
+			768: {
+				items: 3
+			},
+			992: {
+				items: 4,
+			}
+		}
+	})
+	$('.canhcam-banner-1 .banners-list').owlCarousel({
+		items: 1,
+		mouseDrag: false,
+		touchDrag: false,
+		dots: false,
+		nav: false
+	})
+}); // End document ready
+$(function() {
+	$('.product__item figcaption').matchHeight();
+});
+$($(window)).scroll(function () {
+	setHeader($(window).scrollTop());
+	// Header fixed
+	// $(window).scroll(function () {
+	// 	let header = $("header")
+	// 	let h = header.outerHeight()
+	// 	if ($(window).scrollTop() > h) {
+	// 		header.addClass('header-fixed');
+	// 	} else {
+	// 		header.removeClass('header-fixed');
+	// 	}
+	// });
 
 	$('.hassub .sub-title').click(function (e) {
 		$(this).toggleClass('active')

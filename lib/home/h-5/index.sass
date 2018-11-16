@@ -1,0 +1,31 @@
+.canhcam-home-5
+	+pad(2rem null)
+	.homes-list
+		.products-list
+			.owl-nav
+				margin-top: 0
+				button
+					+mar(0)
+					&.owl-prev , &.owl-next
+						+fz(r(30px))
+						color: #999999
+						+pos(abs , 50% null null null)
+						+transform(translateY(-50%))
+						&:focus
+							outline: none
+						&:hover
+							background: none
+					&.owl-prev
+						left: 0
+					&.owl-next
+						right: 0
+	+media-breakpoint-up(lg)
+		+pad(4rem null)
+		.homes-list
+			.products-list
+				.owl-stage-outer
+					padding-top: .5rem
+				.owl-nav
+					button
+						&.owl-prev , &.owl-next
+							top: 35%
