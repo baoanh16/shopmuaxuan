@@ -44,7 +44,6 @@ $(document).ready(function () {
 			}
 		}
 	})
-]
 	// Owl Carousel Partner
 	$('.canhcam-home-4 .homes-list .list-partners').owlCarousel({
 		items: 2,
