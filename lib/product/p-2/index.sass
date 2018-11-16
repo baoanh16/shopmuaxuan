@@ -1,10 +1,40 @@
 .smx-product-2
 	padding: 2rem 0
-	.btn-trigger-filter
-		margin-bottom: 15px
-		@media (min-width: 992px)
+	
+	.sort_filter_mb
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 1rem
+		@media (min-width: 768px)
 			display: none
-	.sidemenu
+		.btn-trigger-filter
+			@media (min-width: 768px)
+				display: none
+		#sortbox
+			position: relative
+			@media (min-width: 768px)
+				display: none
+			.selectbox
+				width: r(125px)
+				overflow: hidden
+			&:after
+				content: '\F35D'
+				font-family: "Material Design Icons"
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 0
+				color: #298ac4
+				font-size: 1rem
+				pointer-events: none
+			select
+				width: 100%
+				border: 0
+				font-size: r(14.82px)
+				color: #298ac4
+				-webkit-appearance: none
+				background-color: transparent
 	.categories-wrapper,.filter-wrapper
 		h2
 			font-size: r(15.76px)
@@ -62,6 +92,8 @@
 
 	.categories-wrapper
 		margin-bottom: 1.2rem
+		em
+			font-size: 1.2rem
 		.hassub
 			.sub-title
 				text-transform: uppercase
@@ -101,3 +133,62 @@
 						a
 							&:after
 								display: block
+	.products-list
+		#title
+			width: 100%
+			text-align: center
+			margin-bottom: 1rem
+			color: #298ac4
+			text-transform: uppercase
+			@media (min-width: 768px)
+				display: none
+		figure
+			margin-bottom: 2rem
+			.boxzoom
+				img
+					width: 100%
+		.product__item
+			text-decoration: none
+		+media-breakpoint-up(lg)
+			figure
+				margin-bottom: 0
+			.product__item
+				margin-bottom: r(60px)
+	.sort-bar
+		width: 100%
+		display: flex
+		position: relative
+		justify-content: space-between
+		align-items: center
+		background: #fff
+		border-radius: 5px
+		+box-sha(0 0 5px 1px rgba(0,0,0,.1))
+		padding: 0.6rem 1rem
+		margin-bottom: r(40px)
+		@media (max-width: 768px)
+			display: none
+		h3
+			font-size: r(19.76px)
+			color: #666666
+		.selectbox
+			margin-right: 1.2rem
+			width: r(135px)
+			position: relative
+			overflow: hidden
+			&:after
+				content: '\F35D'
+				font-family: "Material Design Icons"
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 0
+				color: #298ac4
+				font-size: 1rem
+				pointer-events: none
+			select
+				width: 100%
+				border: 0
+				font-size: r(14.82px)
+				color: #298ac4
+				-webkit-appearance: none
+				background-color: transparent
