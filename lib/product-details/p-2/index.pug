@@ -1,0 +1,34 @@
+section.smx-product-detail-2
+	article
+		.container
+			.row
+				.col-12
+					h2.mx__title.mx__title--gradient Sản phẩm tương tự
+				.col-12.px-0
+					.products-list.owl-carousel.owl-theme
+						- for(x = 1; x < 6; x++)
+							.product__item
+								figure
+									.boxzoom
+										img(src="./img/product_ct/product_ct_3.png", alt="alt")
+										.boxdetail
+											a.buy(href="#")
+												em.mdi.mdi-basket
+												| Cho vào giỏ hàng
+											a.detail(href="#")
+												em.mdi.mdi-eye
+												| Xem sản phẩm
+									figcaption
+										.color__list
+											ul
+												li
+													span(style="background-color: #298ac4")
+												li
+													span(style="background-color: #f6de7e")
+												li
+													span(style="background-color: #000000")
+												li
+													span(style="background-color: #dcdcd9")
+										.name
+											a(href="#") Versace Dylan Blue Pour 
+										span.price 1.500.000 đ

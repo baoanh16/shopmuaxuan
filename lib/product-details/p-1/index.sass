@@ -1,0 +1,172 @@
+.smx-product-detail-1
+	padding: r(80px) 0 0
+	.big-thumbnail
+		.item
+			display: flex
+			justify-content: center
+	.small-thumbnail
+		display: flex
+		justify-content: center
+		margin-top: 2rem
+		.slick-track
+			display: flex
+			justify-content: center
+		.slick-arrow
+			display: flex
+			align-items: center
+			&:before
+				color: #999999
+			&.slick-disabled
+				opacity: 0.3
+		.slick-slide
+			margin: 0 1rem
+			border: 1px solid #e1e1e1
+			width: auto
+			background: #efeeec
+			+media-breakpoint-up(sm)
+				margin: 0 1.5rem
+				height: r(120px)
+			+media-breakpoint-up(md)
+				height: r(136px)
+				margin: 0 2.5rem
+			+media-breakpoint-up(lg)
+				margin: 0 1rem
+				height: r(80px)
+		.slick-current
+			background: transparent
+		.item
+			padding: 0.2rem
+			+media-breakpoint-up(sm)
+				padding: 1rem
+			+media-breakpoint-up(md)
+				padding: 0.2rem 0.5rem
+			+media-breakpoint-up(xl)
+				padding: 0.2rem 1rem
+			img 
+				width: 100%
+	.product-info
+		h2
+			font-size: r(24.69px)
+		h3 
+			font-size: r(29.63px)
+			color: #298ac4
+		h2,h3
+			padding: 1rem 0
+			margin-bottom: 0
+			border-bottom: 1px solid #e1e1e1
+		table
+			margin: 1rem 0 2rem
+			width: 100%
+			tbody
+				tr
+					padding: 0.5rem 0
+					height: r(32px)
+					@media (max-width: 576px)
+						height: 4rem
+					th
+						width: 40%
+						color: #999999
+						font-size: r(15.8px)
+						font-weight: 400
+						text-transform: uppercase
+						@media (max-width: 576px)
+							width: 50%
+					td
+						color: #333333
+						font-size: r(15.8px)
+						@media (max-width: 576px)
+							text-align: right
+						a
+							text-decoration: underline
+							color: #999999
+
+		.input-and-button
+			display: flex
+			align-items: center
+			border-top: 1px solid #e1e1e1
+			@media (max-width: 576px)
+				flex-direction: column
+			.quanlity-wrapper
+				display: flex
+				padding: 1.5rem 0
+				span
+					display: flex
+					background: #ebebeb
+					justify-content: center
+					align-items: center
+					width: r(50px)
+					font-size: r(17.78px)
+					cursor: pointer
+					&.add
+						border-radius: 0 5px 5px 0
+					&.minus
+						border-radius: 5px 0 0 5px
+				input
+					border: 1px solid #ebebeb
+					width: r(90px)
+					text-align: center
+				span,input
+					height: r(50px)
+			.mx-btn
+				margin-left: 1rem
+				a 
+					border-radius: 5px
+					height: r(50px)
+					display: flex
+					align-items: center
+					font-size: r(14.82px)
+					font-weight: 500
+					&:after
+						+linearicons('\e87a')
+						font-size: r(13.26px)
+		.social-networks
+			display: flex
+			align-items: flex-start
+			margin-top: 1rem
+			@media (max-width: 576px)
+				justify-content: center
+			@media (max-width: 992px)
+				margin-bottom: 1rem
+			.fb-share-button
+				span
+					height: 24px !important
+			.nav-item
+				margin-left: 0.4rem
+				@media (min-width: 576px)
+					&:not(:first-child)
+						margin-left: 1rem
+	.product-desc
+		h2
+			width: 100%
+			padding-bottom: 0.5rem
+			text-transform: uppercase
+			text-align: center
+			@media (min-width: 576px)
+				text-align: left
+				padding-left: r(36px)
+			&:after
+				width: 100%
+		.product-props
+			padding: r(40px) r(36px)
+			border: 1px solid #d7d7d7
+			border-top: 0
+			table
+				margin-bottom: 1rem
+				tbody
+					tr
+						height: 2rem
+						font-size: r(14.82px)
+						th
+							width: 40%
+							font-weight: normal
+			p
+				font-style: italic
+				color: #999999
+				font-size: r(14.82px)
+		.product-size
+			text-align: center
+			margin-top: r(30px)
+			padding: r(19px)
+			img
+				border: 1px solid #d7d7d7
+

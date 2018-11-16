@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	createNewsSocial1()
 	//Toggle Dropdown Menu on Header
 	$('.canhcam-header-1 .dropdown-btn').click(function (e) {
 		e.preventDefault();
@@ -26,12 +27,16 @@ $(document).ready(function () {
 	//Map to
 	doMapTo()
 	doMapTo_pc()
+	//Trigger Filter mobile
+	triggerFilter()
+	// Toggle dropdown
+	$('.hassub .sub-title').click(function (e) {
+		$(this).toggleClass('active')
+		$(this).next().toggleClass('active')
+	});
 
-	if ($(window).scrollTop() >= 1) {
-		$(".canhcam-header-1").addClass('header-fixed');
-		setHeader($(window).scrollTop());
-	}
-	SliderHome();
+	SliderHome()
+	
 	$('.canhcam-home-2 .part-list').owlCarousel({
 		items: 1,
 		nav: true,
@@ -44,7 +49,7 @@ $(document).ready(function () {
 			}
 		}
 	})
-]
+
 	// Owl Carousel Partner
 	$('.canhcam-home-4 .homes-list .list-partners').owlCarousel({
 		items: 2,
@@ -52,7 +57,7 @@ $(document).ready(function () {
 		dots: false,
 		autoplay: true,
 		autoplayTimeout: 3000,
-		navText: ['<span class="lnr lnr-chevron-left"></span>','<span class="lnr lnr-chevron-right"></span>'],
+		navText: ['<span class="lnr lnr-chevron-left"></span>', '<span class="lnr lnr-chevron-right"></span>'],
 		responsive: {
 			768: {
 				items: 3
@@ -70,14 +75,14 @@ $(document).ready(function () {
 		autoplay: true,
 		autoplayTimeout: 3000,
 		margin: 34,
-		navText: ['<span class="lnr lnr-chevron-left"></span>','<span class="lnr lnr-chevron-right"></span>'],
+		navText: ['<span class="lnr lnr-chevron-left"></span>', '<span class="lnr lnr-chevron-right"></span>'],
 		responsive: {
 			768: {
 				items: 3
 			},
 			992: {
 				items: 4,
-				stagePadding: 23
+				stagePadding: 5
 			}
 		}
 	})
@@ -88,7 +93,7 @@ $(document).ready(function () {
 		autoplay: true,
 		autoplayTimeout: 3000,
 		margin: 30,
-		navText: ['<span class="lnr lnr-chevron-left"></span>','<span class="lnr lnr-chevron-right"></span>'],
+		navText: ['<span class="lnr lnr-chevron-left"></span>', '<span class="lnr lnr-chevron-right"></span>'],
 		responsive: {
 			768: {
 				items: 3
@@ -98,45 +103,103 @@ $(document).ready(function () {
 			}
 		}
 	})
+
+	$('.smx-product-detail-2 .products-list').owlCarousel({
+		items: 1,
+		nav: true,
+		dots: false,
+		autoplay: true,
+		autoplayTimeout: 3000,
+		margin: 34,
+		navText: ['<span class="lnr lnr-chevron-left"></span>', '<span class="lnr lnr-chevron-right"></span>'],
+		responsive: {
+			768: {
+				items: 3
+			},
+			992: {
+				items: 4,
+				stagePadding: 5
+			}
+		}
+	})
+
+
 	$('.canhcam-banner-1 .banners-list').owlCarousel({
 		items: 1,
 		mouseDrag: false,
 		touchDrag: false,
 		dots: false,
-		nav: false
+		nav: false,
+
 	})
+
+
+	$('.smx-product-detail-1 .big-thumbnail').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		asNavFor: '.smx-product-detail-1 .small-thumbnail',
+		infinite: false
+	});
+
+	$('.smx-product-detail-1 .small-thumbnail').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		asNavFor: '.smx-product-detail-1 .big-thumbnail',
+		dots: true,
+		focusOnSelect: true,
+		infinite: false,
+		prevArrow: '<i class="fas fa-chevron-left"></i>',
+		nextArrow: '<i class="fas fa-chevron-right"></i>',
+		responsive: [
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 2,
+
+				},
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 3,
+				}
+			}
+		]
+	});
+
+	// Remove active class from all thumbnail slides
+	$('.smx-product-detail-1 .small-thumbnail .slick-slide').removeClass('slick-active');
+
+	// Set active class to first thumbnail slides
+	$('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(0).addClass('slick-active');
+
+	// On before slide change match active thumbnail to current slide
+	$('.smx-product-detail-1 .big-thumbnail').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		var mySlideNumber = nextSlide;
+		$('.smx-product-detail-1 .small-thumbnail .slick-slide').removeClass('slick-active');
+		$('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(mySlideNumber).addClass('slick-active');
+	});
+
+	$(window).scroll(function () {
+
+	});
+
 }); // End document ready
-$(function() {
+$(function () {
 	$('.product__item figcaption').matchHeight();
 });
-$($(window)).scroll(function () {
-	setHeader($(window).scrollTop());
-	// Header fixed
-	// $(window).scroll(function () {
-	// 	let header = $("header")
-	// 	let h = header.outerHeight()
-	// 	if ($(window).scrollTop() > h) {
-	// 		header.addClass('header-fixed');
-	// 	} else {
-	// 		header.removeClass('header-fixed');
-	// 	}
-	// });
 
+// End document ready
+$(window).resize(function () {
 	$('.hassub .sub-title').click(function (e) {
 		$(this).toggleClass('active')
 		$(this).next().toggleClass('active')
 	});
-
-	triggerFilter()
-
-});
- // End document ready
- $(window).resize(function () {
 	doMapTo()
 	triggerFilter()
 	doMapTo_pc()
 });
- // End window resize
+// End window resize
 
 $(function () {
 	$('.product__item figcaption').matchHeight();
@@ -251,4 +314,13 @@ function SliderHome() {
 	};
 
 	var swiper = new Swiper(".canhcam-banner-1 .swiper-container", swiperOptions);
+}
+
+
+function createNewsSocial1() {
+	var newsFullPath = document.URL
+	var newsFullPathEncode = encodeURIComponent(document.URL)
+	$('.fb-share-button').attr('data-href', newsFullPath)
+	$('.fb-share-button .fb-xfbml-parse-ignore').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + newsFullPathEncode + '&src=sdkpreparse')
+	$('.twitter-share-button').attr('data-url', newsFullPath)
 }
