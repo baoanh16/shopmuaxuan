@@ -1,0 +1,35 @@
+.canhcam-home-4
+	.homes-list
+		.wrap-partner
+			background: #ffffff
+			h2
+				+pad(.5rem r(28px))
+				background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+				text-transform: uppercase
+				+fz(1rem)
+				+fw(600)
+				color: #ffffff
+			.list-partners
+				+box-sha(0 0 20px 3px rgba(0,0,0,.1))
+				.owl-stage-outer
+					.owl-item
+						.item
+							display: flex
+							justify-content: center
+							align-items: center
+							img
+								width: auto
+				.owl-nav
+					margin-top: 0
+					+pos(abs , r(-30px) r(28px) null null)
+					button
+						+mar(0)
+						&.owl-prev , &.owl-next
+							+fz(r(20px))
+							color: #ffffff
+							&:focus
+								outline: none
+							&:hover
+								background: none
+						&.owl-prev
+							margin-right: r(24px)

@@ -1,0 +1,63 @@
+.canhcam-home-6
+	+pad(2rem null)
+	background-attachment: fixed
+	.homes-list
+		.list-promos
+			.item
+				display: block
+				text-decoration: none
+				figure
+					margin-bottom: 0
+					text-align: center
+					.boxzoom
+						// img
+						// 	width: 100%
+					figcaption
+						+pad(1rem)
+						padding-bottom: 0
+						h3
+							+fz(r(14.82px))
+							color: #ffffff
+							margin-bottom: auto
+						.price
+							margin-top: r(22px)
+							span
+								display: block
+								&.new
+									+fz(r(17.78px))
+									+lh(r(17.78px))
+									+fw(700)
+									color: #fff200
+									margin-bottom: r(10px)
+								&.old
+									+fz(r(14.82px))
+									+lh(r(14.82px))
+									+fw(400)
+									color: #ffffff
+									text-decoration: line-through
+			.owl-nav
+				margin-top: 0
+				button
+					+mar(0)
+					&.owl-prev , &.owl-next
+						+fz(r(30px))
+						color: #999999
+						+pos(abs , 35% null null null)
+						+transform(translateY(-50%))
+						&:focus
+							outline: none
+							background: none
+						&:hover
+							background: none
+					&.owl-prev
+						left: 0
+					&.owl-next
+						right: 0
+	+media-breakpoint-up(lg)
+		+pad(4rem null)
+		.homes-list
+			.list-promos
+				.item
+					figure
+						figcaption
+							padding-top: r(28px)

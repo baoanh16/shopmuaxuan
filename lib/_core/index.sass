@@ -9,6 +9,8 @@ html, body
 	line-height: 1.5
 	font-weight: 400
 	font-family: 'Montserrat', sans-serif
+input,select
+	outline: none
 a
 	text-decoration: none
 	&:hover
@@ -143,7 +145,7 @@ a
 			.boxzoom
 				overflow: hidden
 				img
-					+transition(all .3 ease-in-out)
+					+transition(all .3s ease-in-out)
 			figcaption
 				ul
 					li
@@ -152,3 +154,23 @@ a
 				.boxzoom
 					img
 						+transform(scale(1.1))
+
+.mx-btn
+	text-align: center
+	a
+		text-decoration: none
+		text-transform: uppercase
+		color: #ffffff
+		+fw(400)
+		+fz(r(15.8px))
+		+lh(r(15.8px))
+		display: inline-block
+		+pad(r(16px) r(40px))
+		+bor-rad(10px)
+		background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+		&:after
+			content: '\f045'
+			font-family: 'Material Design Icons'
+			+fz(r(19.76px))
+			+lh(r(19.76px))
+			margin-left: r(20px)
