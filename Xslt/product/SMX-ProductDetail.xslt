@@ -122,7 +122,7 @@
 		<div class="item">
 			<img>
 			<xsl:attribute name="src">
-				<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
+				<xsl:value-of select="ImageUrl"></xsl:value-of>
 			</xsl:attribute>
 			<xsl:attribute name="alt">
 				<xsl:value-of select="Title"></xsl:value-of>
