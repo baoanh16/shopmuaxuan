@@ -1,0 +1,65 @@
+
+.canhcam-breadcrumb-2
+	+pad(r(72px) 0 r(27px))
+	.bullets
+		display: flex
+		margin: 0
+		padding: 0
+		overflow: hidden
+		background: darken(color-get($mau,trang),5%)
+		+bor-rad(5px)
+		+pad(0.5rem 1rem)
+		.bullet-wrapper
+			list-style-type: none
+			position: relative
+			display: flex
+			flex-basis: 0
+			flex-grow: 1
+			flex-direction: column
+			text-align: center
+			align-items: center
+			+fz(.85rem)
+			.num
+				background: darken(color-get($mau,trang),10%)
+				width: 2rem
+				height: 2rem
+				+bor-rad(50%)
+				color: #333333
+				display: flex
+				align-items: center
+				justify-content: center
+				+fw(500)
+			.title
+				display: block
+				font-size: r(12.84px)
+				+fw(500)
+			&.active
+				.num 
+					background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+					color: color-get($mau,trang)
+		+media-breakpoint-up(sm)
+			.bullet-wrapper
+				+fz(1rem)
+				&:after 
+					content: ''
+					position: absolute
+					overflow: hidden
+					display: inline-block
+					width: 6rem
+					height: 6rem
+					top: 50%
+					right: 1rem
+					border-top: 1px solid darken(color-get($mau,trang),15%)
+					border-right: 1px solid darken(color-get($mau,trang),15%)
+					transform: rotate(55deg) skew(22deg) translateY(-3rem)
+				&:last-child 
+					&:after 
+						content: none
+		+media-breakpoint-up(lg)
+			.bullet-wrapper
+				flex-direction: initial
+				margin-right: 2rem
+				.title
+					margin-left: 1rem
+				&:last-child 
+					margin-right: 0
