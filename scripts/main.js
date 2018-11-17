@@ -30,9 +30,23 @@ $(document).ready(function () {
 	//Trigger Filter mobile
 	triggerFilter()
 	// Toggle dropdown
-	$('.hassub .sub-title').click(function (e) {
+	$('.categories-wrapper h2').click(function (e) {
 		$(this).toggleClass('active')
-		$(this).next().toggleClass('active')
+		$('.categories-menu').toggleClass('active')
+	});
+
+	$('.filter-wrapper h2').click(function (e) {
+		$(this).toggleClass('active')
+		$('.filter-item .hassub-menu').toggleClass('active')
+	});
+
+	$('.categories-menu .mdi-menu-down').click(function (e) {
+		$(this).toggleClass('active')
+		$(this).parent().next().toggleClass('active')
+	});
+
+	$('.filter-wrapper .filter-item li').click(function (e) {
+		$(this).toggleClass('active')
 	});
 
 	SliderHome()
