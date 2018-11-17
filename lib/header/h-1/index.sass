@@ -53,6 +53,7 @@
 		left: -350px
 		top: 0
 		background: color-get($mau,trang)
+		overflow-y: auto
 		&.active
 			left: 0
 			position: fixed
@@ -229,6 +230,11 @@
 				flex-direction: row
 				width: 100%
 				.nav-item
+					&:hover
+						.dropdown-list
+							display: block
+							visibility: visible
+							opacity: 1
 					.nav-link
 						font-weight: 600
 						font-size: r(14.82px)
