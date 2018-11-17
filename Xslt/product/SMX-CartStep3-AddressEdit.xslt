@@ -8,7 +8,7 @@
 			<div class="col">
 				<div class="box-resume">
 					<div class="box-resume-title">
-						<h3 class="h6">
+						<h3>
 							<i class="fa fa-map-marker-alt fa-fw"></i>
 							<span>
 								<span>
@@ -24,18 +24,14 @@
 								<span class="text-danger">(*)</span>
 							</label>
 							<div class="col-sm-8">
-								<input class="form-control" type="text" name="Address_FirstName" placeholder="Nhập họ tên" required=""
-								 data-error="Vui lòng nhập thông tin">
-								     <xsl:attribute name="value">
-									  <xsl:value-of select="/CheckoutAddress/FirstName"></xsl:value-of>
+								<input class="form-control" type="text" name="Address_FirstName" placeholder="Ví dụ: Nguyễn Văn C" required="" data-error="Vui lòng nhập thông tin">
+									<xsl:attribute name="value">
+										<xsl:value-of select="/CheckoutAddress/FirstName"></xsl:value-of>
 									</xsl:attribute>
-								 </input>
+								</input>
 								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-
-
-
 						<div class="form-group row align-items-center">
 							<label class="col-form-label col-sm-4" for="tel">
 								<xsl:value-of select="/CheckoutAddress/PhoneText"></xsl:value-of>
@@ -43,49 +39,36 @@
 								</span>
 							</label>
 							<div class="col-sm-8 col-md-4">
-								<input class="form-control" type="text" name="Address_Phone" placeholder="Nhập Số điện thoại" required=""
-								 data-error="Vui lòng nhập thông tin">
-								    <xsl:attribute name="value">
-									  <xsl:value-of select="/CheckoutAddress/Phone"></xsl:value-of>
+								<input class="form-control" type="text" name="Address_Phone" placeholder="Ví dụ: 012345678910" required="" data-error="Vui lòng nhập thông tin">
+									<xsl:attribute name="value">
+										<xsl:value-of select="/CheckoutAddress/Phone"></xsl:value-of>
 									</xsl:attribute>
 								</input>
 								<div class="help-block with-errors"></div>
 							</div>
-							<div class="col-md-4 text-mini">
-								<xsl:value-of select="/CheckoutAddress/ContactNumberText"></xsl:value-of>
-							</div>
+							<div class="col-md-4 text-mini">(Nhân viên giao dịch sẽ liên hệ với SĐT này)</div>
+								<!-- <xsl:value-of select="/CheckoutAddress/ContactNumberText"></xsl:value-of> -->
 						</div>
-
-
-
 						<div class="form-group row">
 							<label class="col-form-label col-sm-4" for="Email">Email</label>
 							<div class="col-sm-8">
-								<input class="form-control" placeholder="Email" name="Address_Email" data-error="Vui lòng nhập thông tin" required="">
-								
-								    <xsl:attribute name="value">
-									  <xsl:value-of select="/CheckoutAddress/Email"></xsl:value-of>
+								<input class="form-control" type="text" name="Address_Email" placeholder="Email" data-error="Ví dụ: nguyenvanc@gmail.com" required="">
+									<xsl:attribute name="value">
+										<xsl:value-of select="/CheckoutAddress/Email"></xsl:value-of>
 									</xsl:attribute>
 								</input>
 								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-
-
 						<hr>
 						</hr>
-
-
 						<div class="form-group row">
 							<label class="col-form-label col-sm-4" for="Country">
 								<xsl:value-of select="/CheckoutAddress/ProvinceText"></xsl:value-of>
 							</label>
 							<div class="col-sm-8">
-								<select class="form-control" id="Country" type="text" placeholder="Country" data-error="Vui lòng nhập thông tin"
-								 required="" onchange="AjaxCheckout.getdistrictsbyprovinceguid(this, 'Address_District-1')">
-									<option value="">
-										<xsl:value-of select="/CheckoutAddress/SelectProvinceText"></xsl:value-of>
-									</option>
+								<select class="form-control" id="Country" type="text" placeholder="Country" data-error="Vui lòng nhập thông tin" required="" onchange="AjaxCheckout.getdistrictsbyprovinceguid(this, 'Address_District-1')">
+									<option value=""> -- Chọn Tỉnh/Thành Phố -- </option>
 									<xsl:apply-templates select="/CheckoutAddress/Provinces"></xsl:apply-templates>
 								</select>
 								<div class="help-block with-errors"></div>
@@ -96,11 +79,8 @@
 								<xsl:value-of select="/CheckoutAddress/DistrictText"></xsl:value-of>
 							</label>
 							<div class="col-sm-8">
-								<select class="form-control" name="Address_District-1" type="text" placeholder="Quận" data-error="Vui lòng nhập thông tin"
-								 required="">
-									<option value="">
-										<xsl:value-of select="/CheckoutAddress/SelectDistrictText"></xsl:value-of>
-									</option>
+								<select class="form-control" name="Address_District-1" type="text" placeholder="Quận" data-error="Vui lòng nhập thông tin" required="">
+									<option value=""> -- Chọn Quận/Huyện -- </option>
 									<xsl:apply-templates select="/CheckoutAddress/Districts"></xsl:apply-templates>
 								</select>
 								<div class="help-block with-errors"></div>
@@ -140,8 +120,7 @@
 						<div class="row">
 							<div class="col">
 								<div class="form-check abc-checkbox">
-									<input class="form-check-input" name="Address_SameBilling" id="checkbox" type="checkbox" expand-to="infomem"
-									 checked="checked">
+									<input class="form-check-input" name="Address_SameBilling" id="checkbox" type="checkbox" expand-to="infomem" checked="checked">
 									</input>
 									<label class="form-check-label" for="checkbox">
 										<xsl:value-of select="/CheckoutAddress/SameInfoText"></xsl:value-of>
@@ -198,8 +177,7 @@
 												<xsl:value-of select="/CheckoutAddress/ProvinceText"></xsl:value-of>
 											</label>
 											<div class="col-sm-8">
-												<select class="form-control" id="Country" type="text" placeholder="Country" data-error="Vui lòng nhập thông tin"
-												 required="" onchange="AjaxCheckout.getdistrictsbyprovinceguid(this, 'Address_District-2')">
+												<select class="form-control" id="Country" type="text" placeholder="Country" data-error="Vui lòng nhập thông tin" required="" onchange="AjaxCheckout.getdistrictsbyprovinceguid(this, 'Address_District-2')">
 													<option value="">
 														<xsl:value-of select="/CheckoutAddress/SelectProvinceText"></xsl:value-of>
 													</option>
@@ -215,8 +193,7 @@
 												<xsl:value-of select="/CheckoutAddress/DistrictText"></xsl:value-of>
 											</label>
 											<div class="col-sm-8">
-												<select class="form-control" name="Address_District-2" type="text" placeholder="Quận" data-error="Vui lòng nhập thông tin"
-												 required="">
+												<select class="form-control" name="Address_District-2" type="text" placeholder="Quận" data-error="Vui lòng nhập thông tin" required="">
 													<option value="">
 														<xsl:value-of select="/CheckoutAddress/SelectDistrictText"></xsl:value-of>
 													</option>
@@ -232,9 +209,6 @@
 											<label class="col-form-label col-sm-4" for="Address">Địa chỉ</label>
 											<div class="col-sm-8">
 												<input class="form-control" name="Address_Address" placeholder="Địa chỉ" data-error="Vui lòng nhập thông tin" required="">
-												     <xsl:attribute name="value">
-													  <xsl:value-of select="/CheckoutAddress/Address"></xsl:value-of>
-													</xsl:attribute>
 												</input>
 												<div class="help-block with-errors"></div>
 											</div>
@@ -257,7 +231,7 @@
 		<div class="row mt-4">
 			<div class="col">
 				<div class="form-check abc-checkbox mb-0">
-					<input class="form-check-input"  name="Invoice_Required" id="checkbox2" type="checkbox" expand-to-invert="vatview"  >
+					<input class="form-check-input" name="IsChecked1" id="checkbox2" type="checkbox" expand-to-invert="vatview">
 					</input>
 					<label class="form-check-label" for="checkbox2">
 						<xsl:value-of select="/CheckoutAddress/RequireVATText"></xsl:value-of>
@@ -276,8 +250,7 @@
 
 									</label>
 									<div class="col-sm-8">
-										<input class="form-control" id="taxID" data-error="Vui lòng nhập thông tin" required=""  name="Invoice_CompanyTaxCode">
-										
+										<input class="form-control" id="taxID" data-error="Vui lòng nhập thông tin" required="">
 										</input>
 										<div class="help-block with-errors"></div>
 									</div>
@@ -287,8 +260,7 @@
 										<xsl:value-of select="/CheckoutAddress/CompanyNameText"></xsl:value-of>
 									</label>
 									<div class="col-sm-8">
-										<input class="form-control" id="nameCompany"  name="Invoice_CompanyName" placeholder="Tên công ty" data-error="Vui lòng nhập thông tin"
-										 required="">
+										<input class="form-control" id="nameCompany" placeholder="Tên công ty" data-error="Vui lòng nhập thông tin" required="">
 										</input>
 										<div class="help-block with-errors"></div>
 									</div>
@@ -297,7 +269,7 @@
 									<label class="col-form-label col-sm-4" for="addressCompany">Địa chỉ công ty
 									</label>
 									<div class="col-sm-8">
-										<input class="form-control" id="addressCompany"   name="Invoice_CompanyAddress" data-error="Vui lòng nhập thông tin" required="">
+										<input class="form-control" id="addressCompany" data-error="Vui lòng nhập thông tin" required="">
 										</input>
 										<div class="help-block with-errors"></div>
 									</div>
