@@ -12,7 +12,8 @@
 		"bower_components/offline/themes/offline-language-english.css",
 		"bower_components/swiper/dist/css/swiper.min.css",
 		"bower_components/slick-carousel/slick/slick.css",
-		"bower_components/slick-carousel/slick/slick-theme.css"
+		"bower_components/slick-carousel/slick/slick-theme.css",
+		"bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css"
 	],
 	"scripts":[
 		"bower_components/jquery/dist/jquery.min.js",
@@ -23,6 +24,7 @@
 		"plugins/bigimg.js",
 		"bower_components/swiper/dist/js/swiper.min.js",
 		"bower_components/matchHeight/dist/jquery.matchHeight-min.js",
-		"bower_components/slick-carousel/slick/slick.min.js"
+		"bower_components/slick-carousel/slick/slick.min.js",
+		"bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"
 	]
 }

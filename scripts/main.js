@@ -146,6 +146,32 @@ $(document).ready(function () {
 		nav: false,
 
 	})
+	$('.canhcam-checkout-1 .product-viewed').owlCarousel({
+		items: 2,
+		mouseDrag: true,
+		touchDrag: true,
+		dots: false,
+		nav: false,
+		margin: 2,
+		responsive: {
+			576: {
+				items: 3,
+				margin: 30
+			},
+			768: {
+				items: 4,
+				margin: 20
+			},
+			992: {
+				items: 6,
+				margin: 20
+			},
+			1200: {
+				items: 7,
+				margin: 10
+			}
+		}
+	})
 
 
 	$('.smx-product-detail-1 .big-thumbnail').slick({
@@ -156,6 +182,8 @@ $(document).ready(function () {
 		asNavFor: '.smx-product-detail-1 .small-thumbnail',
 		infinite: false
 	});
+
+
 
 	$('.smx-product-detail-1 .small-thumbnail').slick({
 		slidesToShow: 4,
@@ -194,6 +222,8 @@ $(document).ready(function () {
 		$('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(mySlideNumber).addClass('slick-active');
 	});
 
+	CheckOut1()
+
 	$(window).scroll(function () {
 
 	});
@@ -203,7 +233,6 @@ $(function () {
 	$('.product__item figcaption').matchHeight();
 });
 
-// End document ready
 $(window).resize(function () {
 	$('.hassub .sub-title').click(function (e) {
 		$(this).toggleClass('active')
@@ -338,3 +367,12 @@ function createNewsSocial1() {
 	$('.fb-share-button .fb-xfbml-parse-ignore').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + newsFullPathEncode + '&src=sdkpreparse')
 	$('.twitter-share-button').attr('data-url', newsFullPath)
 }
+
+function CheckOut1() {
+	$('.canhcam-checkout-1 #quantity input').TouchSpin({
+		min: 0,
+		max: 100,
+		buttondown_class: "btn btn-default",
+		buttonup_class: "btn btn-default"
+	});
+};
