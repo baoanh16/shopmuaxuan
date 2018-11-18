@@ -9,11 +9,10 @@
 				<div class="box-resume">
 					<div class="box-resume-title">
 						<h3>
-							<i class="fa fa-map-marker-alt fa-fw"></i>
+							<span class="fa fa-shopping-cart"></span>
 							<span>
-								<span>
-									<xsl:value-of select="/CheckoutAddress/CustomerInformationText"></xsl:value-of>
-								</span>
+								<span>ĐỊA CHỈ NHẬN HÀNG</span>
+									<!-- <xsl:value-of select="/CheckoutAddress/CustomerInformationText"></xsl:value-of> -->
 							</span>
 						</h3>
 					</div>
@@ -91,7 +90,7 @@
 						<div class="form-group row">
 							<label class="col-form-label col-sm-4" for="Address">Địa chỉ</label>
 							<div class="col-sm-8">
-								<input class="form-control" name="Address_Address" placeholder="Địa chỉ" data-error="Vui lòng nhập thông tin" required="">
+								<input class="form-control" name="Address_Address" placeholder="Ví dụ: 156 Nguyễn Văn Thủ, P. Da Kao, Quận" data-error="Vui lòng nhập thông tin" required="" value="">
 								</input>
 								<div class="help-block with-errors"></div>
 							</div>
@@ -99,31 +98,29 @@
 
 						<div class="form-group row">
 							<label class="col-form-label col-sm-4" for="Message">
-								Tin nhắn
-								<div class="text-mini">
-									<xsl:value-of select="/CheckoutAddress/NotRequireText"></xsl:value-of>
+								Lời nhắn
+								<div class="text-mini">(Không bắt buộc)
+									<!-- <xsl:value-of select="/CheckoutAddress/NotRequireText"></xsl:value-of> -->
 								</div>
 							</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" id="Message" name="OrderNote" cols="30" rows="2" placeholder="Ví dụ: Chuyển hàng ngoài giờ hành chính"></textarea>
+								<textarea class="form-control" id="Message" name="OrderNote" cols="30" rows="2">
+									<xsl:attribute name="placeholder">
+										<xsl:text>Ví dụ: Giao hàng ngoài giờ hành chính</xsl:text>
+									</xsl:attribute>
+								</textarea>
 								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-
-
-
 						<hr>
 						</hr>
-
-
-
 						<div class="row">
 							<div class="col">
 								<div class="form-check abc-checkbox">
 									<input class="form-check-input" name="Address_SameBilling" id="checkbox" type="checkbox" expand-to="infomem" checked="checked">
 									</input>
-									<label class="form-check-label" for="checkbox">
-										<xsl:value-of select="/CheckoutAddress/SameInfoText"></xsl:value-of>
+									<label class="form-check-label" for="checkbox">Thông tin người mua hàng giống như trên
+										<!-- <xsl:value-of select="/CheckoutAddress/SameInfoText"></xsl:value-of> -->
 									</label>
 								</div>
 								<div class="row mt-4 mb-4" id="infomem" style="display:none">
@@ -134,7 +131,7 @@
 												<span class="text-danger">(*)</span>
 											</label>
 											<div class="col-sm-8">
-												<input class="form-control" id="name" placeholder="Nhập họ tên" name="ShippingAddress_FirstName" data-error="Nhập họ tên">
+												<input class="form-control" id="name" placeholder="Ví dụ: Nguyễn Văn E" name="ShippingAddress_FirstName" data-error="Nhập họ tên">
 												</input>
 												<div class="help-block with-errors"></div>
 											</div>
@@ -148,7 +145,7 @@
 												</span>
 											</label>
 											<div class="col-sm-8 col-md-4">
-												<input class="form-control" type="text" name="Address_Phone" placeholder="Nhập số điện thoại" required="">
+												<input class="form-control" type="text" name="Address_Phone" placeholder="Ví dụ: 012345678910" required="">
 												</input>
 												<div class="help-block with-errors"></div>
 											</div>
@@ -178,9 +175,7 @@
 											</label>
 											<div class="col-sm-8">
 												<select class="form-control" id="Country" type="text" placeholder="Country" data-error="Vui lòng nhập thông tin" required="" onchange="AjaxCheckout.getdistrictsbyprovinceguid(this, 'Address_District-2')">
-													<option value="">
-														<xsl:value-of select="/CheckoutAddress/SelectProvinceText"></xsl:value-of>
-													</option>
+													<option value=""> -- Chọn Tỉnh/Thành Phố -- </option>
 													<xsl:apply-templates select="/CheckoutAddress/Provinces"></xsl:apply-templates>
 												</select>
 												<div class="help-block with-errors"></div>
@@ -194,9 +189,7 @@
 											</label>
 											<div class="col-sm-8">
 												<select class="form-control" name="Address_District-2" type="text" placeholder="Quận" data-error="Vui lòng nhập thông tin" required="">
-													<option value="">
-														<xsl:value-of select="/CheckoutAddress/SelectDistrictText"></xsl:value-of>
-													</option>
+													<option value=""> -- Chọn Quận/Huyện -- </option>
 													<xsl:apply-templates select="/CheckoutAddress/Districts"></xsl:apply-templates>
 												</select>
 												<div class="help-block with-errors"></div>
@@ -214,13 +207,13 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="form-check abc-checkbox mb-0">
-									<input class="form-check-input" name="IsChecked1" id="checkbox1" type="checkbox" checked="checked">
-									</input>
-									<label class="form-check-label" for="checkbox1">
-										<xsl:value-of select="/CheckoutAddress/UpdateInformationAsAddress"></xsl:value-of>
-									</label>
+									<div class="col-12">
+										<div class="form-check abc-checkbox mb-0">
+											<input class="form-check-input" name="IsChecked1" id="checkbox1" type="checkbox" checked="checked">
+											</input>
+											<label class="form-check-label" for="checkbox1">Cập nhật thông tin trên làm địa chỉ hiện tại của tôi </label>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -228,7 +221,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row mt-4">
+		<!-- <div class="row mt-4">
 			<div class="col">
 				<div class="form-check abc-checkbox mb-0">
 					<input class="form-check-input" name="IsChecked1" id="checkbox2" type="checkbox" expand-to-invert="vatview">
@@ -311,7 +304,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="row mb-4 navi mt-5">
 			<div class="col mb-3 text-center text-sm-left">
 				<a class="btn btn-secondary text-white" href="dang-nhap">

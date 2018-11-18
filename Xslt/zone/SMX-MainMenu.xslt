@@ -23,18 +23,18 @@
 				</xsl:attribute>
 				<xsl:value-of select="Title"></xsl:value-of>
 			</a>
-			<xsl:if test="count(Zone)>0">
+			<!-- <xsl:if test="count(Zone)>0">
 				<div class="dropdown-list">
 					<ul class="dd-menu">
 						<xsl:apply-templates select="Zone" mode="Child"></xsl:apply-templates>
 					</ul>
 				</div>
-			</xsl:if>
+			</xsl:if> -->
 		</li>
 	</xsl:template>
 
 
-	<xsl:template match="Zone" mode="Child">
+	<!-- <xsl:template match="Zone" mode="Child">
 		<li class="dd-item">
 			<img class="dd-icon">
 				<xsl:attribute name="src">
@@ -48,5 +48,5 @@
 				<xsl:value-of select="Title"></xsl:value-of>
 			</a>
 		</li>
-	</xsl:template>
+	</xsl:template> -->
 </xsl:stylesheet>

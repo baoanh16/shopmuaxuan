@@ -124,6 +124,7 @@ script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
 					<div id="cart"></div>
 					<portal:ModuleWrapper ID="mdl210" runat="server" ConfigureModuleId="210" />
 					<portal:ModuleWrapper ID="mdl211" runat="server" ConfigureModuleId="211" />
+					<portal:ModuleWrapper ID="mdl235" runat="server" ConfigureModuleId="235" />
 
 					<portal:ModuleWrapper ID="mdl212" runat="server" ConfigureModuleId="212" />
 				</nav>
