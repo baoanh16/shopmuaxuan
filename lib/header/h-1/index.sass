@@ -2,7 +2,7 @@
 	width: 100%
 	background: #fff
 	position: sticky
-	z-index: 999
+	z-index: 9999
 	top: 0
 	left: 0
 	box-shadow: 0 2px 1px 0 rgba(0,0,0,.1)
@@ -58,6 +58,14 @@
 			left: 0
 			position: fixed
 			z-index: 91
+		.Module-235
+			.nav-link
+				display: flex
+				align-items: center
+				&:after
+					+linearicons('\e874')
+					font-size: 0.6rem
+					margin-left: 0.5rem
 		.logo-wrapper
 			padding: 1rem 0 0 0.5rem
 		.btn-close
@@ -82,6 +90,12 @@
 				justify-content: center
 				align-items: center
 				text-transform: uppercase
+				text-align: center
+				span
+					display: block
+					width: 150%
+				a
+					font-size: r(13px)
 				&:not(:last-child)
 					border-right: 1px solid #e1e1e1
 				img
@@ -209,6 +223,16 @@
 			align-items: center
 			justify-content: space-between
 			padding: 0.75rem 0
+			overflow-y: visible
+			.Module-235
+				width: 50%
+				.nav-link
+					display: flex
+					align-items: center
+					&:after
+						+linearicons('\e874')
+						font-size: 0.6rem
+						margin-left: 0.5rem
 			.logo-wrapper
 				display: none
 			.btn-close
@@ -235,6 +259,10 @@
 							display: block
 							visibility: visible
 							opacity: 1
+						.nav-link
+							&:after
+								color: rgb(41,138,196)
+								font-weight: 600
 					.nav-link
 						font-weight: 600
 						font-size: r(14.82px)
@@ -257,6 +285,7 @@
 							background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
 							top: 0
 							left: 0
+							z-index: 1
 						&:after
 							position: absolute
 							content: ''
@@ -265,7 +294,7 @@
 							border-style: solid
 							border-width: 0 6px 8px 6px
 							border-color: transparent transparent #007bff transparent
-							top: r(-6px)
+							top: -0.5rem
 							left: r(66px)
 						.dd-menu
 							width: 100%

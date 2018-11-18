@@ -53,7 +53,7 @@
 				+mdi('\F415')
 				-webkit-text-fill-color: initial
 				position: absolute
-				right: -6px
+				right: 0
 				background: linear-gradient(to right,#298ac4 0,#85ea5c 100%)
 				-webkit-background-clip: text
 				-webkit-text-fill-color: transparent
@@ -63,6 +63,7 @@
 	.hassub
 		margin-bottom: 0.8rem
 		cursor: pointer
+		position: relative
 		a
 			display: flex
 			width: 100%
@@ -74,10 +75,14 @@
 			justify-content: space-between
 			&.active
 				font-weight: 600
-			.mdi-menu-down
-				&.active
-					transform: rotate(180deg)
-					color: #298ac4
+		.mdi-menu-down
+			position: absolute
+			top: 6px
+			right: 0
+			color: #999
+			&.active
+				transform: rotate(180deg)
+				color: #298ac4
 		.hassub-menu
 			padding-left: r(20px)
 			display: none

@@ -5,24 +5,30 @@ $(document).ready(function () {
 		e.preventDefault();
 		$('.canhcam-header-1 .dropdown-list').toggleClass('active')
 	});
+	$('.Module-235 .nav-link').click(function (e) {
+		e.preventDefault();
+		$('.Module-235 .dropdown-list').toggleClass('active')
+	});
 	//Toggle Main Menu on Header
 	$('.canhcam-header-1 .toggle-menu').click(function (e) {
 		e.preventDefault();
 		$('.canhcam-header-1 .main-nav').toggleClass('active')
 		$('.canhcam-header-1 .overlay').toggleClass('active')
 	});
-
+	//Turn on overlay
 	$('.canhcam-header-1 .overlay').click(function (e) {
 		e.preventDefault();
 		$('.canhcam-header-1 .main-nav').removeClass('active')
 		$(this).removeClass('active')
 	});
-
+	//Button close menu
 	$('.canhcam-header-1 .btn-close').click(function (e) {
 		e.preventDefault();
 		$('.canhcam-header-1 .main-nav').removeClass('active')
 		$('.canhcam-header-1 .overlay').removeClass('active')
 	});
+	//
+	$('.account-menu .account-list li').not(':has(a)').hide()
 
 	//Map to
 	doMapTo()
@@ -42,7 +48,7 @@ $(document).ready(function () {
 
 	$('.categories-menu .mdi-menu-down').click(function (e) {
 		$(this).toggleClass('active')
-		$(this).parent().next().toggleClass('active')
+		$(this).next().toggleClass('active')
 	});
 
 	$('.filter-wrapper .filter-item li').click(function (e) {
