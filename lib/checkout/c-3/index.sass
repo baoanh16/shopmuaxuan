@@ -10,10 +10,10 @@
 				span 
 					+fw(bold)
 		.box-resume-content
-			background: darken(color-get($mau,trang),2%)
+			background: #f4f4f4
 			border: 1px solid darken(color-get($mau,trang),10%)
 			+bor-rad(5px)
-			+pad(1rem)
+			+pad(3rem 2rem)
 			label,.form-control
 				font-size: r(11.85px)
 			&.box-resume-content-top
@@ -22,6 +22,18 @@
 			.text-mini
 				+fz(.8rem)
 				color: darken(color-get($mau,trang),30%)
+			.abc-checkbox-circle
+				display: flex
+				align-items: center
+				.form-check-label
+					background: #fff
+					width: 100%
+					margin-left: 0.5rem
+					padding: 0.5rem
+					.content-wrap
+						align-items: center
+						.content
+							margin-left: 0.5rem
 	.validator
 		.help-block
 			ul
@@ -30,6 +42,12 @@
 				color: color-get($mau,do-1)
 	.form-check
 		margin-bottom: 1rem
+		display: flex
+		align-items: center
+		padding: 0
+		.form-check-input
+			margin: 0
+			position: static
 	.btn-facebook
 		background:  color-get($mau,duong-1)
 		color: color-get($mau,trang)
