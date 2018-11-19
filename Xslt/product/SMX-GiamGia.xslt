@@ -11,12 +11,12 @@
 						<div class="col-12">
 							<h2 class="mx__title mx__title--gradient">
 								<xsl:value-of select="/ProductList/ModuleTitle"></xsl:value-of>
-								</h2>
+							</h2>
 						</div>
-						<div class="row ajaxresponsewrap">
-							<div id="title"></div>
-							<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
-						</div>
+					</div>
+					<div class="row ajaxresponsewrap">
+						<div id="title"></div>
+						<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
 					</div>
 				</div>
 			</article>
