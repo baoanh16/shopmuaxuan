@@ -37,6 +37,16 @@
 				.num 
 					background: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
 					color: color-get($mau,trang)
+			&.finished
+				.num
+					background: #fff
+					font-size: 0
+					position: relative
+					&:after
+						+mdi('\F12C')
+						position: absolute
+						font-size: 1.2rem
+						color: rgb(41,138,196)
 		+media-breakpoint-up(sm)
 			.bullet-wrapper
 				+fz(1rem)
