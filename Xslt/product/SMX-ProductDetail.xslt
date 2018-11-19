@@ -22,6 +22,7 @@
 							<div class="product-info">
 								<h2>
 									<xsl:value-of select="/ProductDetail/Title"></xsl:value-of>
+									<xsl:value-of select="/ProductDetail/EditLink" disable-output-escaping="yes"></xsl:value-of>
 								</h2>
 								<h3>
 									<xsl:value-of select="/ProductDetail/Price"></xsl:value-of>
@@ -40,7 +41,6 @@
 								</table>
 								<div class="input-and-button">
 									<div class="quanlity-wrapper">
-										<span class="minus">-</span>
 										<input type="text" value="1">
 										<xsl:attribute name="name">
 											<xsl:text>addtocart_</xsl:text>
@@ -48,7 +48,6 @@
 											<xsl:text>.EnteredQuantity</xsl:text>
 										</xsl:attribute>
 										</input>
-										<span class="add">+</span>
 									</div>
 									<div class="mx-btn">
 										<a href="#!" data-action="addcart" data-url="" onclick="AjaxCart.addproducttocart_details(this); return false;">

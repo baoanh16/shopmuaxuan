@@ -20,7 +20,20 @@
 			<div class="row products-list ajaxresponsewrap">
 				<div id="title"></div>
 				<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
+				<xsl:if test="/ProductList/NextPageUrl!=''">
+				<div class="row justify-content-center w-100">
+					<div class="mx-btn">
+						<a href="#" class="ajaxpagerlink">
+							<xsl:attribute name="href">
+								<xsl:value-of select="/ProductList/NextPageUrl" />
+							</xsl:attribute>
+							<xsl:text>Xem thêm</xsl:text>
+						</a>
+					</div>
+				</div>
+		</xsl:if>
 			</div>
+			
 		</div>
 	</xsl:template>
 
