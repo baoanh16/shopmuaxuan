@@ -1,0 +1,95 @@
+.cart-panel
+	position: fixed
+	top: 113px
+	right: 0
+	box-shadow: 0 0 5px grey
+	width: 360px
+	display: none
+	z-index: 3000
+	transition: all .3s ease-in-out
+	
+	+media-breakpoint-down(xs)
+		max-width: 100%
+	&:before
+		content: ''
+		position: absolute
+		border-left: 7px solid transparent
+		border-right: 7px solid transparent
+		border-bottom: 10px solid color-get($mau, main)
+		bottom: 100%
+		right: 25px
+	+media-breakpoint-up(sm)
+		position: absolute
+		right: 0
+		top: 59px
+		&:before
+			right: 10px
+	+media-breakpoint-up(lg)
+		top: calc(100% + 21px)
+		&:before
+			right: 50px
+	.title
+		background: color-get($mau, main)
+		+pad(0 10px)
+		color: color-get($mau, trang)
+		text-transform: uppercase
+		+fz(14px)
+		+lh(40px)
+		a
+			color: color-get($mau, trang)
+			+lh(40px)
+			&:hover
+				text-decoration: underline
+				color: color-get($mau, trang)
+	.btn-closecart
+		position: absolute
+		+fz(20px)
+		color: color-get($mau,trang)
+		+lh(1)
+		top: 10px
+		right: 10px
+		cursor: pointer
+	.cart-list
+		+pad(0 10px)
+		background: white
+		ul
+			list-style-type: none
+			padding-left: 0
+			margin-bottom: 0
+			li
+				+pad(10px 0 15px 0)
+				border-bottom: 1px dashed rgba(0,0,0,.1)
+				display: flex
+				.product-img
+					max-width: 60px
+				.product-info
+					margin-left: 10px
+				.remove-product
+					cursor: pointer
+					margin-left: auto
+					align-self: center
+					span
+						color: color-get($mau, main)
+	.checkout-panel
+		.total
+			background: white
+			+pad(5px 10px)
+			+fz(15px)
+			strong
+				color: color-get($mau,main)
+		.button
+			background: color-get($mau, main)
+			+pad(10px)
+			a
+				display: block
+				+fz(15px)
+				text-align: center
+				color: white
+				&:before
+					content: '\f07a'
+					font-family: 'Font Awesome 5 Free'
+					margin-right: 5px
+					color: white
+					font-weight: 900
+	&.open
+		display: block
