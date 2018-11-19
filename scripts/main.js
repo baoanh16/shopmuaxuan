@@ -254,7 +254,6 @@ $(function () {
 });
 
 
-
 const doMapTo = function () {
 	if (window.matchMedia('(min-width: 992px)').matches) {
 		$("[map-to]").each(function () {
