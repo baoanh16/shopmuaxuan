@@ -21,10 +21,10 @@
 					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>
 				<xsl:value-of select="Title"></xsl:value-of>
-				<em class="mdi mdi-menu-down"></em>
 			</a>
+			<em class="mdi mdi-menu-down"></em>
 			<ul class="list-unstyled hassub-menu">
-				<xsl:apply-templates select="/ZoneList/Zone" mode="Child"></xsl:apply-templates>
+				<xsl:apply-templates select="Zone" mode="Child"></xsl:apply-templates>
 			</ul>
 		</li>
 	</xsl:template>
