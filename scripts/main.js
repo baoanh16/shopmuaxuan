@@ -215,18 +215,18 @@ $(document).ready(function () {
 		]
 	});
 
-	// // Remove active class from all thumbnail slides
-	// $('.smx-product-detail-1 .small-thumbnail .slick-slide').removeClass('slick-active');
+	// Remove active class from all thumbnail slides
+	$('.smx-product-detail-1 .small-thumbnail .slick-slide').removeClass('slick-active');
 
-	// // Set active class to first thumbnail slides
-	// $('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(0).addClass('slick-active');
+	// Set active class to first thumbnail slides
+	$('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(0).addClass('slick-active');
 
-	// // On before slide change match active thumbnail to current slide
-	// $('.smx-product-detail-1 .big-thumbnail').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-	// 	var mySlideNumber = nextSlide;
-	// 	$('.smx-product-detail-1 .small-thumbnail .slick-slide').removeClass('slick-active');
-	// 	$('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(mySlideNumber).addClass('slick-active');
-	// });
+	// On before slide change match active thumbnail to current slide
+	$('.smx-product-detail-1 .big-thumbnail').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		var mySlideNumber = nextSlide;
+		$('.smx-product-detail-1 .small-thumbnail .slick-slide').removeClass('slick-active');
+		$('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(mySlideNumber).addClass('slick-active');
+	});
 
 	CheckOut1()
 
@@ -240,12 +240,11 @@ $(function () {
 });
 
 $(window).resize(function () {
-	$('.hassub .sub-title').click(function (e) {
-		$(this).toggleClass('active')
-		$(this).next().toggleClass('active')
-	});
+	// $('.hassub .sub-title').click(function (e) {
+	// 	$(this).toggleClass('active')
+	// 	$(this).next().toggleClass('active')
+	// });
 	doMapTo()
-	triggerFilter()
 	doMapTo_pc()
 });
 // End window resize
