@@ -12,7 +12,15 @@
 			</div>
 			<div class="box-resume-content">
 				<xsl:apply-templates select="/CheckoutMethod/Payment"></xsl:apply-templates>
+				<div class="agree">
+					<input id="PaymentAgree" type="checkbox" checked="checked" name="PaymentAgree" />
+					<label for="PaymentAgree">Tôi đã đọc và đồng ý điều khoản trên</label>
+					
+					<!-- <input class="form-check-input" name="IsChecked1" id="checkbox2" type="checkbox"></input>
+					<label class="form-check-label" for="checkbox2">Tôi đã đọc và đồng ý với các điều khoản trên</label> -->
+				</div>
 			</div>
+			
 		</div>
 
 		<div class="row mb-4 navi mt-5">
@@ -87,12 +95,8 @@
 					</xsl:if>
 				</div>
 			</label>
-			<xsl:if test="Id=3">
-				<div class="agree">
-					<input id="PaymentAgree" type="checkbox" checked="checked" name="PaymentAgree" />
-					<label for="PaymentAgree">Tôi đã đọc và đồng ý điều khoản trên</label>
-				</div>
-			</xsl:if>
+			<!-- <xsl:if test="Id=3"> -->
+			<!-- </xsl:if> -->
 		</div>
 	</xsl:template>
 

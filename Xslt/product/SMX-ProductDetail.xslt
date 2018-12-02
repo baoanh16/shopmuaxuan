@@ -36,7 +36,7 @@
 											</td>
 										</tr>
 										<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes"></xsl:value-of>
-										
+
 									</tbody>
 								</table>
 								<div class="input-and-button">
@@ -60,9 +60,11 @@
 								</div>
 								<div class="social-networks nav">
 									<div class="nav-item">
-										<div class="fb-share-button" data-href="" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Chia sẻ</a></div>
+										<div class="fb-share-button" data-href="" data-layout="button" data-size="small" data-mobile-iframe="true"><a
+											 class="fb-xfbml-parse-ignore" target="_blank" href="">Chia sẻ</a></div>
 									</div>
-									<div class="nav-item"><a class="twitter-share-button" href="https://twitter.com/share" data-size="medium" data-text="custom share text" data-url="" data-via="twitterdev" data-related="twitterapi,twitter"></a></div>
+									<div class="nav-item"><a class="twitter-share-button" href="https://twitter.com/share" data-size="medium"
+										 data-text="custom share text" data-url="" data-via="twitterdev" data-related="twitterapi,twitter"></a></div>
 									<div class="nav-item">
 										<div class="g-plus" data-action="share"></div>
 									</div>
@@ -79,7 +81,7 @@
 						<div class="col px-0">
 							<div class="product-props">
 								<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes"></xsl:value-of>
-								
+
 							</div>
 						</div>
 					</div>
@@ -91,12 +93,50 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="mx__title mx__title--gradient">Sản phẩm tương tự</h2>
+							<h2 class="mx__title mx__title--gradient mt-3">Sản phẩm tương tự</h2>
 						</div>
 						<div class="col-12 px-0">
 							<div class="products-list owl-carousel owl-theme">
 								<xsl:apply-templates select="/ProductDetail/ProductOther"></xsl:apply-templates>
 							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+		<section class="canhcam-home-8" style="margin: 0 -15px">
+			<article class="homes-list">
+				<div class="container">
+					<div class="row h-100">
+						<div class="col-sm-4 item">
+							<figure class="figure">
+								<div class="img-block">
+									<img src="/Data/Sites/1/Banner/icon_4.png" alt="TẤT CẢ SẢN PHẨM 100% CHÍNH HÃNG"></img>
+								</div>
+								<figcaption class="figcaption">
+									<h2>TẤT CẢ SẢN PHẨM 100% CHÍNH HÃNG</h2>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="col-sm-4 item">
+							<figure class="figure">
+								<div class="img-block">
+									<img src="/Data/Sites/1/Banner/icon_5.png" alt="GIAO HÀNG NHANH CHÓNG TRONG NGÀY"></img>
+								</div>
+								<figcaption class="figcaption">
+									<h2>GIAO HÀNG NHANH CHÓNG TRONG NGÀY</h2>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="col-sm-4 item">
+							<figure class="figure">
+								<div class="img-block">
+									<img src="/Data/Sites/1/Banner/icon_6.png" alt="ĐA DẠNG CHỦNG LOẠI SẢN PHẨM"></img>
+								</div>
+								<figcaption class="figcaption">
+									<h2>ĐA DẠNG CHỦNG LOẠI SẢN PHẨM</h2>
+								</figcaption>
+							</figure>
 						</div>
 					</div>
 				</div>

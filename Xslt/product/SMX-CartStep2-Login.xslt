@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col"><a class="btn btn-lg btn-primary text-uppercase btn-block"  type="submit" name="ctl00$mainContent$ctl02$LoginCtrl$Login" value="Tiếp tục" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('ctl00$mainContent$ctl02$LoginCtrl$Login','', true,'CheckoutLogin',
+                <div class="col"><a class="btn btn-lg btn-primary text-uppercase btn-block" type="submit" name="ctl00$mainContent$ctl02$LoginCtrl$Login" value="Tiếp tục" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('ctl00$mainContent$ctl02$LoginCtrl$Login','', true,'CheckoutLogin',
                 '', false, false))" id="ctl00_mainContent_ctl02_LoginCtrl_Login" class="hvr-sweep-to-right btn-continue">Continue</a></div>
             </div>
             <div class="row">

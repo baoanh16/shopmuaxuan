@@ -446,17 +446,17 @@ $(document).ready(function () {
     }
 
     var isLoading = false;
-    if ($('a.ajaxpagerlink').length) {
-        var height = $('footer').height();
-        $(window).scroll(function () {
-            if ($(window).scrollTop() + $(window).height() >= $(document).height() - height) {
-                if (isLoading == false) {
-                    isLoading = true;
-                    $('a.ajaxpagerlink').trigger('click');
-                }
-            }
-        });
-    }
+    // if ($('a.ajaxpagerlink').length) {
+    //     var height = $('footer').height();
+    //     $(window).scroll(function () {
+    //         if ($(window).scrollTop() + $(window).height() >= $(document).height() - height) {
+    //             if (isLoading == false) {
+    //                 isLoading = true;
+    //                 $('a.ajaxpagerlink').trigger('click');
+    //             }
+    //         }
+    //     });
+    // }
 
     $("body").on("click", "a.ajaxpagerlink", function (e) {
         e.preventDefault();
@@ -466,8 +466,8 @@ $(document).ready(function () {
         */
 
         //get the link location that was clicked
-        obj = $(this);
-        pageurl = $(this).attr('href');
+        let obj = $(this);
+        let pageurl = $(this).attr('href');
         if (!pageurl.length) return;
 
         //to get the ajax content and display in div with id 'content'
@@ -713,10 +713,10 @@ $(document).ready(function () {
 var AjaxCart = {
     loadWaiting: false,
     usepopupnotifications: false,
-    effecttocart: false,
-    topcartselector: '.cart .amount',
+    effecttocart: true,
+    topcartselector: '.cart-toggle .amount',
     topwishlistselector: '',
-    flyoutcartselector: '.cart-panel',
+    flyoutcartselector: '.shopcart .cart-panel',
 
     init: function init(usepopupnotifications, topcartselector, topwishlistselector, flyoutcartselector) {
         this.loadWaiting = false;
@@ -739,7 +739,8 @@ var AjaxCart = {
         this.setLoadWaiting(true);
 
         if (this.effecttocart == true && this.topcartselector) {
-            var img = $(button).parent().parent().find('.product-img img');
+            // var img = $(button).parent().parent().find('.product-img img');
+            var img = $(button).parent().parent().find('img');
             flyToCart($(img), this.topcartselector);
         }
 
@@ -821,7 +822,7 @@ var AjaxCart = {
         if (this.loadWaiting != false) {
             return;
         }
-        this.setLoadWaiting(true);
+        this.setLoadWaiting(false);
 
         var action = $(button).data("action");
 
@@ -1141,7 +1142,7 @@ var AjaxCart = {
     },
 
     success_desktop: function success_desktop(response) {
-        $(AjaxCart.flyoutcartselector).addClass("show");
+        $(AjaxCart.flyoutcartselector).addClass("open");
         if (response.updatetopcartsectionhtml) {
             $(AjaxCart.topcartselector).html(response.updatetopcartsectionhtml);
         }
@@ -1151,7 +1152,10 @@ var AjaxCart = {
         if (response.updateflyoutcartsectionhtml) {
             // var checkoutUrl = $('.checkout-url').data('checkouturl');
             //$(AjaxCart.flyoutcartselector).replaceWith(response.updateflyoutcartsectionhtml);
-            $(AjaxCart.flyoutcartselector).replaceWith($(response.updateflyoutcartsectionhtml).filter(AjaxCart.flyoutcartselector));
+			// $('.shopcart .Module-239 .ModuleContent .cart-list ul').html($(response.updateflyoutcartselectionhtml));
+			var ditMeThangLonPhamNguyenBaoNguyen = $($(response.updateflyoutcartsectionhtml)[2]).html()
+			console.log(ditMeThangLonPhamNguyenBaoNguyen)
+			$('.shopcart .Module-239 .ModuleContent .cart-panel').html(ditMeThangLonPhamNguyenBaoNguyen);
             //            if (checkoutUrl != null)
             //                $(AjaxCart.flyoutcartselector).find('.btn-checkout').attr('href', checkoutUrl);
         }
@@ -1989,10 +1993,10 @@ var AjaxCheckout = {
             messages: {
                 Address_FirstName: "Vui lòng nhập Tên",
                 Address_LastName: "Vui lòng nhập Họ",
-                // Address_Email: {
-                    // required: "Vui lòng nhập Email",
-                    // email: "Email không hợp lệ"
-                // },
+                Address_Email: {
+                    required: "Vui lòng nhập Email",
+                    email: "Email không hợp lệ"
+                },
                 Address_Address: "Vui lòng nhập Địa chỉ",
                 /*Address_Phone: "Vui lòng nhập Điện thoại",*/
                 Address_Phone: {

@@ -81,6 +81,9 @@ script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
 				<div class="top-nav">
 					<div class="container">
 						<div class="row justify-content-between align-items-center">
+							<div class="shopcart" map-to="#cart">
+								<portal:ModuleWrapper ID="mdl239" runat="server" ConfigureModuleId="239" />
+							</div>
 							<div class="logo-wrapper">
 								<portal:ModuleWrapper ID="mdl206" runat="server" ConfigureModuleId="206" />
 							</div>
@@ -118,11 +121,7 @@ script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
 							</li>
 						</ul>
 					</div>
-					<div>
-						<div class="shopcart">
-							<portal:ModuleWrapper ID="mdl239" runat="server" ConfigureModuleId="239" />
-						</div>
-					</div>
+					<div id="cart"></div>
 					<portal:ModuleWrapper ID="mdl210" runat="server" ConfigureModuleId="210" />
 					<portal:ModuleWrapper ID="mdl211" runat="server" ConfigureModuleId="211" />
 					<portal:ModuleWrapper ID="mdl235" runat="server" ConfigureModuleId="235" />

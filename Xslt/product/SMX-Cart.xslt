@@ -10,7 +10,6 @@
 				<span class="amount">
 					<xsl:value-of select="/ShoppingCart/TotalProducts" disable-output-escaping="yes"></xsl:value-of>
 				</span>
-
 			</div>
 		</div>
 		<div class="cart-panel">

@@ -51,9 +51,9 @@
 							<thead>
 								<tr>
 									<th class="product-details">Sản phẩm</th>
-									<th class="product-price">Giá</th>
+									<th class="product-price">Đơn giá</th>
 									<th class="product-count">Số lượng</th>
-									<th class="product-result">Tổng</th>
+									<th class="product-result">Thành tiền</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -105,7 +105,7 @@
 		<tr>
 			<td class="product-details">
 				<div class="row">
-					<div class="col">
+					<div class="col-12 col-md">
 						<div class="media">
 
 							<img>
@@ -131,7 +131,7 @@
 
 					<!-- <xsl:apply-templates select="Attributes"></xsl:apply-templates> -->
 
-					<div class="col-sm-auto mt-3 mt-sm-0">
+					<div class="col-sm-auto mt-3 mt-md-0 px-4 px-md-0">
 						<a class="del btn btn-danger btn-sm" href="javascript:void(0)" onclick="AjaxCart.removefromcart(this);return false;">
 							<xsl:attribute name="data-itemguid">
 								<xsl:value-of select="ItemGuid"></xsl:value-of>
