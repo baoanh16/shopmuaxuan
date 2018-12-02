@@ -16,6 +16,7 @@ $(document).ready(function () {
 		$('.canhcam-header-1 .main-nav').toggleClass('active')
 		$('.canhcam-header-1 .overlay').toggleClass('active')
 	});
+	
 	//Turn on overlay
 	$('.canhcam-header-1 .overlay').click(function (e) {
 		e.preventDefault();
@@ -235,6 +236,15 @@ $(document).ready(function () {
 	});
 
 }); // End document ready
+$(document).on('click', '.cart-toggle', function(){ 
+	event.preventDefault();
+	$('.cart-panel').addClass('open')
+	console.log('Menu work')
+});
+$(document).on('click', '.btn-closecart', function(){ 
+	event.preventDefault();
+	$('.cart-panel').removeClass('open')
+});
 $(function () {
 	$('.product__item figcaption').matchHeight();
 });
