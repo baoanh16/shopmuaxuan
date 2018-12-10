@@ -1,0 +1,193 @@
+.smx-order-1
+	padding: r(80px) 0
+	h2
+		text-align: center
+		text-transform: uppercase
+		padding-bottom: 21px
+		&:after
+			left: 50%
+			transform: translateX(-50%)
+			height: 2.5px
+	.brand-slider
+		margin-top: r(51px)
+		position: relative
+		padding: 0 5rem
+		@media (max-width: 576px)
+			padding: 0 4rem
+		.owl-item
+			height: 100px
+			width: 160px !important
+			overflow: hidden
+			border: 1.5px solid #f5f5f5
+			display: flex
+			align-items: center
+			justify-content: center
+			@media (max-width: 576px)
+				width: auto
+				margin: 0 20px
+			.item
+				height: 110px
+				display: flex
+				justify-content: center
+				align-items: center
+		.owl-nav
+			position: absolute
+			top: 50%
+			left: 0
+			transform: translateY(-50%)
+			width: 100%
+			display: flex
+			justify-content: space-between
+			pointer-events: none
+			button
+				width: r(36px)
+				height: r(66px)
+				font-size: 0
+				pointer-events: all
+				&:hover
+					background-color: transparent
+				&:focus
+					outline: none
+			.owl-prev
+				background-image: url(.././img/order/prev.png)
+				background-size: contain
+				background-repeat: no-repeat
+			.owl-next
+				background-image: url(.././img/order/next.png)
+				background-size: contain
+				background-repeat: no-repeat
+		.owl-stage
+			@media (max-width: 576px)
+				display: flex
+				justify-content: center
+		.owl-stage-outer
+			@media (max-width: 576px)
+				display: flex
+
+
+.tooltip
+	margin-left: 40px
+	.tooltip-inner
+		background: #f5f5f5
+		color: #666666
+		font-size: r(16.79px)
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 8px 8px 8px
+			border-color: transparent transparent #f5f5f5 transparent
+			top: 0
+			transform: translateY(-100%)
+			left: 15px
+	
+.smx-order-2
+	.nav-tabs
+		li
+			flex: 0 0 20%
+			max-width: 20%
+			display: flex
+			justify-content: center
+			align-items: center
+			background: #e2e2e2
+			padding: 8px
+			border-right: 2px solid #efefef
+			&:first-child
+				border-radius: 5px 0 0 0
+			&:last-child
+				border: 0
+				border-radius: 0 5px 0 0
+			a
+				text-transform: uppercase
+				font-size: r(14.82px)
+				font-weight: 500
+				color: #666666
+			&.active,&:hover
+				background-image: linear-gradient( to right, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+				a
+					color: white
+		@media (max-width: 768px)
+			li
+				a
+					font-size: r(13px)
+		@media (max-width: 576px)
+			li
+				flex: 100%
+				max-width: 100%
+				border-right: 0
+				&:first-child
+					border-radius: 5px 5px 0 0
+				&:last-child
+					border-radius: 0
+
+.smx-order-3
+	padding-bottom: 80px
+	.tab-pane
+		.content
+			padding-top: r(33px)
+			display: flex
+			background: #f7f7f7
+			padding-bottom: 2rem
+			flex-wrap: wrap
+		.item
+			flex: 0 0 33.333333%
+			max-width: 33.333333%
+			padding: 0 15px
+			figure
+				display: flex
+				justify-content: center
+				flex-direction: column
+				align-items: center
+				.img-block
+					width: 181px
+					height: 181px
+					border-radius: 50%
+					display: flex
+					justify-content: center
+					align-items: center
+					box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2)
+					margin-bottom: r(15px)
+					background: white
+				figcaption
+					text-align: center
+					font-size: r(15px)
+					font-weight: 500
+					line-height: r(20px)
+					max-width: r(256.5px)
+		@media (max-width: 992px)
+			.item
+				figure
+					.img-block
+						width: 120px
+						height: 120px
+						img
+							max-height: 60%
+					figcaption
+						max-width: 100%
+						font-size: r(14px)
+		@media (max-width: 768px)
+			.item
+				flex: 0 0 50%
+				max-width: 50%
+				&:last-child
+					flex: 0 0 100%
+					max-width: 100%
+					margin-top: 2rem
+				figure
+					.img-block
+						width: 90px
+						height: 90px
+						img
+							max-height: 50%
+					figcaption
+						font-size: r(13px)
+		@media (max-width: 576px)
+			.item
+				flex: auto
+				max-width: 100%
+				margin-bottom: 2rem
+				&:last-child
+					margin-top: 0

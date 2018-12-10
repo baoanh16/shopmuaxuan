@@ -1,0 +1,53 @@
+
+.nth-ordersupport-2
+	padding-bottom: 2rem
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+		padding-top: 2rem
+	.nth-ordersupport-2-title
+		+fz(r(30px))
+		+fw(600)
+		color: color-get($mau, main)
+		text-transform: uppercase
+		margin-bottom: 1.25rem
+		text-align: center
+		+media-breakpoint-up(lg)
+			text-align: left
+	.nth-ordersupport-2-content
+		p
+			margin-bottom: 0
+			+fw(400)
+			+fz(r(14px))
+		h3
+			+fw(700)
+			+fz(r(14px))
+
+	+media-breakpoint-up(lg)
+		.nth-ordersupport-title
+			+fz(r(18px))
+			+fw(500)
+			color: rgb(41,138,196)
+			text-transform: uppercase
+			line-height: r(24px)
+			margin-bottom: 1rem
+			margin-top: .6rem
+		.nth-ordersupport-nav
+			display: flex
+			flex-direction: column
+			margin-top: 1.4rem
+			a
+				background-color: #666666
+				color: #f5f5f5
+				+fz(r(14px))
+				+fw(500)
+				text-transform: uppercase
+				text-decoration: none
+				height: r(30px)
+				line-height: r(30px)
+				border-top-right-radius: r(30px)
+				border-bottom-right-radius: r(30px)
+				padding-left: r(30px)
+				max-width: r(210px)
+				&.nth-ordersupport-nav-active
+					background-color: rgb(41,138,196)
+					color: white
