@@ -1,6 +1,18 @@
 $(document).ready(function () {
 	createNewsSocial1()
 	CheckOut2()
+	$('[data-toggle="tooltip"]').tooltip({
+		template: '<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'
+	})
+	$('#infomem').hide()
+
+	$('.Module-198 .form-check-input').change(function () {
+        if (!this.checked) 
+        //  ^
+           $('#infomem').show();
+        else 
+            $('#infomem').hide();
+    });
 	//Toggle Dropdown Menu on Header
 	$('.canhcam-header-1 .dropdown-btn').click(function (e) {
 		e.preventDefault();
@@ -180,6 +192,33 @@ $(document).ready(function () {
 		}
 	})
 
+	$('.smx-order-1 .brand-slider').owlCarousel({
+		items: 1,
+		mouseDrag: true,
+		touchDrag: true,
+		dots: false,
+		nav: true,
+		margin: 0,
+		responsive: {
+			576: {
+				items: 2,
+				margin: 20
+			},
+			768: {
+				items: 3,
+				margin: 20
+			},
+			992: {
+				items: 4,
+				margin: 36
+			},
+			1200: {
+				items: 5,
+				margin: 36
+			}
+		}
+	})
+
 
 	$('.smx-product-detail-1 .big-thumbnail').slick({
 		slidesToShow: 1,
@@ -231,9 +270,7 @@ $(document).ready(function () {
 
 	CheckOut1()
 
-	$(window).scroll(function () {
-
-	});
+	
 
 }); // End document ready
 $(document).on('click', '.cart-toggle', function(){ 
@@ -262,6 +299,7 @@ $(window).resize(function () {
 $(function () {
 	$('.product__item figcaption').matchHeight();
 });
+
 
 
 const doMapTo = function () {
@@ -397,3 +435,33 @@ function CheckOut2() {
 		max: 100
 	});
 };
+
+
+const cart = new MappingListener({
+	selector: '.shopcart',
+	mobileWrapper: ".mobile-cart",
+	mobileMethod: "appendTo",
+	desktopWrapper: ".desktop-cart",
+	desktopMethod: "appendTo",
+	breakpoint: 992,
+}).watch();
+
+const mapOrderSupportSideMenuTo = (windowMedia) => {
+	let orderSupportSideMenuWrapper = document.getElementById('orderSupportSideMenuWrapper');
+	let mapToId = orderSupportSideMenuWrapper.getAttribute('nth-map-to')
+	if (windowMedia.matches) {
+		let orderSupportSideMenu = orderSupportSideMenuWrapper.innerHTML;
+		document.getElementById(mapToId).innerHTML = orderSupportSideMenu
+	} else {
+		document.getElementById(mapToId).innerHTML = null
+	}
+}
+
+try {
+	const windowMedia = window.matchMedia("(min-width: 992px)");
+	mapOrderSupportSideMenuTo(windowMedia);
+	windowMedia.addListener(mapOrderSupportSideMenuTo);
+
+} catch (error) {
+
+}

@@ -1,0 +1,14 @@
+extends _layout/_layout.pug
+
+block var
+	- title = 'Demo - About'
+	- bodyClass = 'about-page'
+
+block header
+	include ../lib/header/h-1/index.pug
+block main
+	include ../lib/product/p-1/index.pug
+	include ../lib/order/o-1/index.pug
+	include ../lib/home/h-8/index.pug
+block footer
+	include ../lib/footer/f-1/index.pug
