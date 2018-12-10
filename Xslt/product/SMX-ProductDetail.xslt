@@ -77,7 +77,7 @@
 						</div>
 					</div>
 					<div class="row product-desc">
-						<h2 class="mx__title--gradient title-line">Mô tả sản phẩm</h2>
+						<h2 class="mx__title--gradient title-line h4 pt-2 text-left">Mô tả sản phẩm</h2>
 						<div class="col px-0">
 							<div class="product-props">
 								<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes"></xsl:value-of>

@@ -81,7 +81,7 @@
 				<tr>
 					<td class="product-details">Tổng tiền</td>
 					<td class="product-result">
-						<div class="sum">
+						<div class="sum text-danger">
 							<xsl:value-of select="/ShoppingCart/SubTotal"></xsl:value-of>
 						</div>
 					</td>
@@ -95,9 +95,17 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="product-details">Số tiền phải thanh toán</td>
+					<td class="product-details">Phí vận chuyển</td>
 					<td class="product-result">
 						<div class="sum">
+							<xsl:value-of select="/ShoppingCart/ShippingTotal"></xsl:value-of>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="product-details">Số tiền phải thanh toán</td>
+					<td class="product-result">
+						<div class="sum text-danger">
 							<xsl:value-of select="/ShoppingCart/Total"></xsl:value-of>
 						</div>
 					</td>

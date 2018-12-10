@@ -123,7 +123,7 @@
 										<!-- <xsl:value-of select="/CheckoutAddress/SameInfoText"></xsl:value-of> -->
 									</label>
 								</div>
-								<div class="row mt-4 mb-4" id="infomem" style="display:none">
+								<div class="row mt-4 mb-4" id="infomem" style="">
 									<div class="col-12">
 										<div class="form-group row align-items-center">
 											<label class="col-form-label col-sm-4" for="name">
@@ -174,7 +174,7 @@
 												<xsl:value-of select="/CheckoutAddress/ProvinceText"></xsl:value-of>
 											</label>
 											<div class="col-sm-8">
-												<select class="form-control" id="Country" type="text" placeholder="Country" data-error="Vui lòng nhập thông tin" required="" onchange="AjaxCheckout.getdistrictsbyprovinceguid(this, 'Address_District-2')">
+												<select class="form-control" id="Address_Province" type="text" placeholder="Country" data-error="Vui lòng nhập thông tin" required="" onchange="AjaxCheckout.getdistrictsbyprovinceguid(this, 'Address_District-2')">
 													<option value=""> -- Chọn Tỉnh/Thành Phố -- </option>
 													<xsl:apply-templates select="/CheckoutAddress/Provinces"></xsl:apply-templates>
 												</select>
@@ -188,7 +188,7 @@
 												<xsl:value-of select="/CheckoutAddress/DistrictText"></xsl:value-of>
 											</label>
 											<div class="col-sm-8">
-												<select class="form-control" name="Address_District-2" type="text" placeholder="Quận" data-error="Vui lòng nhập thông tin" required="">
+												<select class="form-control" id="Address_District" name="Address_District-2" type="text" placeholder="Quận" data-error="Vui lòng nhập thông tin" required="">
 													<option value=""> -- Chọn Quận/Huyện -- </option>
 													<xsl:apply-templates select="/CheckoutAddress/Districts"></xsl:apply-templates>
 												</select>
@@ -209,7 +209,7 @@
 									</div>
 									<div class="col-12">
 										<div class="form-check abc-checkbox mb-0">
-											<input class="form-check-input" name="IsChecked1" id="checkbox1" type="checkbox" checked="checked">
+											<input class="form-check-input" name="IsChecked1" id="checkbox1" type="checkbox" checked="unchecked">
 											</input>
 											<label class="form-check-label" for="checkbox1">Cập nhật thông tin trên làm địa chỉ hiện tại của tôi </label>
 										</div>
