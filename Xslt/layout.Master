@@ -47,7 +47,7 @@ Facebook: https://fb.com/canhcam.vn
 	<meta name="msapplication-navbutton-color" content="#000000">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000000">
 	<!-- ////////////// Responsive Config ////////////// -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;amp;subset=vietnamese"
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;amp;subset=vietnamese" rel="stylesheet"/>
 	 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 	<meta name="format-detection" content="telephone=no">
@@ -81,6 +81,7 @@ script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
 				<div class="top-nav">
 					<div class="container">
 						<div class="row justify-content-between align-items-center">
+							<div class="mobile-cart d-lg-none"></div>
 							<div class="logo-wrapper">
 								<portal:ModuleWrapper ID="mdl206" runat="server" ConfigureModuleId="206" />
 							</div>
@@ -118,7 +119,7 @@ script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
 							</li>
 						</ul>
 					</div>
-					<div>
+					<div class="desktop-cart">
 						<div class="shopcart">
 							<portal:ModuleWrapper ID="mdl239" runat="server" ConfigureModuleId="239" />
 						</div>
@@ -215,10 +216,9 @@ script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
 		<portal:Woopra ID="woopra11" runat="server" />
 	</form>
 	<!-- ////////////// Back to Top ////////////// -->
-	<!-- <a href="#top-page" id="back-to-top" title="Back to top">
-		<span>TOP</span>
-		<i class="fa fa-angle-up"></i>
-	</a> -->
+	<a href="#top-page" id="back-to-top" title="Back to top">
+		<i class="lnr lnr-arrow-up"></i>
+	</a>
 	<!-- ////////////// Javascript Include ////////////// -->
 	<script src="/Data/Sites/1/skins/default/scripts/core.min.js?v=1.0.0"></script>
 	<script src="/Data/Sites/1/skins/default/scripts/ecommerce.js?v=1.0.0"></script>
