@@ -38,7 +38,7 @@
 					<xsl:text>active</xsl:text>
 				</xsl:attribute>
 			</xsl:if>
-			<a>
+			<a class="sub-title">
 				<xsl:attribute name="href">
 					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>
