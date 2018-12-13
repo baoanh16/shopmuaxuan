@@ -62,7 +62,7 @@
 				&:before
 					+mdi('\F374')
 	.hassub
-		margin-bottom: 0.8rem
+		margin-bottom: 0
 		cursor: pointer
 		position: relative
 		a
@@ -85,7 +85,7 @@
 				transform: rotate(180deg)
 				color: #298ac4
 		.hassub-menu
-			padding-left: r(20px)
+			padding-left: 0
 			display: none
 			list-style: none
 			li
@@ -97,7 +97,6 @@
 					text-transform: none
 			&.active
 				display: block
-
 	.categories-wrapper
 		margin-bottom: 1.2rem
 		em
@@ -111,10 +110,15 @@
 			.hassub-menu
 				li
 					&.active
-						a
+						>a
 							color: #298ac4
 							font-weight: 600
-
+		.hassub-menu-child-1 
+			padding-left: 1rem
+			>li
+				position: relative
+		.hassub-menu-child-2
+			padding-left: 1rem
 	.filter-wrapper
 		.filter-item
 			.hassub-menu

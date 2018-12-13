@@ -1,4 +1,26 @@
 $(document).ready(function () {
+
+
+
+
+	// $('.wrap-secure.wrap-login').children().addClass('offset-sm-3')
+	// $('.wrap-secure.wrap-login .control-label').removeClass('col-sm-2')
+	// $('.wrap-secure.wrap-login .control-label').next().removeClass('col-sm-10')
+	// $('.wrap-secure.wrap-login .col-sm-offset-2.col-sm-10').removeClass('col-sm-10').addClass('col-sm-12')
+
+	// const loginFormButtonLoginHtml = $(".wrap-secure.wrap-login input[type='submit']").parent().html()
+	// $(".wrap-secure.wrap-login input[type='checkbox']").parent().append(loginFormButtonLoginHtml)
+	// $($(".wrap-secure.wrap-login input[type='submit']")[1]).parent().parent().html('')
+
+
+	// Active Side menu page Product
+	$('.hassub-menu-child-2 li.active').parent().addClass('active')
+	$('.hassub-menu-child-2 li.active').parent().siblings('em.mdi').addClass('active')
+	$('.hassub-menu-child-2.active').parents('.hassub-menu-child-1').addClass('active')
+	$('.hassub-menu-child-2.active').parents('.hassub-menu-child-1').siblings('em.mdi').addClass('active')
+	$('.hassub-menu-child-1 li.active').parent().addClass('active')
+	$('.hassub-menu-child-1 li.active').parent().siblings('em.mdi').addClass('active')
+	//
 	createNewsSocial1()
 	CheckOut2()
 	$('[data-toggle="tooltip"]').tooltip({
@@ -7,12 +29,12 @@ $(document).ready(function () {
 	$('#infomem').hide()
 
 	$('.Module-198 .form-check-input').change(function () {
-        if (!this.checked) 
-        //  ^
-           $('#infomem').show();
-        else 
-            $('#infomem').hide();
-    });
+		if (!this.checked)
+			//  ^
+			$('#infomem').show();
+		else
+			$('#infomem').hide();
+	});
 	//Toggle Dropdown Menu on Header
 	$('.canhcam-header-1 .dropdown-btn').click(function (e) {
 		e.preventDefault();
@@ -28,7 +50,7 @@ $(document).ready(function () {
 		$('.canhcam-header-1 .main-nav').toggleClass('active')
 		$('.canhcam-header-1 .overlay').toggleClass('active')
 	});
-	
+
 	//Turn on overlay
 	$('.canhcam-header-1 .overlay').click(function (e) {
 		e.preventDefault();
@@ -70,7 +92,7 @@ $(document).ready(function () {
 	});
 
 	SliderHome()
-	
+
 	$('.canhcam-home-2 .part-list').owlCarousel({
 		items: 1,
 		nav: true,
@@ -270,15 +292,15 @@ $(document).ready(function () {
 
 	CheckOut1()
 
-	
+
 
 }); // End document ready
-$(document).on('click', '.cart-toggle', function(){ 
+$(document).on('click', '.cart-toggle', function () {
 	event.preventDefault();
 	$('.cart-panel').addClass('open')
 	console.log('Menu work')
 });
-$(document).on('click', '.btn-closecart', function(){ 
+$(document).on('click', '.btn-closecart', function () {
 	event.preventDefault();
 	$('.cart-panel').removeClass('open')
 });

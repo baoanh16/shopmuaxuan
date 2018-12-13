@@ -221,6 +221,53 @@
 				</div>
 			</div>
 		</div>
+
+
+		<div class="box-resume clearfix mt-3">
+			<section class="box-resume-title d-flex align-items-center">
+				<xsl:value-of select="/CheckoutAddress/UsingCoupon"></xsl:value-of>
+				
+				<h3>NHẬP MÃ COUPON</h3>
+				<div data-toggle="tooltip" data-placement="right" title="Mã giảm giá sẽ được chia đến từng sản phẩm và được làm tròn theo quy định của "
+				 class="help ml-2">
+					<i class="fa fa-question-circle" aria-hidden="true"></i>
+				</div>
+			</section>
+			<section class="box-resume-content clearfix">
+				<div class="input-coupon form-group clearfix">
+					<xsl:choose>
+						<xsl:when test="/CheckoutAddress/CouponCode!=''">
+							<span class="code">
+								<xsl:value-of select="/CheckoutAddress/CouponCode"></xsl:value-of>
+							</span>
+							<span class="title">
+								<xsl:value-of select="/CheckoutAddress/CouponTitle"></xsl:value-of>
+							</span>
+							<input type="button" onclick="AjaxCart.removecoupon();return false;" class="remove" value="" runat="server" />
+						</xsl:when>
+						<xsl:otherwise>
+							<input class="form-control" type="text" id="couponCode" autocomplete="off" max-length="20" placeholder="Nhập mã giảm giá">
+							<xsl:attribute name="placeholder">
+								<xsl:value-of select="/CheckoutAddress/plCoupon"></xsl:value-of>
+							</xsl:attribute>
+							</input>
+							<button class="btn btn-primary mt-3" onclick="AjaxCart.applycoupon();return false;">
+								<xsl:value-of select="/CheckoutAddress/ApplyText"></xsl:value-of>
+							</button>
+							<div class="coupon-apply-error"></div>
+						</xsl:otherwise>
+					</xsl:choose>
+				</div>
+				<div class="des">
+					<em>
+						<xsl:value-of select="/CheckoutAddress/CouponNodeText"></xsl:value-of>
+					</em>
+				</div>
+				<div class="module-title">
+					<xsl:value-of select="/CheckoutAddress/CouponNodeText2"></xsl:value-of>
+				</div>
+			</section>
+		</div>
 		<!-- <div class="row mt-4">
 			<div class="col">
 				<div class="form-check abc-checkbox mb-0">

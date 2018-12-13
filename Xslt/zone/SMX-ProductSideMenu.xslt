@@ -22,14 +22,38 @@
 				</xsl:attribute>
 				<xsl:value-of select="Title"></xsl:value-of>
 			</a>
-			<em class="mdi mdi-menu-down"></em>
-			<ul class="list-unstyled hassub-menu">
-				<xsl:apply-templates select="Zone" mode="Child"></xsl:apply-templates>
-			</ul>
+			<xsl:if test="count(Zone)>0">
+				<em class="mdi mdi-menu-down"></em>
+				<ul class="list-unstyled hassub-menu hassub-menu-child-1">
+					<xsl:apply-templates select="Zone" mode="Child"></xsl:apply-templates>
+				</ul>
+			</xsl:if>
 		</li>
 	</xsl:template>
 
 	<xsl:template match="Zone" mode="Child">
+		<li>
+			<xsl:if test="IsActive='true'">
+				<xsl:attribute name="class">
+					<xsl:text>active</xsl:text>
+				</xsl:attribute>
+			</xsl:if>
+			<a>
+				<xsl:attribute name="href">
+					<xsl:value-of select="Url"></xsl:value-of>
+				</xsl:attribute>
+				<xsl:value-of select="Title"></xsl:value-of>
+			</a>
+			<xsl:if test="count(Zone)>0">
+				<em class="mdi mdi-menu-down"></em>
+				<ul class="list-unstyled hassub-menu hassub-menu-child-2">
+					<xsl:apply-templates select="Zone" mode="Child-Child"></xsl:apply-templates>
+				</ul>
+			</xsl:if>
+		</li>
+	</xsl:template>
+
+	<xsl:template match="Zone" mode="Child-Child">
 		<li>
 			<xsl:if test="IsActive='true'">
 				<xsl:attribute name="class">
