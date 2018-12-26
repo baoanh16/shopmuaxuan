@@ -20,6 +20,7 @@ $(document).ready(function () {
 	$('.hassub-menu-child-2.active').parents('.hassub-menu-child-1').siblings('em.mdi').addClass('active')
 	$('.hassub-menu-child-1 li.active').parent().addClass('active')
 	$('.hassub-menu-child-1 li.active').parent().siblings('em.mdi').addClass('active')
+	$('.hassub-menu-child-1 li.active').parent().siblings('.sub-title').addClass('active')
 	//
 	createNewsSocial1()
 	CheckOut2()
@@ -84,6 +85,7 @@ $(document).ready(function () {
 
 	$('.categories-menu .mdi-menu-down').click(function (e) {
 		$(this).toggleClass('active')
+		$(this).siblings('.sub-title').toggleClass('active')
 		$(this).next().toggleClass('active')
 	});
 
