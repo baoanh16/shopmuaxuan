@@ -1,0 +1,82 @@
+.search-page
+	padding: 2rem 0
+	input
+		border: 1px solid darken(white,12%)
+		border-radius: 4px
+		height: 40px
+		font-size: r(14px)
+		&:focus
+			border-color: color-get($mau, main)
+			box-shadow: 0 0 .25rem color-get($mau,main)
+	.search-page-top
+		.searchcontrols
+			margin-bottom: 1rem
+			.form-inline
+				+media-breakpoint-up(sm)
+					max-width: 510px
+				.form-group
+					margin-bottom: 0
+					&:last-child
+						padding-left: .5rem
+						input
+							width: 100px
+							color: white
+							background: color-get($mau, main)
+					&:first-child
+						flex-grow: 1
+						width: auto
+						flex-basis: 0
+						input
+							width: 100%
+							color: color-get($mau, main)
+	.btn-reindex
+		margin-top: .5rem
+		margin-bottom: 1rem
+		+media-breakpoint-up(sm)
+			max-width: 402.5px
+		input
+			width: 100%
+			color: white
+			background: color-get($mau, main)
+	.searchresults
+		.modulepager
+			&:first-child
+				display: none
+			&:last-child
+				.pagination
+					display: flex
+					justify-content: center
+					list-style-type: none
+					li
+						width: r(40px)
+						height: r(40px)
+						border: 1px solid transparent
+						a,span
+							display: flex
+							font-size: r(15px)
+							display: flex
+							justify-content: center
+							align-items: center
+							text-decoration: none
+							height: 100%
+							width: 100%
+							color: darken(white,40%)
+						&.active, &:hover
+							border-color: color-get($mau, main)
+							a,span
+								color: color-get($mau, main)
+		.searchresultlist
+			.searchresult
+				transition: all .3s ease-in-out
+				&:nth-child(odd)
+					background: lighten(color-rgba(color-get($mau, main),.1 ),5%)
+				&:nth-child(even)
+					background: darken(color-rgba(color-get($mau, main),.2 ),5%)
+				&:hover
+					transform: translateY(-5px)
+					box-shadow: 0 0 .5px color-get($mau, main)
+				.NeatHtml
+					padding: .5rem .75rem 0 .75rem!important
+					h3
+						a
+							color: darken(color-get($mau,main), 30%)

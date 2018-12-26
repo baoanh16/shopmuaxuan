@@ -1,0 +1,101 @@
+.login-page, .signup-page
+	padding: r(40px) 0
+	+media-breakpoint-up(lg)
+		padding: r(60px) 0
+.login-panel
+	background: white
+	padding: 0 15px
+	box-shadow: 0px 3px 30px color-rgba(black,0.1)
+	border-radius: 5px
+	border: 1px solid darken(white,10%)
+.signup-form, .login-form 
+	width: 100%
+	.headtitle
+		margin-bottom: 10px
+		color: color-get($mau, main)
+		text-transform: uppercase
+		font-size: r(15px)
+		line-height: 30px
+		font-weight: 700
+		border-bottom: 1px solid darken($white,10%)
+	.panel-heading
+		margin-bottom: 5px
+		color: darken($white,60%)
+	.form-group
+		margin-bottom: 10px
+		label 
+			font-size: r(14px)
+			margin-bottom: 5px
+		input, select
+			width: 100%
+			border-radius: 3px
+			font-size: 0.9rem
+			border: 1px solid darken($white,15%)
+			padding: 0px 15px
+			line-height: 35px
+			height: 35px
+			&:active, &:focus
+				border-color: color-get($mau, main)
+				box-shadow: 0 0 .25rem color-get($mau, main)
+		select
+			padding: 10px 15px
+		.fa.fa-exclamation
+			top: 42px
+			right: 10px
+		
+	.btnwrap
+		text-align: center
+		padding: 10px 0
+	input[type="submit"]
+		display: block
+		width: 100%
+		line-height: 36px
+		padding: 0px 20px
+		border-radius: 0
+		+text-gradient
+		color: white
+		font-weight: 300 !important
+		font-size: r(13px)
+		border: none
+		text-transform: uppercase
+		&:hover
+			background: color-get($mau, main)
+	table
+		tbody
+			tr
+				td
+					padding: 5px 0
+.login-form
+	.form-group
+		a
+			font-size: r(13px)
+			color: color-get($mau, main)
+		&.forget
+			input
+				display: none
+			label
+				position: relative
+				margin-bottom: 0
+				line-height: 1.5
+				padding-left: 24px
+				&:before
+					content: ''
+					font-family: fontawesome
+					display: block
+					width: 16px
+					height: 16px
+					line-height: 14px
+					text-align: center
+					color: color-get($mau, main)
+					border: 1px solid #ccc
+					position: absolute
+					top: 1px
+					left: 0
+					z-index: 1
+					transition: all .4s ease-in-out
+				&.active
+					&:before
+						content: '\f00c'
+		&:nth-child(1), &:nth-child(2)
+			label
+				display: none

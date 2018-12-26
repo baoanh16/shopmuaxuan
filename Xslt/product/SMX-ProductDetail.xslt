@@ -35,6 +35,33 @@
 												<xsl:value-of select="/ProductDetail/Code"></xsl:value-of>
 											</td>
 										</tr>
+										<tr>
+											<th>Tình trạng</th>
+											<td>
+												<xsl:choose>
+													<xsl:when test="floor(/ProductDetail/ShowOption div 2) mod 2 = 1">
+														<xsl:text>Hết hàng</xsl:text>
+													</xsl:when>
+													<xsl:otherwise>
+														<xsl:text>Còn hàng</xsl:text>
+													</xsl:otherwise>
+												</xsl:choose>
+											</td>
+										</tr>
+										<tr>
+											<th>Phí vận chuyển</th>
+											<td>
+												<xsl:choose>
+													<xsl:when test="floor(/ProductDetail/ShowOption div 4) mod 2 = 1">
+														<xsl:text>Miễn phí vận chuyển</xsl:text>
+													</xsl:when>
+													<xsl:otherwise>
+														<xsl:text>Có phí vận chuyển</xsl:text>
+														<a href="/cuoc-phi-giao-hang">(Xem ước tính)</a>
+													</xsl:otherwise>
+												</xsl:choose>
+											</td>
+										</tr>
 										<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes"></xsl:value-of>
 
 									</tbody>
@@ -76,15 +103,40 @@
 							</div>
 						</div>
 					</div>
-					<div class="row product-desc">
-						<h2 class="mx__title--gradient title-line h4 pt-2 text-left">Mô tả sản phẩm</h2>
-						<div class="col px-0">
+				</div>
+				<div class="container">
+					<nav>
+						<div class="row product-desc nav nav-tabs" id="productTab" role="tablist">
+							<a class="col-auto active" data-toggle="tab" role="tab" aria-selected="true" href="#tab-1">
+								<h2 class="mx__title--gradient title-line h4 pt-2 text-left">
+									Mô tả sản phẩm
+								</h2>
+							</a>
+							<xsl:apply-templates select="/ProductDetail/ProductAttributes" mode="Nav"></xsl:apply-templates>
+						</div>
+					</nav>
+
+					<div class="row product-desc tab-content" id="productTabContent">
+						<div class="col-12 px-0 tab-pane fade show active" id="tab-1" role="tabpanel">
 							<div class="product-props">
 								<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes"></xsl:value-of>
-
 							</div>
 						</div>
+						<xsl:apply-templates select="/ProductDetail/ProductAttributes" mode="Panel"></xsl:apply-templates>
 					</div>
+					<!-- <nav>
+						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+							<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+							<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+							<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+						</div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+						<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+						<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+					</div> -->
+
 				</div>
 			</article>
 		</section>
@@ -142,6 +194,31 @@
 				</div>
 			</article>
 		</section>
+	</xsl:template>
+
+
+	<xsl:template match="ProductAttributes" mode="Nav">
+		<a class="col-auto" role="tab" data-toggle="tab" aria-selected="false">
+			<xsl:attribute name="href">
+				<xsl:text>#tab-</xsl:text>
+				<xsl:value-of select="position()+1"></xsl:value-of>
+			</xsl:attribute>
+			<h2 class="mx__title--gradient title-line h4 pt-2 text-left">
+				<xsl:value-of select="Title"></xsl:value-of>
+			</h2>
+		</a>
+	</xsl:template>
+
+	<xsl:template match="ProductAttributes" mode="Panel">
+		<div class="col-12 px-0 tab-pane fade" role="tabpanel">
+			<xsl:attribute name="id">
+				<xsl:text>tab-</xsl:text>
+				<xsl:value-of select="position()+1"></xsl:value-of>
+			</xsl:attribute>
+			<div class="product-props">
+				<xsl:value-of select="Content" disable-output-escaping="yes"></xsl:value-of>
+			</div>
+		</div>
 	</xsl:template>
 
 	<xsl:template match="ProductImages" mode="BigImages">

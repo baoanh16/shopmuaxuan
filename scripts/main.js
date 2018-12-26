@@ -291,7 +291,9 @@ $(document).ready(function () {
 		$('.smx-product-detail-1 .small-thumbnail .slick-slide').removeClass('slick-active');
 		$('.smx-product-detail-1 .small-thumbnail .slick-slide').eq(mySlideNumber).addClass('slick-active');
 	});
-
+	$('.login-panel .forget label').on('click', function (e) {
+		$(this).toggleClass('active')
+	})
 	CheckOut1()
 
 

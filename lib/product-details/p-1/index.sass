@@ -140,16 +140,24 @@
 					&:not(:first-child)
 						margin-left: 1rem
 	.product-desc
-		h2
-			width: 100%
-			padding-bottom: 0.5rem
-			text-transform: uppercase
-			text-align: center
-			@media (min-width: 576px)
-				text-align: left
-				padding-left: r(36px)
-			&:after
+		a
+			h2
 				width: 100%
+				padding-bottom: 0.5rem
+				text-transform: uppercase
+				text-align: center
+				-webkit-background-clip: text
+				-webkit-text-fill-color: initial
+				color: darken(white,80%)
+				@media (min-width: 576px)
+					padding: 0 15px
+				&:after
+					width: 100%
+			&.active
+				h2
+					color: initial
+					-webkit-background-clip: text
+					-webkit-text-fill-color: transparent
 		.product-props
 			padding: r(40px) r(36px)
 			border: 1px solid #d7d7d7

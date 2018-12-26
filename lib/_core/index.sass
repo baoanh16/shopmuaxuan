@@ -257,123 +257,128 @@ label.error
 				content: "\f054"
 				color: #ffffff
 
-.wrap-login,.wrap-register
-	padding: 2rem 0
-	+media-breakpoint-up(lg)
-		padding: 4rem 0
-	h3
-		text-transform: uppercase
-		font-weight: 700
-		color: #333
-		font-size: 1.25rem
-		margin-bottom: 2rem
-		text-align: center
-	.panel.panel-primary,.signup-panel
-		padding: 1rem
-		box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.07)
-		.panel-heading
-			font-weight: 400
-			font-style: italic
-			color: #c9c9c9
-			text-align: right
-	.form-horizontal
-		margin-top: 1rem
-		.form-group
-			margin-bottom: 1.5rem
-			label
-				font-size: .85rem
-				font-weight: 600
-				color: #333
-				margin-left: .4rem
-				margin-bottom: 0.75rem
-			input[type="submit"]
-				margin-left: auto
-				background: rgb(133,234,92)
-				padding-left: 1rem
-				padding-right: 1rem
-				font-weight: 700
-				transition: all .3s ease-in-out
-				&:hover
-					background: rgb(60, 184, 120)
+// .wrap-login,.wrap-register
+// 	padding: 2rem 0
+// 	+media-breakpoint-up(lg)
+// 		padding: 4rem 0
+// 	h3
+// 		text-transform: uppercase
+// 		font-weight: 700
+// 		color: #333
+// 		font-size: 1.25rem
+// 		margin-bottom: 2rem
+// 		text-align: center
+// 	.panel.panel-primary,.signup-panel
+// 		padding: 1rem
+// 		box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.07)
+// 		.panel-heading
+// 			font-weight: 400
+// 			font-style: italic
+// 			color: #c9c9c9
+// 			text-align: right
+// 	.form-horizontal
+// 		margin-top: 1rem
+// 		.form-group
+// 			margin-bottom: 1.5rem
+// 			label
+// 				font-size: .85rem
+// 				font-weight: 600
+// 				color: #333
+// 				margin-left: .4rem
+// 				margin-bottom: 0.75rem
+// 			input[type="submit"]
+// 				margin-left: auto
+// 				background: rgb(133,234,92)
+// 				padding-left: 1rem
+// 				padding-right: 1rem
+// 				font-weight: 700
+// 				transition: all .3s ease-in-out
+// 				&:hover
+// 					background: rgb(60, 184, 120)
 					
-			.col-sm-offset-2.col-sm-12,.settingcontrol
-				display: flex
-				align-items: center
-				padding-left: 0
-				padding-right: 0
-				a
-					transition: all .3s ease-in-out
-					text-decoration: none
-					&:first-child
-						margin-right: .75rem
-				label
-					margin-bottom: 0
-					color: rgb(133,234,92)
-					font-weight: 500
-					font-style: italic
-					margin-left: .25rem
-				select
-					display: block
-					width: 100%
-					height: calc(2.25rem + 2px)
-					padding: .375rem .75rem
-					font-size: 1rem
-					line-height: 1.5
-					color: #495057
-					background-color: #fff
-					background-clip: padding-box
-					border: 1px solid #ced4da
-					border-radius: .25rem
-					transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
-				.RadInput.RadInput_Default
-					width: 100%
-				.riTextBox.riEnabled.form-control
-					display: block
-					width: 100%
-					height: calc(2.25rem + 2px)
-					padding: .375rem .75rem
-					font-size: 1rem
-					line-height: 1.5
-					color: #495057
-					background-color: #fff
-					background-clip: padding-box
-					border: 1px solid #ced4da
-					border-radius: .25rem
-					transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
-	table
-		tbody
-			input[type="submit"]
-				margin-left: auto
-				background: -webkit-gradient(linear,left top,right top,from(#298ac4),to(#85ea5c))
-				background: -webkit-linear-gradient(left,#298ac4 0,#85ea5c 100%)
-				background: -o-linear-gradient(left,#298ac4 0,#85ea5c 100%)
-				background: linear-gradient(to right,#298ac4 0,#85ea5c 100%)
-				padding-left: 1rem
-				padding-right: 1rem
-				font-weight: 700
-				transition: all .3s ease-in-out
-				color: white
-				&:hover
-					background: rgb(60, 184, 120)
-.login.col
-	display: flex
-	justify-content: center
-	align-items: center
-	flex-direction: column
-	li
-		width: 100%
-		text-align: center
+// 			.col-sm-offset-2.col-sm-12,.settingcontrol
+// 				display: flex
+// 				align-items: center
+// 				padding-left: 0
+// 				padding-right: 0
+// 				a
+// 					transition: all .3s ease-in-out
+// 					text-decoration: none
+// 					&:first-child
+// 						margin-right: .75rem
+// 				label
+// 					margin-bottom: 0
+// 					color: rgb(133,234,92)
+// 					font-weight: 500
+// 					font-style: italic
+// 					margin-left: .25rem
+// 				select
+// 					display: block
+// 					width: 100%
+// 					height: calc(2.25rem + 2px)
+// 					padding: .375rem .75rem
+// 					font-size: 1rem
+// 					line-height: 1.5
+// 					color: #495057
+// 					background-color: #fff
+// 					background-clip: padding-box
+// 					border: 1px solid #ced4da
+// 					border-radius: .25rem
+// 					transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+// 				.RadInput.RadInput_Default
+// 					width: 100%
+// 				.riTextBox.riEnabled.form-control
+// 					display: block
+// 					width: 100%
+// 					height: calc(2.25rem + 2px)
+// 					padding: .375rem .75rem
+// 					font-size: 1rem
+// 					line-height: 1.5
+// 					color: #495057
+// 					background-color: #fff
+// 					background-clip: padding-box
+// 					border: 1px solid #ced4da
+// 					border-radius: .25rem
+// 					transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+// 	table
+// 		tbody
+// 			input[type="submit"]
+// 				margin-left: auto
+// 				background: -webkit-gradient(linear,left top,right top,from(#298ac4),to(#85ea5c))
+// 				background: -webkit-linear-gradient(left,#298ac4 0,#85ea5c 100%)
+// 				background: -o-linear-gradient(left,#298ac4 0,#85ea5c 100%)
+// 				background: linear-gradient(to right,#298ac4 0,#85ea5c 100%)
+// 				padding-left: 1rem
+// 				padding-right: 1rem
+// 				font-weight: 700
+// 				transition: all .3s ease-in-out
+// 				color: white
+// 				&:hover
+// 					background: rgb(60, 184, 120)
+// .login.col
+// 	display: flex
+// 	justify-content: center
+// 	align-items: center
+// 	flex-direction: column
+// 	li
+// 		width: 100%
+// 		text-align: center
 
-.form-horizontal
-	.form-group:first-child
-		.fa.fa-user
-			&:after
-				content: 'Email'
-				color: #333
-				margin-left: .5rem
-	.form-group:nth-child(2)
-		.fa.fa-lock
-			&:after
-				content: 'Mật khẩu'
-				color: #333
-				margin-left: .5rem
+// .form-horizontal
+// 	.form-group:first-child
+// 		.fa.fa-user
+// 			&:after
+// 				content: 'Email'
+// 				color: #333
+// 				margin-left: .5rem
+// 	.form-group:nth-child(2)
+// 		.fa.fa-lock
+// 			&:after
+// 				content: 'Mật khẩu'
+// 				color: #333
+// 				margin-left: .5rem
+
+
+.product-detail-page 
+	.productdetailpager
+		display: none
