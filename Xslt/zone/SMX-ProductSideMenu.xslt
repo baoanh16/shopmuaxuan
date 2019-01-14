@@ -17,6 +17,11 @@
 	<xsl:template match="Zone">
 		<li class="hassub">
 			<a class="sub-title">
+				<xsl:if test="IsActive='true'">
+					<xsl:attribute name="class">
+						<xsl:text>sub-title active</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
 				<xsl:attribute name="href">
 					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>
@@ -25,6 +30,12 @@
 			<xsl:if test="count(Zone)>0">
 				<em class="mdi mdi-menu-down"></em>
 				<ul class="list-unstyled hassub-menu hassub-menu-child-1">
+				
+					<xsl:if test="IsActive='true'">
+						<xsl:attribute name="class">
+							<xsl:text>list-unstyled hassub-menu hassub-menu-child-1 active</xsl:text>
+						</xsl:attribute>
+					</xsl:if>
 					<xsl:apply-templates select="Zone" mode="Child"></xsl:apply-templates>
 				</ul>
 			</xsl:if>
@@ -38,7 +49,7 @@
 					<xsl:text>active</xsl:text>
 				</xsl:attribute>
 			</xsl:if>
-			<a>
+			<a class="sub-title">
 				<xsl:attribute name="href">
 					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>
@@ -47,6 +58,11 @@
 			<xsl:if test="count(Zone)>0">
 				<em class="mdi mdi-menu-down"></em>
 				<ul class="list-unstyled hassub-menu hassub-menu-child-2">
+				<xsl:if test="IsActive='true'">
+						<xsl:attribute name="class">
+							<xsl:text>list-unstyled hassub-menu hassub-menu-child-2 active</xsl:text>
+						</xsl:attribute>
+					</xsl:if>
 					<xsl:apply-templates select="Zone" mode="Child-Child"></xsl:apply-templates>
 				</ul>
 			</xsl:if>

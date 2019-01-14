@@ -117,6 +117,8 @@
 						li
 							display: flex
 							align-items: center
+							.mega
+								display: none
 							.dd-link
 								font-size: 0.8025rem
 								padding: 0.5rem 0
@@ -257,7 +259,7 @@
 						position: absolute
 						background-color: color-get($mau,trang)
 						box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2)
-						padding: r(12px) r(28px) r(45px) 
+						padding: r(12px) 0 r(45px) 
 						&:before
 							position: absolute
 							content: ''
@@ -280,10 +282,58 @@
 						.dd-menu
 							width: 100%
 							.dd-item
-								padding: 0.3rem 1.2rem
+								padding: 0.3rem 2.95rem
 								width: 100%
-								&:not(:last-child)
-									border-bottom: 1px solid #e1e1e1
+								.mega-menu-wrapper
+									padding: .3rem 0
+									width: 100%
+									&:not(:last-child)
+										border-bottom: 1px solid #e1e1e1
+								.mega
+									position: absolute
+									overflow-y: auto
+									top: 0
+									left: 100%
+									height: 100%
+									width: 670px
+									background: white
+									display: none
+									flex-wrap: wrap
+									border-left: 1px solid #e1e1e1
+									padding: 1rem 0
+									border-top: 2px solid rgb(133,234,92)
+									box-shadow: 5px 0 10px 0 rgba(0,0,0,.2)
+									&::-webkit-scrollbar
+										width: 5px
+										background: darken(white,15%)
+									&::-webkit-scrollbar-thumb
+										width: 5px
+										background: linear-gradient( to bottom, rgb(41,138,196) 0%, rgb(133,234,92) 100%)
+									.mega-sub
+										flex: 0 0 33.333%
+										width: fit-content
+										padding: 0 10px
+										margin-bottom: 1rem
+										h6
+											margin-bottom: .75rem
+											a
+												font-size: r(15px)
+												font-weight: 700
+												text-transform: uppercase
+												color: darken(rgb(133,234,92),30%)
+										ul
+											li
+												margin-bottom: .2rem
+												a
+													color: lighten(black,20%)
+													font-size: r(14px)
+												&:hover, &.active
+													a
+														color: darken(rgb(133,234,92),30%)
+
+								&:hover
+									.mega
+										display: flex
 	+media-breakpoint-up(xl)
 		.main-nav
 			.searchbox

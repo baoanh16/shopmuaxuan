@@ -1,26 +1,19 @@
 $(document).ready(function () {
 
-
-
-
-	// $('.wrap-secure.wrap-login').children().addClass('offset-sm-3')
-	// $('.wrap-secure.wrap-login .control-label').removeClass('col-sm-2')
-	// $('.wrap-secure.wrap-login .control-label').next().removeClass('col-sm-10')
-	// $('.wrap-secure.wrap-login .col-sm-offset-2.col-sm-10').removeClass('col-sm-10').addClass('col-sm-12')
-
-	// const loginFormButtonLoginHtml = $(".wrap-secure.wrap-login input[type='submit']").parent().html()
-	// $(".wrap-secure.wrap-login input[type='checkbox']").parent().append(loginFormButtonLoginHtml)
-	// $($(".wrap-secure.wrap-login input[type='submit']")[1]).parent().parent().html('')
-
-
 	// Active Side menu page Product
-	$('.hassub-menu-child-2 li.active').parent().addClass('active')
-	$('.hassub-menu-child-2 li.active').parent().siblings('em.mdi').addClass('active')
-	$('.hassub-menu-child-2.active').parents('.hassub-menu-child-1').addClass('active')
-	$('.hassub-menu-child-2.active').parents('.hassub-menu-child-1').siblings('em.mdi').addClass('active')
-	$('.hassub-menu-child-1 li.active').parent().addClass('active')
-	$('.hassub-menu-child-1 li.active').parent().siblings('em.mdi').addClass('active')
-	$('.hassub-menu-child-1 li.active').parent().siblings('.sub-title').addClass('active')
+
+	$('.categories-menu .hassub-menu li.active').parent().addClass('active')
+	$('.categories-menu .hassub-menu li.active').parent().siblings('.sub-title').addClass('active')
+
+	$('.categories-menu .hassub-menu-child-2 li.active').parents('.hassub').children('.sub-title, .hassub-menu').addClass('active')
+
+	$('.categories-menu .hassub-menu.active').siblings('.sub-title').addClass('active')
+	$('.hassub .sub-title.active').parent().addClass('active')
+
+
+
+
+
 	//
 	createNewsSocial1()
 	CheckOut2()
@@ -294,7 +287,14 @@ $(document).ready(function () {
 
 	CheckOut1()
 
-
+	// const moveFilter = new MappingListener({
+	// 	selector: '.smx-product-2 .sort-bar',
+	// 	mobileWrapper: '.smx-product-2 .sidemenu',
+	// 	mobileMethod: 'insertAfter',
+	// 	desktopWrapper: '.row.px-3',
+	// 	desktopMethod: 'appendTo',
+	// 	breakpoint: 992
+	// }).watch()
 
 }); // End document ready
 $(document).on('click', '.cart-toggle', function () {
@@ -352,6 +352,10 @@ const triggerFilter = function () {
 	if (window.matchMedia('(max-width: 768px)').matches) {
 		$('.sidemenu').hide()
 		$('.btn-trigger-filter').click(function (e) {
+			e.preventDefault();
+			$('.sort-bar').toggle()
+		})
+		$('.btn-trigger-list').click(function (e) {
 			e.preventDefault();
 			$('.sidemenu').toggle()
 		})

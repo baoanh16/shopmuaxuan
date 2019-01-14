@@ -4,9 +4,10 @@ section.smx-product-2
 			.row
 				.col-md-4.col-lg-3.mb-3.mb-lg-0
 					.sort_filter_mb
+						a(href="javacript:void(0)").btn.btn-primary.btn-trigger-list Danh Mục
+							span.mdi.mdi-format-list-bulleted
 						a(href="javacript:void(0)").btn.btn-primary.btn-trigger-filter Bộ lọc
 							span.mdi.mdi-filter
-						#sortbox
 					.sidemenu
 						.categories-wrapper.hassub
 							h2.title-line.sub-title Danh mục sản phẩm
@@ -47,12 +48,30 @@ section.smx-product-2
 				.col-md-8.col-lg-9
 					.row.px-3
 						.sort-bar
-							h3(map-to-pc="#title") Gel tắm
-							.selectbox(map-to-pc="#sortbox")
+							.selectbox
 								select
-									option(value="") Giá: Thấp - Cao
-									option(value="") Giá: Thấp - Cao
-									option(value="") Giá: Thấp - Cao
+									option(value="#") Thương hiệu
+									option(value="#") Thương hiệu 1
+									option(value="#") Thương hiệu 2
+									option(value="#") Thương hiệu 3
+							.selectbox
+								select
+									option(value="#") Độ tuổi
+									option(value="#") Độ tuổi 1
+									option(value="#") Độ tuổi 2
+									option(value="#") Độ tuổi 3
+							.selectbox
+								select
+									option(value="#") Giới tính
+									option(value="#") Độ tuổi 14
+									option(value="#") Độ tuổi 24
+									option(value="#") Độ tuổi 4
+							.selectbox
+								select
+									option(value="#") Giới tính
+									option(value="#") Độ tuổi 14
+									option(value="#") Độ tuổi 24
+									option(value="#") Độ tuổi 4
 					.row.products-list
 						#title
 						.col-sm-6.col-lg-4.product__item

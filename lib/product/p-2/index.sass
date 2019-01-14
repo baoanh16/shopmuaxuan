@@ -179,38 +179,64 @@
 	.sort-bar
 		width: 100%
 		display: flex
+		flex-wrap: wrap
 		position: relative
 		justify-content: space-between
 		align-items: center
-		background: #fff
-		border-radius: 5px
-		+box-sha(0 0 5px 1px rgba(0,0,0,.1))
+		background: darken(white,8%)
 		padding: 0.6rem 1rem
 		margin-bottom: r(40px)
+		min-height: 60px
 		@media (max-width: 768px)
 			display: none
 		h3
 			font-size: r(19.76px)
 			color: #666666
 		.selectbox
-			margin-right: 1.2rem
-			width: r(135px)
 			position: relative
 			overflow: hidden
-			&:after
-				content: '\F35D'
-				font-family: "Material Design Icons"
-				position: absolute
-				top: 50%
-				transform: translateY(-50%)
-				right: 0
-				color: #298ac4
-				font-size: 1rem
-				pointer-events: none
+			width: 100%
+			&:not(:last-child)
+				margin-bottom: 1rem
+			@media (min-width: 992px)
+				width: auto
+				&:not(:last-child)
+					margin-bottom: 0
+					margin-right: 1.2rem
+			// &:after
+			// 	content: '\F35D'
+			// 	font-family: "Material Design Icons"
+			// 	position: absolute
+			// 	top: 50%
+			// 	transform: translateY(-50%)
+			// 	right: 
+			// 	color: #2b8ac4
+			// 	font-size: 18px
+			// 	width: 12p
+			// 	height: 6px
+			// 	pointer-events: none
 			select
-				width: 100%
 				border: 0
 				font-size: r(14.82px)
-				color: #298ac4
-				-webkit-appearance: none
-				background-color: transparent
+				min-width: 1px
+				height: 35px
+				background: white
+				padding: 0 20px 0 10px
+				font-size: .86438rem
+				color: lighten(black,10%)
+				font-weight: 400
+				text-transform: uppercase
+				border-radius: 5px
+				transition: none
+				width: 100%
+				@media (min-width: 992px)
+					width: fit-content
+				&:hover
+					background: linear-gradient(to right,#298ac4 0,#85ea5c 100%)
+					color: white
+				*
+					padding: 10px 0
+					height: 35px
+					color: black
+			&:nth-child(3)
+				margin-right: auto

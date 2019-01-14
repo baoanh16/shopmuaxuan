@@ -4,36 +4,37 @@
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
-		<div class="ajaxresponse">
-			<div class="row px-3">
+		<!-- <div class="row">
+			<div class="col-12 filter-wrapper">
 				<div class="sort-bar">
-					<h3 map-to-pc="#title">
-						<xsl:value-of select="/ProductList/ZoneTitle"></xsl:value-of>
-					</h3>
-					<div class="selectbox sort-filter" map-to-pc="#sortbox">
-						<select class="ajaxsort">
-							<xsl:apply-templates select="/ProductList/SortBy"></xsl:apply-templates>
-						</select>
-					</div>
+					
 				</div>
 			</div>
+		</div> -->
+		<div class="row sort-bar px-3">
+			<div class="selectbox sort-filter">
+				<select class="ajaxsort">
+					<xsl:apply-templates select="/ProductList/SortBy"></xsl:apply-templates>
+				</select>
+			</div>
+		</div>
+		<div class="ajaxresponse">
 			<div class="row products-list ajaxresponsewrap">
 				<div id="title"></div>
 				<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
 				<xsl:if test="/ProductList/NextPageUrl!=''">
-				<div class="row justify-content-center w-100">
-					<div class="mx-btn">
-						<a href="#" class="ajaxpagerlink">
-							<xsl:attribute name="href">
-								<xsl:value-of select="/ProductList/NextPageUrl" />
-							</xsl:attribute>
-							<xsl:text>Xem thêm</xsl:text>
-						</a>
+					<div class="d-flex justify-content-center w-100">
+						<div class="mx-btn">
+							<a href="#" class="ajaxpagerlink">
+								<xsl:attribute name="href">
+									<xsl:value-of select="/ProductList/NextPageUrl" />
+								</xsl:attribute>
+								<xsl:text>Xem thêm</xsl:text>
+							</a>
+						</div>
 					</div>
-				</div>
-		</xsl:if>
+				</xsl:if>
 			</div>
-			
 		</div>
 	</xsl:template>
 
