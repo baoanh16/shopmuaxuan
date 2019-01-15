@@ -4,7 +4,7 @@
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
-		<div class="sort-bar ajaxfilterresponse">
+		<div class="filter-group ajaxfilterresponse">
 			<xsl:apply-templates select="/ProductFilter/Group"></xsl:apply-templates>
 			<!-- <h2 class="title-line sub-title">Thương hiệu</h2>
 			<ul class="hassub-menu">
@@ -34,6 +34,12 @@
 
 	<xsl:template match="Option" mode="Default">
 		<option>
+		<xsl:if test="position()=1">
+			
+			<xsl:attribute name="value">
+				<xsl:value-of select="ClearUrl"></xsl:value-of>
+			</xsl:attribute>
+		</xsl:if>
 			<xsl:attribute name="value">
 				<xsl:value-of select="Url"></xsl:value-of>
 			</xsl:attribute>

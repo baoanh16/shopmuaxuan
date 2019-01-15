@@ -11,11 +11,13 @@
 				</div>
 			</div>
 		</div> -->
-		<div class="row sort-bar px-3">
-			<div class="selectbox sort-filter">
-				<select class="ajaxsort">
-					<xsl:apply-templates select="/ProductList/SortBy"></xsl:apply-templates>
-				</select>
+		<div class="row no-gutters">
+			<div class="col-12 sort-bar">
+				<div class="selectbox sort-filter">
+					<select class="ajaxsort">
+						<xsl:apply-templates select="/ProductList/SortBy"></xsl:apply-templates>
+					</select>
+				</div>
 			</div>
 		</div>
 		<div class="ajaxresponse">

@@ -1,5 +1,23 @@
 $(document).ready(function () {
+	if (document.querySelectorAll('.smx-product-2').length > 0) {
 
+		let moveFilter = new MappingListener({
+			selector: '.smx-product-2 .filter-group',
+			desktopWrapper: '.smx-product-2 .sort-bar',
+			desktopMethod: 'prependTo',
+			mobileWrapper: '.smx-product-2 .sort-bar',
+			mobileMethod: 'prependTo',
+			breakpoint: 768,
+		}).watch()
+		let moveFilter2 = new MappingListener({
+			selector: '.smx-product-2 .sort-filter',
+			desktopWrapper: '.smx-product-2 .filter-group',
+			desktopMethod: 'appendTo',
+			mobileWrapper: '.smx-product-2 .filter-group',
+			mobileMethod: 'appendTo',
+			breakpoint: 768,
+		}).watch()
+	}
 	// Active Side menu page Product
 
 	$('.categories-menu .hassub-menu li.active').parent().addClass('active')
@@ -287,15 +305,6 @@ $(document).ready(function () {
 
 	CheckOut1()
 
-	// const moveFilter = new MappingListener({
-	// 	selector: '.smx-product-2 .sort-bar',
-	// 	mobileWrapper: '.smx-product-2 .sidemenu',
-	// 	mobileMethod: 'insertAfter',
-	// 	desktopWrapper: '.row.px-3',
-	// 	desktopMethod: 'appendTo',
-	// 	breakpoint: 992
-	// }).watch()
-
 }); // End document ready
 $(document).on('click', '.cart-toggle', function () {
 	event.preventDefault();
@@ -319,6 +328,7 @@ $(window).resize(function () {
 	doMapTo_pc()
 });
 // End window resize
+
 
 $(function () {
 	$('.product__item figcaption').matchHeight();

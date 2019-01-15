@@ -438,7 +438,6 @@ $(document).ready(function () {
 				}
 			}
 		});
-
 		//to change the browser URL to 'pageurl'
 		if (pageurl != window.location) {
 			window.history.pushState({ path: pageurl }, '', pageurl);
