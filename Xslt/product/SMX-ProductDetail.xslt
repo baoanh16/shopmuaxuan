@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
- exclude-result-prefixes="msxsl">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
@@ -11,10 +11,12 @@
 						<div class="col-lg-5">
 							<div class="product-img">
 								<div class="big-thumbnail">
-									<xsl:apply-templates select="/ProductDetail/ProductImages" mode="BigImages"></xsl:apply-templates>
+									<xsl:apply-templates select="/ProductDetail/ProductImages" mode="BigImages">
+									</xsl:apply-templates>
 								</div>
 								<div class="small-thumbnail">
-									<xsl:apply-templates select="/ProductDetail/ProductImages" mode="SmallImages"></xsl:apply-templates>
+									<xsl:apply-templates select="/ProductDetail/ProductImages" mode="SmallImages">
+									</xsl:apply-templates>
 								</div>
 							</div>
 						</div>
@@ -22,13 +24,15 @@
 							<div class="product-info">
 								<h2>
 									<xsl:value-of select="/ProductDetail/Title"></xsl:value-of>
-									<xsl:value-of select="/ProductDetail/EditLink" disable-output-escaping="yes"></xsl:value-of>
+									<xsl:value-of select="/ProductDetail/EditLink" disable-output-escaping="yes">
+									</xsl:value-of>
 								</h2>
 								<h3>
 									<xsl:value-of select="/ProductDetail/Price"></xsl:value-of>
 								</h3>
 								<table>
 									<tbody>
+
 										<tr>
 											<th>Mã sản phẩm</th>
 											<td>
@@ -62,8 +66,12 @@
 												</xsl:choose>
 											</td>
 										</tr>
-										<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes"></xsl:value-of>
-
+										<xsl:if test="count(/ProductDetail/ProductProperties)>0">
+											<xsl:apply-templates select="/ProductDetail/ProductProperties">
+											</xsl:apply-templates>
+										</xsl:if>
+										<xsl:value-of select="/ProductDetail/BriefContent"
+											disable-output-escaping="yes"></xsl:value-of>
 									</tbody>
 								</table>
 								<div class="input-and-button">
@@ -71,13 +79,15 @@
 										<input type="text" value="1">
 										<xsl:attribute name="name">
 											<xsl:text>addtocart_</xsl:text>
-											<xsl:value-of select="/ProductDetail/ProductId" disable-output-escaping="yes"></xsl:value-of>
+											<xsl:value-of select="/ProductDetail/ProductId"
+												disable-output-escaping="yes"></xsl:value-of>
 											<xsl:text>.EnteredQuantity</xsl:text>
 										</xsl:attribute>
 										</input>
 									</div>
 									<div class="mx-btn">
-										<a href="#!" data-action="addcart" data-url="" onclick="AjaxCart.addproducttocart_details(this); return false;">
+										<a href="#!" data-action="addcart" data-url=""
+											onclick="AjaxCart.addproducttocart_details(this); return false;">
 											<xsl:attribute name="data-productid">
 												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
 											</xsl:attribute>
@@ -87,16 +97,20 @@
 								</div>
 								<div class="social-networks nav">
 									<div class="nav-item">
-										<div class="fb-share-button" data-href="" data-layout="button" data-size="small" data-mobile-iframe="true"><a
-											 class="fb-xfbml-parse-ignore" target="_blank" href="">Chia sẻ</a></div>
+										<div class="fb-share-button" data-href="" data-layout="button" data-size="small"
+											data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank"
+												href="">Chia sẻ</a></div>
 									</div>
-									<div class="nav-item"><a class="twitter-share-button" href="https://twitter.com/share" data-size="medium"
-										 data-text="custom share text" data-url="" data-via="twitterdev" data-related="twitterapi,twitter"></a></div>
+									<div class="nav-item"><a class="twitter-share-button"
+											href="https://twitter.com/share" data-size="medium"
+											data-text="custom share text" data-url="" data-via="twitterdev"
+											data-related="twitterapi,twitter"></a></div>
 									<div class="nav-item">
 										<div class="g-plus" data-action="share"></div>
 									</div>
 									<div class="nav-item">
-										<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+										<script src="//platform.linkedin.com/in.js"
+											type="text/javascript">lang: en_US</script>
 										<script type="IN/Share"></script>
 									</div>
 								</div>
@@ -112,17 +126,20 @@
 									Mô tả sản phẩm
 								</h2>
 							</a>
-							<xsl:apply-templates select="/ProductDetail/ProductAttributes" mode="Nav"></xsl:apply-templates>
+							<xsl:apply-templates select="/ProductDetail/ProductAttributes" mode="Nav">
+							</xsl:apply-templates>
 						</div>
 					</nav>
 
 					<div class="row product-desc tab-content" id="productTabContent">
 						<div class="col-12 px-0 tab-pane fade show active" id="tab-1" role="tabpanel">
 							<div class="product-props">
-								<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes"></xsl:value-of>
+								<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes">
+								</xsl:value-of>
 							</div>
 						</div>
-						<xsl:apply-templates select="/ProductDetail/ProductAttributes" mode="Panel"></xsl:apply-templates>
+						<xsl:apply-templates select="/ProductDetail/ProductAttributes" mode="Panel">
+						</xsl:apply-templates>
 					</div>
 					<!-- <nav>
 						<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -163,7 +180,8 @@
 						<div class="col-sm-4 item">
 							<figure class="figure">
 								<div class="img-block">
-									<img src="/Data/Sites/1/Banner/icon_4.png" alt="TẤT CẢ SẢN PHẨM 100% CHÍNH HÃNG"></img>
+									<img src="/Data/Sites/1/Banner/icon_4.png"
+										alt="TẤT CẢ SẢN PHẨM 100% CHÍNH HÃNG"></img>
 								</div>
 								<figcaption class="figcaption">
 									<h2>TẤT CẢ SẢN PHẨM 100% CHÍNH HÃNG</h2>
@@ -173,7 +191,8 @@
 						<div class="col-sm-4 item">
 							<figure class="figure">
 								<div class="img-block">
-									<img src="/Data/Sites/1/Banner/icon_5.png" alt="GIAO HÀNG NHANH CHÓNG TRONG NGÀY"></img>
+									<img src="/Data/Sites/1/Banner/icon_5.png"
+										alt="GIAO HÀNG NHANH CHÓNG TRONG NGÀY"></img>
 								</div>
 								<figcaption class="figcaption">
 									<h2>GIAO HÀNG NHANH CHÓNG TRONG NGÀY</h2>
@@ -194,6 +213,35 @@
 				</div>
 			</article>
 		</section>
+	</xsl:template>
+
+
+	<xsl:template match="ProductProperties">
+		<tr>
+			<th>
+				<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
+			</th>
+			<td>
+				<xsl:apply-templates select="Options"></xsl:apply-templates>
+			</td>
+		</tr>
+	</xsl:template>
+
+
+	<xsl:template match="Options">
+		<xsl:if test="position() > 1">
+			<xsl:text>, </xsl:text>
+		</xsl:if>
+		<xsl:value-of select="Title"></xsl:value-of>
+	</xsl:template>
+
+	<xsl:template match="Options" mode="abc">
+		<a>
+			<xsl:attribute name="href">
+				<xsl:value-of select="Url"></xsl:value-of>
+			</xsl:attribute>
+			<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
+		</a>
 	</xsl:template>
 
 
@@ -336,7 +384,8 @@
 					</xsl:attribute>
 					</img>
 					<div class="boxdetail">
-						<a class="buy" onclick="AjaxCart.addproducttocart_catalog(this);return false;" style="cursor: pointer">
+						<a class="buy" onclick="AjaxCart.addproducttocart_catalog(this);return false;"
+							style="cursor: pointer">
 							<xsl:attribute name="data-productid">
 								<xsl:value-of select="ProductId"></xsl:value-of>
 							</xsl:attribute>

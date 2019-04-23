@@ -223,7 +223,7 @@ $(document).ready(function () {
 				if (response.success) {
 					console.log($(response.data));
 					obj.parent().parent().parent().find('.ajaxproductresponse').html($(response.data).find('.ajaxproductresponse').html());
-					//CarouselInit.InitProductsHomePage();                    
+					//CarouselInit.InitProductsHomePage();
 				}
 			},
 			complete: function complete() { }
@@ -257,7 +257,7 @@ $(document).ready(function () {
 						$("body").on("click", '.ajaxzoneproductlink', function (e) {
 							e.preventDefault();
 
-							//var target = $(e.target).attr("href") // activated tab          
+							//var target = $(e.target).attr("href") // activated tab
 							var obj = $(this);
 
 							obj.parent().parent().find('.ajaxzoneproductlink').removeClass('active');
@@ -295,7 +295,7 @@ $(document).ready(function () {
 
 	$("body").on("click", '.tv-onair .ajaxzoneproductlink', function (e) {
 
-		//var target = $(e.target).attr("href") // activated tab          
+		//var target = $(e.target).attr("href") // activated tab
 		var obj = $(this);
 
 		obj.parent().parent().find('.ajaxzoneproductlink').removeClass('active');
@@ -425,7 +425,8 @@ $(document).ready(function () {
 			data: { isajax: true },
 			success: function success(data) {
 				$('.productpage  .ajaxresponse').html($(data).find('.ajaxresponse').html());
-				$('.productpage  .ajaxfilterresponse').html($(data).find('.ajaxfilterresponse').html());
+				$('.productpage .ajaxfilterresponse').html($(data).filter('.ajaxfilterresponse').html());
+				console.log($(data).find('.ajaxfilterresponse').html())
 				$('.productpage .ajaxbrandresponse').html($(data).find('.ajaxbrandresponse').html());
 				$('.productpage .productpager').remove();
 				$(data).find('.productpager').insertAfter($('.productpage .ajaxresponse'));
@@ -459,9 +460,9 @@ $(document).ready(function () {
 
 	$("body").on("click", "a.ajaxpagerlink", function (e) {
 		e.preventDefault();
-        /*  
+        /*
         if uncomment the above line, html5 nonsupported browers won't change the url but will display the ajax content;
-        if commented, html5 nonsupported browers will reload the page to the specified link. 
+        if commented, html5 nonsupported browers will reload the page to the specified link.
         */
 
 		//get the link location that was clicked
@@ -788,7 +789,7 @@ var AjaxCart = {
 			success: function success(response) {
 				if (response.success == true) {
 					$('.product-option-input').val('');
-					//$(button).parent().find('.product-option').removeClass('active').removeClass('disable');                   
+					//$(button).parent().find('.product-option').removeClass('active').removeClass('disable');
 					$('.product-option-input').val($(button).attr('data-id'));
 					$(button).addClass('active');
 					var objcolor = $(".color-slide .slick-current.slick-active .color");
@@ -976,7 +977,7 @@ var AjaxCart = {
 	//            return;
 	//        }
 	//        this.setLoadWaiting(true);
-	//       
+	//
 	//        var urladd = siteRoot + "/Product/Services/CartService.aspx";
 	//        var data = $('#aspnetForm').serializeArray();
 	//        data.push({ name: 'method', value: 'UpdateCartAttributes' });
@@ -989,7 +990,7 @@ var AjaxCart = {
 	//            complete: this.resetLoadWaiting,
 	//            error: this.ajaxFailure
 	//        });
-	//    },  
+	//    },
 
 	//remove from cart
 	removefromcart: function removefromcart(button) {
@@ -1264,7 +1265,7 @@ function displayBarNotification(n, t, i) {
 	}, i));
 }
 
-// fly to basket  
+// fly to basket
 function flyToCart(flyer, flyingTo, callBack) {
 	try {
 		var $jqfunc = $(this);

@@ -7,17 +7,17 @@
 		<!-- <div class="row">
 			<div class="col-12 filter-wrapper">
 				<div class="sort-bar">
-					
+
 				</div>
 			</div>
 		</div> -->
 		<div class="row no-gutters">
 			<div class="col-12 sort-bar">
-				<div class="selectbox sort-filter">
+				<!-- <div class="selectbox sort-filter">
 					<select class="ajaxsort">
 						<xsl:apply-templates select="/ProductList/SortBy"></xsl:apply-templates>
 					</select>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="ajaxresponse">

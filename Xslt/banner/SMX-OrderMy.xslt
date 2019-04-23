@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
- exclude-result-prefixes="msxsl">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
@@ -13,11 +13,9 @@
 								<xsl:value-of select="/BannerList/ModuleTitle"></xsl:value-of>
 							</h2>
 						</div>
-						<div class="col-12">
-							<div class="brand-slider owl-carousel owl-theme">
-								<xsl:apply-templates select="/BannerList/Banner"></xsl:apply-templates>
-							</div>
-						</div>
+					</div>
+					<div class="row">
+						<xsl:apply-templates select="/BannerList/Banner"></xsl:apply-templates>
 					</div>
 				</div>
 			</article>
@@ -25,23 +23,24 @@
 	</xsl:template>
 
 	<xsl:template match="Banner">
-		<a>
-			<xsl:attribute name="href">
-				<xsl:value-of select="Url"></xsl:value-of>
-			</xsl:attribute>
-			<div class="item" data-toggle="tooltip" data-placement="bottom">
-				<xsl:attribute name="title">
-					<xsl:value-of select="Title"></xsl:value-of>
+		<div class="item-banner">
+			<a>
+				<xsl:attribute name="href">
+					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>
-				<img>
-				<xsl:attribute name="src">
-					<xsl:value-of select="ImageUrl"></xsl:value-of>
-				</xsl:attribute>
-				<xsl:attribute name="alt">
-					<xsl:value-of select="Title"></xsl:value-of>
-				</xsl:attribute>
-				</img>
-			</div>
-		</a>
+				<div class="item" data-toggle="tooltip" data-placement="bottom">
+					<xsl:attribute name="title">
+						<xsl:value-of select="Title"></xsl:value-of>
+					</xsl:attribute>
+					<img>
+					<xsl:attribute name="src">
+						<xsl:value-of select="ImageUrl"></xsl:value-of>
+					</xsl:attribute>
+					<xsl:attribute name="alt">
+						<xsl:value-of select="Title"></xsl:value-of>
+					</xsl:attribute>
+					</img>
+				</div>
+			</a></div>
 	</xsl:template>
 </xsl:stylesheet>

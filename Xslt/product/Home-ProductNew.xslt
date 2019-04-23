@@ -15,7 +15,7 @@
 						</div>
 						<div class="col-lg-6">
 							<figure>
-								<div class="boxzoom"><img src="/Data/Sites/1/skins/default/img/home/home_4.jpg" alt="alt"></img></div>
+								<div class="boxzoom"><img src="/Data/Sites/1/media/done.png" alt="alt"></img></div>
 							</figure>
 						</div>
 						<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
@@ -26,7 +26,7 @@
 	</xsl:template>
 
 	<xsl:template match="Product">
-		<div class="col-md-6 col-lg-3 product__item">
+		<div class="col-6 col-lg-3 product__item">
 			<figure>
 				<div class="boxzoom">
 					<img>

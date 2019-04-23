@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	if (document.querySelectorAll('.smx-product-2').length > 0) {
+	if ($('.smx-product-2 .filter-group').length > 0) {
 
 		let moveFilter = new MappingListener({
 			selector: '.smx-product-2 .filter-group',
@@ -9,6 +9,8 @@ $(document).ready(function () {
 			mobileMethod: 'prependTo',
 			breakpoint: 768,
 		}).watch()
+	}
+	if ($('.smx-product-2 .sort-filter').length > 0) {
 		let moveFilter2 = new MappingListener({
 			selector: '.smx-product-2 .sort-filter',
 			desktopWrapper: '.smx-product-2 .filter-group',
@@ -137,7 +139,7 @@ $(document).ready(function () {
 	})
 	// Owl Carousel Home 5
 	$('.canhcam-home-5 .homes-list .products-list').owlCarousel({
-		items: 1,
+		items: 2,
 		nav: true,
 		dots: false,
 		autoplay: true,
@@ -155,7 +157,7 @@ $(document).ready(function () {
 		}
 	})
 	$('.canhcam-home-6 .homes-list .list-promos').owlCarousel({
-		items: 1,
+		items: 2,
 		nav: true,
 		dots: false,
 		autoplay: true,
@@ -305,7 +307,13 @@ $(document).ready(function () {
 
 	CheckOut1()
 
+	$('.mobile-arrow').on('click', function () {
+		$(this).find('.mega').slideToggle()
+	})
 }); // End document ready
+
+
+
 $(document).on('click', '.cart-toggle', function () {
 	event.preventDefault();
 	$('.cart-panel').addClass('open')

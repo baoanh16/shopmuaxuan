@@ -19,6 +19,11 @@
 
 	<xsl:template match="Zone">
 		<li class="dd-item">
+		<xsl:if test="count(Zone)>0">
+			<xsl:attribute name="class">
+				<xsl:text disable-output-escaping="yes">dd-item mobile-arrow</xsl:text>
+			</xsl:attribute>
+		</xsl:if>
 			<div class="mega-menu-wrapper">
 
 				<img class="dd-icon">
