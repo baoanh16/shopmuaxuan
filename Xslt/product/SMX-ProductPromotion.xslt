@@ -4,15 +4,15 @@
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
-		<section class="canhcam-home-6" bg-img="/Data/Sites/1/skins/default/img/home/home_promo_bg.png">
+		<section class="canhcam-home-6">
 			<article class="homes-list">
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="mx__title mx__title--white">
+							<h2 class="mx__title mx__title--gradient">
 								<xsl:value-of select="/ProductList/ModuleTitle"></xsl:value-of>
 							</h2>
-							<div class="list-promos owl-carousel owl-theme">
+							<div class="row list-promos-1">
 								<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
 							</div>
 						</div>
@@ -23,6 +23,7 @@
 	</xsl:template>
 
 	<xsl:template match="Product">
+		<div class="col-lg-3 col-sm-4 col-6">
 		<a class="item">
 			<xsl:attribute name="href">
 				<xsl:value-of select="Url"></xsl:value-of>
@@ -37,7 +38,7 @@
 					</xsl:if>
 			<figure>
 				<div class="boxzoom">
-					<img>
+					<img class="img-fluid">
 					<xsl:attribute name="src">
 						<xsl:value-of select="ImageUrl"></xsl:value-of>
 					</xsl:attribute>
@@ -67,5 +68,6 @@
 				</figcaption>
 			</figure>
 		</a>
+		</div>
 	</xsl:template>
 </xsl:stylesheet>

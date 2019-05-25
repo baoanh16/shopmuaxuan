@@ -43,10 +43,12 @@
 					</div>
 				</div>
 			</div>
+			<xsl:if test="floor(ShowOption div 8) mod 2 != 1">
 			<a class="btn btn-outline-primary" href="#!" onclick="AjaxCart.addproducttocart_catalog(this);return false;" style="cursor: pointer">
 				<xsl:attribute name="data-productid">
 					<xsl:value-of select="ProductId"></xsl:value-of>
 				</xsl:attribute>Thêm vào giỏ hàng</a>
+				</xsl:if>
 		</div>
 	</xsl:template>
 </xsl:stylesheet>

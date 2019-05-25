@@ -33,7 +33,6 @@ $(document).ready(function () {
 
 
 
-
 	//
 	createNewsSocial1()
 	CheckOut2()
@@ -175,7 +174,7 @@ $(document).ready(function () {
 	})
 
 	$('.smx-product-detail-2 .products-list').owlCarousel({
-		items: 1,
+		items: 2,
 		nav: true,
 		dots: false,
 		autoplay: true,
@@ -277,19 +276,17 @@ $(document).ready(function () {
 		infinite: false,
 		prevArrow: '<i class="fas fa-chevron-left"></i>',
 		nextArrow: '<i class="fas fa-chevron-right"></i>',
-		responsive: [
-			{
-				breakpoint: 576,
-				settings: {
-					slidesToShow: 2,
+		responsive: [{
+			breakpoint: 576,
+			settings: {
+				slidesToShow: 2,
 
-				},
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 3,
-				}
+			},
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 3,
 			}
-		]
+		}]
 	});
 
 	// Remove active class from all thumbnail slides

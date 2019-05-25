@@ -11,7 +11,7 @@
 					&.owl-prev , &.owl-next
 						+fz(r(30px))
 						color: #999999
-						+pos(abs , 50% null null null)
+						+pos(abs , 25% null null null)
 						+transform(translateY(-50%))
 						&:focus
 							outline: none
@@ -31,3 +31,7 @@
 					button
 						&.owl-prev , &.owl-next
 							top: 35%
+							+pos(abs , 50% null null null)
+	@media (max-width: 768px)
+		h2
+			font-size: 1.3rem

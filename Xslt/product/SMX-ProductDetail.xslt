@@ -43,8 +43,8 @@
 											<th>Tình trạng</th>
 											<td>
 												<xsl:choose>
-													<xsl:when test="floor(/ProductDetail/ShowOption div 2) mod 2 = 1">
-														<xsl:text>Hết hàng</xsl:text>
+													<xsl:when test="floor(/ProductDetail/ShowOption div 8) mod 2 = 1">
+														<xsl:text>Tạm hết</xsl:text>
 													</xsl:when>
 													<xsl:otherwise>
 														<xsl:text>Còn hàng</xsl:text>
@@ -85,6 +85,7 @@
 										</xsl:attribute>
 										</input>
 									</div>
+									<xsl:if test="floor(/ProductDetail/ShowOption div 8) mod 2 != 1">
 									<div class="mx-btn">
 										<a href="#!" data-action="addcart" data-url=""
 											onclick="AjaxCart.addproducttocart_details(this); return false;">
@@ -94,6 +95,7 @@
 											Mua sản phẩm
 										</a>
 									</div>
+									</xsl:if>
 								</div>
 								<div class="social-networks nav">
 									<div class="nav-item">

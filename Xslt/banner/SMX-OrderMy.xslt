@@ -14,7 +14,7 @@
 							</h2>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row justify-content-between">
 						<xsl:apply-templates select="/BannerList/Banner"></xsl:apply-templates>
 					</div>
 				</div>
