@@ -90,7 +90,7 @@
 						<div class="form-group row">
 							<label class="col-form-label col-sm-4" for="Address">Địa chỉ</label>
 							<div class="col-sm-8">
-								<input class="form-control" name="Address_Address" placeholder="Ví dụ: 156 Nguyễn Văn Thủ, P. Da Kao, Quận" data-error="Vui lòng nhập thông tin" required="" value="">
+								<input class="form-control" name="Address_Address" placeholder="Ví dụ: 182 Tân Phước, Phường 6, Quận 10" data-error="Vui lòng nhập thông tin" required="" value="">
 								</input>
 								<div class="help-block with-errors"></div>
 							</div>
@@ -251,7 +251,7 @@
 								<xsl:value-of select="/CheckoutAddress/plCoupon"></xsl:value-of>
 							</xsl:attribute>
 							</input>
-							<button class="btn btn-primary mt-3" onclick="AjaxCart.applycoupon();return false;">
+							<button class="btn btn-primary" onclick="AjaxCart.applycoupon();return false;">
 								<xsl:value-of select="/CheckoutAddress/ApplyText"></xsl:value-of>
 							</button>
 							<div class="coupon-apply-error"></div>

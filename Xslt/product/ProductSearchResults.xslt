@@ -25,7 +25,7 @@
 
 	
 	<xsl:template match="Product">
-		<div class="col-sm-6 col-lg-3 product__item">
+		<div class="col-6 col-lg-3 product__item">
 			<figure>
 				<div class="boxzoom">
 					<img>

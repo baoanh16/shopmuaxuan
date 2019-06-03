@@ -13,11 +13,11 @@
 								<xsl:value-of select="/ProductList/ModuleTitle"></xsl:value-of>
 							</h2>
 						</div>
-						<div class="col-lg-6">
+						<!-- <div class="col-lg-6">
 							<figure>
 								<div class="boxzoom"><img src="/Data/Sites/1/media/done.png" alt="alt"></img></div>
 							</figure>
-						</div>
+						</div> -->
 						<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
 					</div>
 				</div>
