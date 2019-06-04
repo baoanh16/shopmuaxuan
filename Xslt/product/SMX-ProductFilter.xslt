@@ -21,9 +21,6 @@
 		<div class="selectbox">
 			<select class="ajaxsort">
 				<option value="">
-					<xsl:value-of select='Title'></xsl:value-of>
-				</option>
-				<option value="">
 					<!-- <xsl:attribute name="value">
 						<xsl:value-of select="/"></xsl:value-of>
 					</xsl:attribute> -->

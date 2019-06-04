@@ -1,16 +1,9 @@
 $xam-1: #c8c8c4
 $den-1: #333333
 .canhcam-banner-1
-	// position: relative
-	// &:before
-	// 	content: ''
-	// 	display: block
-	// 	width: 100%
-	// 	height: r(10px)
-	// 	+pos(abs , null null 0 0 )
-	// 	background: url('./../img/home/home_slider_after_bg.png')
 	.swiper-container
-		height: r(300px)
+		// height: r(300px)
+		height: 160px
 		.swiper-slide
 			overflow: hidden
 			.slide-inner
@@ -28,6 +21,8 @@ $den-1: #333333
 					color: $den-1
 				.see__more
 					display: inline-block
+					@media (max-width: 767.98px)
+						display: none
 					p
 						+fz(r(14px))
 						+fw(400)
@@ -67,9 +62,11 @@ $den-1: #333333
 				+background-gradient($startColor: rgb(8,174,234) , $endColor:  rgb(42,245,152))
 			&:focus
 				outline: none
+		@media (max-width: 767.98px)
+			bottom: .5rem
 	+media-breakpoint-up(sm)
 		.swiper-container
-			height: r(480px)
+			height: 280px
 	+media-breakpoint-up(lg)
 		.swiper-container
 			height: r(577px)

@@ -307,6 +307,10 @@ $(document).ready(function () {
 	$('.mobile-arrow').on('click', function () {
 		$(this).find('.mega').slideToggle()
 	})
+	$('.mega-sub').on('click', function (e) {
+		e.stopPropagation();
+		$(this).children('ul').slideToggle()
+	})
 }); // End document ready
 
 

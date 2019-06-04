@@ -168,8 +168,26 @@
 										a
 											text-transform: uppercase
 											color: inherit
+									.mega-sub
+										position: relative
+										padding-right: 40px
+										&:after
+											content: '\e874'
+											font-family: 'Linearicons-Free'
+											position: absolute
+											width: 32px
+											height: 32px
+											top: 0
+											right: 0
+											display: flex
+											justify-content: center
+											align-items: center
+											margin-right: 5px
+											font-size: 15px
 									ul
 										padding-left: 15px
+										@media (max-width: 991.98px)
+											display: none
 										li
 											color: #333
 										a

@@ -251,7 +251,7 @@
 								<xsl:value-of select="/CheckoutAddress/plCoupon"></xsl:value-of>
 							</xsl:attribute>
 							</input>
-							<button class="btn btn-primary" onclick="AjaxCart.applycoupon();return false;">
+							<button class="btn btn-primary mt-3" onclick="AjaxCart.applycoupon();return false;">
 								<xsl:value-of select="/CheckoutAddress/ApplyText"></xsl:value-of>
 							</button>
 							<div class="coupon-apply-error"></div>
