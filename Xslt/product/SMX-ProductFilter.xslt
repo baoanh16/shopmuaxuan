@@ -10,9 +10,12 @@
 			<ul class="hassub-menu">
 			</ul> -->
 			<div class="selectbox">
-				<select class="ajaxsort">
+				<select class="ajaxsort" id="sort-filter">
 					<xsl:apply-templates select="/ProductFilter/SortBy"></xsl:apply-templates>
 				</select>
+				<label for="sort-filter">
+					<xsl:text disable-output-escaping="yes">Sắp xếp</xsl:text>
+				</label>
 			</div>
 		</div>
 	</xsl:template>
@@ -20,10 +23,11 @@
 	<xsl:template match="Group">
 		<div class="selectbox">
 			<select class="ajaxsort">
+				<xsl:attribute name="id">
+					<xsl:text disable-output-escaping="yes">se_</xsl:text>
+					<xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
+				</xsl:attribute>
 				<option value="">
-					<xsl:attribute name="value">
-						<xsl:value-of select="/"></xsl:value-of>
-					</xsl:attribute>
 					<xsl:attribute name="value">
 						<xsl:value-of select="ClearUrl"></xsl:value-of>
 					</xsl:attribute>
@@ -31,13 +35,14 @@
 				</option>
 				<xsl:apply-templates select="Option" mode="Default"></xsl:apply-templates>
 			</select>
+			<label>
+				<xsl:attribute name="for">
+					<xsl:text disable-output-escaping="yes">se_</xsl:text>
+					<xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
+				</xsl:attribute>
+				<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+			</label>
 		</div>
-		<!-- <h2 class="title-line sub-title">
-			<xsl:value-of select="Title"></xsl:value-of>
-		</h2>
-		<ul class="hassub-menu">
-			<xsl:apply-templates select="Option" mode="Default"></xsl:apply-templates>
-		</ul> -->
 	</xsl:template>
 
 	<xsl:template match="SortBy">

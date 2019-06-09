@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes" />
-
 	<xsl:template match="/">
-		<!-- <div class="row">
-			<div class="col-12 filter-wrapper">
-				<div class="sort-bar">
-
-				</div>
-			</div>
-		</div> -->
+		<!-- <div class="row"><div class="col-12 filter-wrapper"><div class="sort-bar"></div></div></div> -->
 		<div class="row no-gutters">
 			<div class="col-12 sort-bar">
-				<!-- <div class="selectbox sort-filter">
-					<select class="ajaxsort">
-						<xsl:apply-templates select="/ProductList/SortBy"></xsl:apply-templates>
-					</select>
-				</div> -->
+				<!-- <div class="selectbox sort-filter"><select class="ajaxsort"><xsl:apply-templates select="/ProductList/SortBy"></xsl:apply-templates></select></div> -->
 			</div>
 		</div>
 		<div class="ajaxresponse">
@@ -39,7 +29,6 @@
 			</div>
 		</div>
 	</xsl:template>
-
 	<xsl:template match="SortBy">
 		<option>
 			<xsl:if test="IsActive='true'">
@@ -53,18 +42,17 @@
 			<xsl:value-of select="Title"></xsl:value-of>
 		</option>
 	</xsl:template>
-
 	<xsl:template match="Product">
 		<div class="col-sm-6 col-lg-4 product__item">
 			<figure>
 				<div class="boxzoom">
 					<img>
-					<xsl:attribute name="src">
-						<xsl:value-of select="ImageUrl" disable-output-escaping="yes"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:attribute name="alt">
-						<xsl:value-of select="Title"></xsl:value-of>
-					</xsl:attribute>
+						<xsl:attribute name="src">
+							<xsl:value-of select="ImageUrl" disable-output-escaping="yes"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="alt">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
 					</img>
 					<div class="boxdetail">
 						<xsl:if test="floor(ShowOption div 8) mod 2 != 1">
@@ -75,6 +63,8 @@
 								</xsl:attribute>
 								<em class="mdi mdi-basket"></em>
 								Cho vào giỏ hàng
+							
+							
 							</a>
 						</xsl:if>
 						<a class="detail">
@@ -86,19 +76,28 @@
 							</xsl:attribute>
 							<em class="mdi mdi-eye"></em>
 							Xem sản phẩm
+						
+						
 						</a>
 					</div>
 				</div>
 				<figcaption>
 					<div class="color__list">
 						<ul>
-							<li><span style="background-color: #298ac4"></span></li>
-							<li><span style="background-color: #f6de7e"></span></li>
-							<li><span style="background-color: #000000"></span></li>
-							<li><span style="background-color: #dcdcd9"></span></li>
+							<li>
+								<span style="background-color: #298ac4"></span>
+							</li>
+							<li>
+								<span style="background-color: #f6de7e"></span>
+							</li>
+							<li>
+								<span style="background-color: #000000"></span>
+							</li>
+							<li>
+								<span style="background-color: #dcdcd9"></span>
+							</li>
 						</ul>
 					</div>
-
 					<div class="name">
 						<a>
 							<xsl:attribute name="href">
@@ -118,6 +117,11 @@
 					<span class="price">
 						<xsl:value-of select="Price"></xsl:value-of>
 					</span>
+					<xsl:if test="OldPrice != ''">
+						<del>
+							<xsl:value-of select="OldPrice"></xsl:value-of>
+						</del>
+					</xsl:if>
 				</figcaption>
 			</figure>
 		</div>

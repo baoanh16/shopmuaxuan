@@ -185,7 +185,12 @@ a
 					+fz(r(14px))
 					+fw(400)
 					color: #333333
-					display: block
+					display: -webkit-box
+					-webkit-line-clamp: 3
+					-webkit-box-orient: vertical
+					overflow: hidden
+					text-overflow: ellipsis
+					height: 63px
 			span
 				color: #298ac4
 				+fw(700)

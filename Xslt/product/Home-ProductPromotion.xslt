@@ -54,12 +54,11 @@
 						<span class="new">
 							<xsl:value-of select="Price"></xsl:value-of>
 						</span>
-						<!-- <xsl:if test="Price != ''"></xsl:if> -->
-						<span class="old">
-							<xsl:value-of select="OldPrice"></xsl:value-of>
-						</span>
-						<!-- <xsl:if test="OldPrice != ''"></xsl:if> -->
-						<!-- <span class="new">5.000.000 đ</span><span class="old">7.000.000 đ</span> -->
+						<xsl:if test="OldPrice != ''">
+							<span class="old" style="color: white">
+								<xsl:value-of select="OldPrice"></xsl:value-of>
+							</span>
+						</xsl:if>
 					</div>
 				</figcaption>
 			</figure>

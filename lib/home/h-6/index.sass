@@ -19,11 +19,16 @@
 						+pad(1rem)
 						padding-bottom: 0
 						h3
-							+fz(r(14.82px))
+							+fz(r(14px))
 							color: #ffffff
 							margin-bottom: auto
+							display: -webkit-box
+							-webkit-line-clamp: 3
+							-webkit-box-orient: vertical
+							overflow: hidden
+							text-overflow: ellipsis
+							height: 63px
 						.price
-							margin-top: r(22px)
 							span
 								display: block
 								&.new

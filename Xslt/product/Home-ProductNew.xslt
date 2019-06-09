@@ -88,6 +88,11 @@
 					<span class="price">
 						<xsl:value-of select="Price"></xsl:value-of>
 					</span>
+					<xsl:if test="OldPrice != ''">
+						<del>
+							<xsl:value-of select="OldPrice"></xsl:value-of>
+						</del>
+					</xsl:if>
 				</figcaption>
 			</figure>
 		</div>
