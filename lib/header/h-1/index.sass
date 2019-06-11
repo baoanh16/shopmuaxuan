@@ -5,9 +5,9 @@
 	z-index: 9999
 	top: 0
 	left: 0
-	box-shadow: 0 2px 1px 0 rgba(0,0,0,.1)
+	box-shadow: 0 0 7px rgba(0,0,0,.4)
 	.top-nav
-		box-shadow: 0 2px 1px 0 rgba(0,0,0,.2)
+		// box-shadow: 0 2px 1px 0 rgba(0,0,0,.2)
 		padding: 1rem
 		display: flex
 		justify-content: space-between
@@ -171,19 +171,20 @@
 									.mega-sub
 										position: relative
 										padding-right: 40px
-										&:after
-											content: '\e874'
-											font-family: 'Linearicons-Free'
-											position: absolute
-											width: 32px
-											height: 32px
-											top: 0
-											right: 0
-											display: flex
-											justify-content: center
-											align-items: center
-											margin-right: 5px
-											font-size: 15px
+										&.mega-has-sub
+											&:after
+												content: '\e874'
+												font-family: 'Linearicons-Free'
+												position: absolute
+												width: 32px
+												height: 32px
+												top: 0
+												right: 0
+												display: flex
+												justify-content: center
+												align-items: center
+												margin-right: 5px
+												font-size: 15px
 									ul
 										padding-left: 15px
 										@media (max-width: 991.98px)

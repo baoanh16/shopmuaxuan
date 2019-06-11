@@ -47,6 +47,11 @@
 	</xsl:template>
 	<xsl:template match="Zone" mode="Mega1">
 		<div class="mega-sub">
+			<xsl:if test="count(Zone)>0">
+				<xsl:attribute name="class">
+					<xsl:text disable-output-escaping="yes">mega-sub mega-has-sub</xsl:text>
+				</xsl:attribute>
+			</xsl:if>
 			<h6>
 				<a>
 					<xsl:attribute name="href">

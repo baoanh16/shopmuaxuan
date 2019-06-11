@@ -55,6 +55,7 @@ $(document).ready(function () {
 	});
 	$('.Module-235 .nav-link').click(function (e) {
 		e.preventDefault();
+		$(this).toggleClass('rotate-180')
 		$('.Module-235 .dropdown-list').toggleClass('active')
 	});
 	//Toggle Main Menu on Header
@@ -305,11 +306,17 @@ $(document).ready(function () {
 	CheckOut1()
 
 	$('.mobile-arrow').on('click', function () {
+		$(this).toggleClass('rotate-180')
 		$(this).find('.mega').slideToggle()
+		$(this).siblings('.mobile-arrow').find('.mega').slideUp()
+		$(this).siblings('.mobile-arrow').removeClass('rotate-180')
 	})
 	$('.mega-sub').on('click', function (e) {
 		e.stopPropagation();
+		$(this).toggleClass('rotate-180')
 		$(this).children('ul').slideToggle()
+		$('.mega-sub').not(this).removeClass('rotate-180')
+		$('.mega-sub').not(this).children('ul').slideUp()
 	})
 }); // End document ready
 
