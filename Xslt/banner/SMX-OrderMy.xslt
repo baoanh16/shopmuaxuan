@@ -24,8 +24,9 @@
 
 	<xsl:template match="Banner">
 		<div class="item-banner">
-			<a>
+			<a target="_blank">
 				<xsl:attribute name="href">
+					<xsl:text disable-output-escaping="yes">http://</xsl:text>
 					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>
 				<div class="item" data-toggle="tooltip" data-placement="bottom">
