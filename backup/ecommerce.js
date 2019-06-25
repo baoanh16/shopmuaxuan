@@ -420,13 +420,13 @@ $(document).ready(function () {
 
 	function ProcessAjax(pageurl) {
 		//to get the ajax content and display in div with id 'content'
-
 		$.ajax({
 			url: pageurl,
 			data: { isajax: true },
 			success: function success(data) {
 				$('.productpage  .ajaxresponse').html($(data).find('.ajaxresponse').html());
 				$('.productpage .ajaxfilterresponse').html($(data).filter('.ajaxfilterresponse').html());
+				console.log($(data).find('.ajaxfilterresponse').html())
 				$('.productpage .ajaxbrandresponse').html($(data).find('.ajaxbrandresponse').html());
 				$('.productpage .productpager').remove();
 				$(data).find('.productpager').insertAfter($('.productpage .ajaxresponse'));
@@ -437,14 +437,6 @@ $(document).ready(function () {
 				} else {
 					$('.ajaxpagerlink').hide();
 				}
-
-				$(".filter-group select").each(function () {
-					var tempVal = $(this).find("option[selected]").html()
-					// var tempVal = $(this).html();
-					console.log(tempVal)
-					var labelTarget = $(this).attr("id")
-					$("label[for=" + labelTarget + "]").html(tempVal)
-				})
 			}
 		});
 		//to change the browser URL to 'pageurl'
