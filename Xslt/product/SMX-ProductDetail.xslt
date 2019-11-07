@@ -86,15 +86,15 @@
 										</input>
 									</div>
 									<xsl:if test="floor(/ProductDetail/ShowOption div 8) mod 2 != 1">
-									<div class="mx-btn">
-										<a href="#!" data-action="addcart" data-url=""
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>
-											Mua sản phẩm
-										</a>
-									</div>
+										<div class="mx-btn">
+											<a href="#!" data-action="addcart" data-url=""
+												onclick="AjaxCart.addproducttocart_details(this); return false;">
+												<xsl:attribute name="data-productid">
+													<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+												</xsl:attribute>
+												Mua sản phẩm
+											</a>
+										</div>
 									</xsl:if>
 								</div>
 								<div class="social-networks nav">
@@ -111,8 +111,9 @@
 										<div class="g-plus" data-action="share"></div>
 									</div>
 									<div class="nav-item">
-										<script src="//platform.linkedin.com/in.js"
-											type="text/javascript">lang: en_US</script>
+										<script src="//platform.linkedin.com/in.js" type="text/javascript">
+											lang: en_US
+										</script>
 										<script type="IN/Share"></script>
 									</div>
 								</div>
@@ -273,14 +274,22 @@
 
 	<xsl:template match="ProductImages" mode="BigImages">
 		<div class="item">
-			<img>
-			<xsl:attribute name="src">
-				<xsl:value-of select="ImageUrl"></xsl:value-of>
-			</xsl:attribute>
-			<xsl:attribute name="alt">
-				<xsl:value-of select="Title"></xsl:value-of>
-			</xsl:attribute>
-			</img>
+			<a data-fancybox='product-images'>
+				<xsl:attribute name='href'>
+					<xsl:value-of select='ImageUrl'></xsl:value-of>
+				</xsl:attribute>
+				<xsl:attribute name='title'>
+					<xsl:value-of select='Title'></xsl:value-of>
+				</xsl:attribute>
+				<img>
+				<xsl:attribute name="src">
+					<xsl:value-of select="ImageUrl"></xsl:value-of>
+				</xsl:attribute>
+				<xsl:attribute name="alt">
+					<xsl:value-of select="Title"></xsl:value-of>
+				</xsl:attribute>
+				</img>
+			</a>
 		</div>
 	</xsl:template>
 
