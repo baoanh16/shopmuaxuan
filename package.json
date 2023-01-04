@@ -14,7 +14,7 @@
 	"author": "sonvh2510",
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.1.5",
+		"@babel/core": "^7.20.12",
 		"@babel/preset-env": "^7.1.5",
 		"@babel/register": "^7.0.0",
 		"browser-sync": "^2.26.3",
